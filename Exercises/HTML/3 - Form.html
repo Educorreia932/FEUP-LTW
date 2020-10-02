@@ -6,7 +6,7 @@
     </head>
 
     <body>
-        <form>
+        <form method="get">
             <fieldset>
                 <legend>Name:</legend>
                 <input id="name" type="text" name="name"><br>
@@ -16,16 +16,16 @@
 
             <fieldset>
                 <legend>Age:</legend>
-                <label><input id="age" type="radio" name="age">&lt;18<br></label>
-                <label><input type="radio" name="age">19-35<br></label>
-                <label><input type="radio" name="age">36-48<br></label>
-                <label><input type="radio" name="age">&gt;49<br></label>
+                <label><input type="radio" name="age" value="18">&lt;18</label><br>
+                <label><input type="radio" name="age" value="19-35">19-35</label><br>
+                <label><input type="radio" name="age" value="36-48">36-48></label><br>
+                <label><input type="radio" name="age" value=">49">&gt;49</label><br>
             </fieldset>
 
             <br>
 
             <fieldset>
-                <legend>Profession:</legend></label>
+                <legend>Profession:</legend>
                 <input id="profession" type="text" name="profession"><br>
             </fieldset>
 
@@ -45,11 +45,11 @@
 
             <fieldset>
                 <legend>Interests:</legend>
-                <label><input id="interests" type="checkbox" name="interests" value="Bike">Writing</label><br>
-                <label></label><input type="checkbox" name="interests" value="Bike">Blogging</label><br>
-                <label><input type="checkbox" name="interests" value="Bike">Drawing</label><br>
-                <label><input type="checkbox" name="interests" value="Bike">Photography</label><br>
-                <label><input type="checkbox" name="interests" value="Bike">Travel</label><br>
+                <label><input id="interests" type="checkbox" name="interests" value="Writing">Writing</label><br>
+                <label><input type="checkbox" name="interests" value="Blogging">Blogging</label><br>
+                <label><input type="checkbox" name="interests" value="Drawing">Drawing</label><br>
+                <label><input type="checkbox" name="interests" value="Photography">Photography</label><br>
+                <label><input type="checkbox" name="interests" value="Travel">Travel</label><br>
             </fieldset>
             
             <br>
