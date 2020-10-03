@@ -1,4 +1,4 @@
-* {
+body {
     font-family: Verdana;
 }
 
@@ -64,6 +64,10 @@ header a {
 
 /* Navigaton menu */
 
+nav#menu {
+    background-color: white;
+}
+
 nav#menu input#hamburger {
     display: none;
 }
@@ -121,11 +125,17 @@ aside#related {
     background-color: #2A2F33;
 }
 
+aside#related p {
+    color: #EDEFF0;
+    line-height: 1.4rem;
+}
+
 /* News section */
 
 section#news article {
     position: relative;
     margin-top: 1rem;
+    background-color: white;
 }
 
 section#news article header {
@@ -147,7 +157,7 @@ section#news article p {
     margin-left: 1rem;
 }
 
-section#news article p::first-letter {
+section#news article p:first-of-type::first-letter {
     font-weight: bold;
     font-size: 2rem;    
 }
@@ -169,7 +179,8 @@ section#news article .tags a, section#news article .comments {
 }
 
 section#news article .date {
-    margin: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 section#news article .comments::after {
@@ -181,5 +192,8 @@ footer {
 }
 
 footer p {
+    margin: 0;
+    margin-left: 1rem;
     padding: 1rem;
+    padding-left: 0rem;
 }

@@ -1,0 +1,74 @@
+body {
+    background-color: #EDEFF0;
+    width: 60em;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-areas: 
+        "header header"
+        "menu related"
+        "news related"
+        "footer related";
+}
+
+header {
+    display: grid;
+    grid-area: header;
+    grid-template-areas: 
+        "title ."
+        "subtitle signup";
+    grid-template-columns: 80% 20%;
+}
+
+header h1 {
+    grid-area: title;
+}
+
+header h2 {
+    grid-area: subtitle;
+}
+
+header #signup {
+    grid-area: signup;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+nav#menu {
+    grid-area: menu;
+}
+
+nav#menu ul {
+    display: flex;
+}
+
+nav#menu ul li {
+    width: 100%;
+}
+
+aside#related {
+    grid-area: related;
+}
+
+section#news {
+    grid-area: news;
+    margin-right: 1rem;
+}
+
+section#news article footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0rem;
+}
+
+section#news article footer .author {
+    margin-right: auto;
+}
+
+footer {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    grid-area: footer;
+}
