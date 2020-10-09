@@ -5,17 +5,13 @@ body {
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-columns: 80% 20%;
-    grid-template-areas: 
-        "header header"
-        "menu related"
-        "news related"
-        "footer related";
+    grid-template-columns: [start] 4fr [middle] 1fr [end];
+    grid-template-rows: [start] auto [nav] auto [news] 1fr [footer] auto [end];
 }
 
 header {
     display: grid;
-    grid-area: header;
+    grid-column: start / end;
     grid-template-areas: 
         "title ."
         "subtitle signup";
@@ -37,7 +33,7 @@ header #signup {
 }
 
 nav#menu {
-    grid-area: menu;
+    grid-column: start;
 }
 
 nav#menu ul {
@@ -45,15 +41,16 @@ nav#menu ul {
 }
 
 nav#menu ul li {
-    width: 100%;
+    flex-grow: 1;
 }
 
 aside#related {
-    grid-area: related;
+    grid-column: middle;
+    grid-row: nav / end;
 }
 
 section#news {
-    grid-area: news;
+    grid-column: start;
     margin-right: 1rem;
 }
 
@@ -68,7 +65,8 @@ section#news article footer .author {
 }
 
 footer {
+    grid-column: start;
+    align-self: end;
     margin-top: 1rem;
     margin-right: 1rem;
-    grid-area: footer;
 }

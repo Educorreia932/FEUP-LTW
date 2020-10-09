@@ -40,13 +40,10 @@
         content: "✕";
     }
 
-    nav#menu input#hamburger:checked + label.hamburger:before {
-        content: "✕";
-    }
-
     nav#menu input#hamburger:checked + label.hamburger + ul li {
         max-height: 1000px;
         opacity: 1;
+        display: block;
     }
 
     nav#menu ul {
@@ -56,6 +53,7 @@
     }
 
     nav#menu ul li {
+        display: none;
         max-height: 0px;
         opacity: 0;
         transition: all 0.5s ease-in-out;
