@@ -9,7 +9,7 @@
     }
 }
 
-@media (max-width: 10000em) { 
+@media (max-width: 30em) { 
     body header {
         display: block;
     }
@@ -44,20 +44,21 @@
         content: "✕";
     }
 
-    nav#menu input#hamburger:not(:checked) ~ ul {
-        max-height: 0px;
-    }
-
-    nav#menu input#hamburger:checked ~ ul {
-        transition: all 0.5s ease-in;
+    nav#menu input#hamburger:checked + label.hamburger + ul li {
         max-height: 1000px;
+        opacity: 1;
     }
 
     nav#menu ul {
-        max-height: 0px;
-        display: block;
+        flex-direction: column;
         background-color: #EDEFF0;
         text-align: left;
+    }
+
+    nav#menu ul li {
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
     }
 
     nav#menu li a {
