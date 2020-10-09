@@ -1,0 +1,118 @@
+h1, h2, h3 {
+    font-family: Verdana;
+}
+
+body {
+    width: 60%;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ddddff;
+    padding: 0;
+}
+
+div {
+    background-color: white;
+}
+
+/* Header */
+
+div#header {
+    background-color: #666666;
+    color: white;
+    padding:
+        2rem
+        0
+        2rem 
+        1rem;
+}
+
+div#header h1{
+    margin-top: 0;
+}
+
+div#header h2 {
+    margin-bottom: 0;
+}
+
+/* Header */
+
+div#menu {
+    background-color: #330000;
+}
+
+div#menu ul { 
+    margin: 0;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 0;
+}
+
+div#menu ul li {
+    display: inline-block;
+}
+
+div#menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
+}
+
+div#menu ul li + li a {
+    border-left: 1px solid white;
+}
+
+/* Content */
+
+div#content {
+    padding-left: 0.7rem;
+    padding-top: 0.7rem;
+}
+
+div#content h3 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+div#content img {
+    float: left;
+    margin-right: 1rem;
+}
+
+div#content div.news-item {
+    border-bottom: 1px solid black;
+}
+
+div#content div.news-item:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+div#content div.news-item a {
+    text-decoration: none;
+}
+
+div#content div.news-item ul {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+}
+
+div#content div.news-item ul li {
+    background-color: #333333;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+div#content div.news-item ul li a {
+    color: white;
+}
+
+div#footer {
+    margin: 0;
+    padding: 1rem
+}
+
+div#footer p {
+    margin: 0;
+}
