@@ -58,20 +58,11 @@
         </aside>
         <section id="news">
             <?php
-                $DB_PATH = "../3 - SQLite Database Creation/news.db";
-                $db = new PDO('sqlite:' . $DB_PATH);
-
-                $query =   'SELECT news.*, users.*, COUNT(comments.id) AS comments
-                            FROM news JOIN
-                                users USING (username) LEFT JOIN
-                                comments ON comments.news_id = news.id
-                            GROUP BY news.id, users.username
-                            ORDER BY published DESC';
-
-                $stmt = $db->prepare($query);
-                $stmt->execute();
-                $articles = $stmt->fetchAll();
-
+            session_start();    
+                include_once('database/connection.php');
+                include_once('database/news.php');
+                $articles = getAllNews();
+                
                 foreach($articles as $article) {
                     echo '<article>' . PHP_EOL;
                     echo '<header><h1><a href="item.html">' . $article['title'] . '</a></h1></header>' . PHP_EOL;
