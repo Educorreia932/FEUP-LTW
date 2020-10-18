@@ -4,3 +4,5 @@
     $stmt->execute();
     $article = $stmt->fetch();
 ?>  
+
+<a href="edit_news.php">Edit new</a>

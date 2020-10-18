@@ -7,12 +7,12 @@ CREATE TABLE users (
 CREATE TABLE news (
 	id INTEGER PRIMARY KEY,
 	title VARCHAR,
-	published INTEGER,
 	-- date when the article was published in epoch format
-	tags VARCHAR,
+	published INTEGER,
 	-- comma separated tags
-	username VARCHAR REFERENCES users,
+	tags VARCHAR,
 	-- who wrote the article
+	username VARCHAR REFERENCES users,
 	introduction VARCHAR,
 	fulltext VARCHAR
 );
