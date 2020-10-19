@@ -1,8 +1,13 @@
+  
 <?php
-    $stmt = $db->prepare('SELECT * FROM news JOIN users USING (username) WHERE id = :id');
-    $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
-    $stmt->execute();
-    $article = $stmt->fetch();
-?>  
+    include_once('database/connection.php');
+    include_once('database/news.php');
 
-<a href="edit_news.php">Edit new</a>
+    $article = getArticle($_GET['id']);
+    $tags = explode(',', $article['tags']);
+    $comments = getComments($_GET['id']);
+
+    include('templates/common/header.php');
+    include('templates/news/view_news.php');
+    include('templates/common/footer.php');
+?>

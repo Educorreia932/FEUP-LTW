@@ -23,11 +23,8 @@
 		?>
 
 		<footer>
-			<!-- Author -->
-			<!-- TODO: Retrieve author's name from database -->
 			<span class="author"><?= $article['author'] ?></span> 
 
-			<!-- Tags -->
 			<span class="tags">
 				<?php
 					$tags = explode(',', $article['tags']);
@@ -40,7 +37,6 @@
 				<?php } ?>
 			</span>
 
-			<!-- Date -->
 			<span class="date">
 				<?= date("F d, Y", $article['published']) ?>
 			</span>

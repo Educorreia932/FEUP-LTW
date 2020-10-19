@@ -1,4 +1,3 @@
 <?php 
-    $DB_PATH = "database/news.db";
-    $db = new PDO('sqlite:' . $DB_PATH);
+    $db = new PDO("sqlite:" . __DIR__ . "/news.db");
 ?>
