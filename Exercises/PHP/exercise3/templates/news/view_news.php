@@ -8,10 +8,10 @@
 		
 		<p><?= $article['introduction']?></p>
 		<p><?= $article['fulltext']?></p>
-		<p>
-			<a href="edit_news.php?id=<?= $article['id']?>">Edit</a> 
-			<a href="delete_news.php?id=<?= $article['id']?>">Delete</a>
-		</p>
+			<p>
+				<a href="edit_news.php?id=<?= $article['id']?>" style="color: black">Edit</a> 
+				<a href="delete_news.php?id=<?= $article['id']?>" style="color: black">Delete</a>
+			</p>
 
 		<section id="comments">
 			<?php include(__DIR__ . '/../comments/list_comments.php')?>
@@ -44,7 +44,7 @@
 				<?php }?>
 			</span>
 
-			<span class="date"><?= date(DATE_RSS, $article['published'])?></span>
+			<span class="date"><?= date("F d, Y", $article['published'])?></span>
 			
 			<a class="comments" href="news_item.php?id=<?= $article['id']?>"><?= count($comments)?></a>
 		</footer>

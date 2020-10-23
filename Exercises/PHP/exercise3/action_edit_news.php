@@ -7,7 +7,7 @@
     $introduction = $_POST['introduction'];
     $fulltext = $_POST['fulltext'];
 
-    // updateDatabase($id, $title, $introduction, $fulltext);
+    updateNews($id, $title, $introduction, $fulltext);
 
     header("Location: news_item.php?id=$id");
 ?>

@@ -2,6 +2,7 @@
 <?php
     include_once('database/connection.php');
     include_once('database/news.php');
+    include_once('database/comments.php');
 
     $article = getArticle($_GET['id']);
     $tags = explode(',', $article['tags']);

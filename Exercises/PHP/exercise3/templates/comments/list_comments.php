@@ -4,7 +4,7 @@
 
 <article class="comment">
     <span class="user"><?= ucfirst($comment['username']) ?></span>
-    <span class="date"><?= date(DATE_RSS, $comment['published']) ?></span>
+    <span class="date"><?= date("F d, Y", $article['published']) ?></span>
     <p><?= $comment['text']?></p>
 </article>
 

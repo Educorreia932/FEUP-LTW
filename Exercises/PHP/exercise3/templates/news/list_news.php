@@ -5,8 +5,7 @@
 
 	<article>
 		<header>
-			<!-- TODO: Change to article link -->
-			<h1><a href="list_news.php"><?= $article['title'] ?></a></h1> 
+			<h1><a href="news_item.php?id=<?= $article['id']?>"><?= $article['title'] ?></a></h1> 
 		</header>
 		<!-- Illustration -->
 		<img src="https://picsum.photos/600/300" alt="Article Illustration">
@@ -41,9 +40,8 @@
 				<?= date("F d, Y", $article['published']) ?>
 			</span>
 
-			<a class="comments" href="news_item.php"><?= $article['comments'] ?></a>
+			<a class="comments" href="news_item.php?id=<?= $article['id']?>"> <?= $article['comments'] ?></a>
 		</footer>
-
 	</article>
 
 	<?php } ?>

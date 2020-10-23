@@ -22,14 +22,19 @@
 
         $stmt = $db->prepare('SELECT *, name AS author FROM news JOIN users USING (username) WHERE id = ?');
         $stmt->execute(array($id));
+
         return $stmt->fetch();
     }
 
-    function getComments($id) {
+    
+
+    function updateNews($id, $title, $introduction, $fulltext) {
         global $db;
-        
-        $stmt = $db->prepare('SELECT * FROM comments JOIN users USING (username) WHERE news_id = ?');
-        $stmt->execute(array($id));
-        return $stmt->fetchAll();
+
+        $stmt = $db->prepare('UPDATE news 
+                            SET title = ?, introduction = ?, fulltext = ?
+                            WHERE id = ?');
+
+        $stmt->execute(array($title, $introduction, $fulltext, $id));
     }
 ?>
