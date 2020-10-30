@@ -1,0 +1,24 @@
+
+a {
+    text-decoration: none;
+}
+
+nav#menu {
+    height: 100%;
+    position: fixed;
+    right: 0;
+    background-color: #111;
+    z-index: 1;
+}
+
+nav#menu a {
+    color: white;
+}
+
+section#adoption {
+    background-color: wheat;
+}
+
+section#adoption ol {
+    list-style: none;
+}
