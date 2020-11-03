@@ -36,12 +36,11 @@ VALUES(
 INSERT INTO Pets
 VALUES(
     NULL,
-    "Maya Polar Bear",
+    "Maya",
     1,
     1,
     "https://ourfunnylittlesite.com/wp-content/uploads/2018/07/1-4.jpg"
 );
-
 
 INSERT INTO Pets
 VALUES(
@@ -50,4 +49,13 @@ VALUES(
     1,
     1,
     "https://i2-prod.mirror.co.uk/incoming/article20090958.ece/ALTERNATES/s1227b/0_JS193011867.jpg"
+);
+
+INSERT INTO Pets
+VALUES(
+    NULL,
+    "Kermit",
+    1,
+    1,
+    "https://cdn.discordapp.com/attachments/627876438216933419/773219910331531304/iu.png"
 );

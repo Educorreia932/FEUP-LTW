@@ -23,7 +23,10 @@
 
         <div class="pet-card">
             <div class="favorite-icon">
-                <i class="far fa-heart"></i>
+                <span class="fa-stack fa-x">
+                    <i class="fas fa-square fa-stack-2x"></i>
+                    <i class="far fa-heart fa-stack-1x fa-inverse"></i>
+                </span>
             </div>
 
             <img src=<?= $pet["URL"] ?> alt="Pet Photo">

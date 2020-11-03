@@ -36,17 +36,28 @@ nav#menu a {
 
 section#adoption {
     display: flex;
+    flex-wrap: wrap;
 }
 
 div.pet-card {
+    flex-shrink: 0;
     position: relative;
-    width: 20%;
+    width: 17em;
+    height: 18em;
     background-color: white;
     margin-left: 0.8em;
+    margin-top: 0.8em;
 }
 
 div.favorite-icon {
     position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    font-size: 1.3em;
+}
+
+div.favorite-icon i.fa-square {
+    text-shadow: 3px 3px  white;
 }
 
 div.pet-card img {
