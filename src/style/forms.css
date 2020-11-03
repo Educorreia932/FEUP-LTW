@@ -43,7 +43,7 @@ section#register form label input {
 section#login form input[type=submit],
 section#register form input[type=submit] {
     margin-left: auto;
-    background-color: #2A2F33;
+    background-color: var(--boxColor);
     color: white;
     padding: 0.8rem;
     border: 0;
