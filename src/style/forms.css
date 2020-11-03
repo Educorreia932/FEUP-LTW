@@ -54,3 +54,7 @@ section#register form input[type=submit] {
         background-color: white;
     }
 }
+
+input[type=submit]{
+    font-family: 'Varela Round', sans-serif;
+}
