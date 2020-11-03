@@ -22,10 +22,6 @@ header h1 {
     margin: 0;
 }
 
-header a#sign-up, header a#login {
-
-}
-
 nav#menu {
     height: 100%;
     position: fixed;
@@ -55,7 +51,12 @@ div.favorite-icon {
 
 div.pet-card img {
     width: 100%;
+    height: 85%;
     object-fit: cover;
 }
 
+div.container p {
+    margin: 0;
+    text-align: center;
+}
 

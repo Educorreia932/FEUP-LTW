@@ -1,3 +1,3 @@
-cd src
+sqlite3 src/database/pets.db < src/database/pets.sql
 
-php -S localhost:8000
+cd src & php -S localhost:8000

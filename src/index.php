@@ -1,5 +1,7 @@
 <?php
     include_once("templates/common/header.php");
+    include_once("database/connection.php");
+    include_once("database/pets.php");
 ?>
 
     <div id="search-bar">
@@ -14,7 +16,9 @@
     <section id="adoption">
 
     <?php
-        for ($i = 0; $i < 3; $i++) {
+        $pets = getAllPets();
+
+        foreach ($pets as $pet) {
     ?>
 
         <div class="pet-card">
@@ -22,10 +26,10 @@
                 <i class="far fa-heart"></i>
             </div>
 
-            <img src="http://placekitten.com/200/200" alt="Pet Photo">
+            <img src=<?= $pet["URL"] ?> alt="Pet Photo">
 
             <div class="container">
-                <p>Pet Name</p>
+                <p><?= $pet["Name"] ?></p>
              </div>
         </div>
 
