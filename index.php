@@ -9,11 +9,16 @@
         </form>
     </div>
 
+    <h2>Pets for Adoption</h2>
+
     <section id="adoption">
-        <div class="pet-entry">
-            <i class="far fa-heart"></i>
-            <p>Pet Name</p>
-            <img src="http://placekitten.com/500/300" alt="Pet Photo">
+        <div class="pet-card">
+            <img src="http://placekitten.com/200/200" alt="Pet Photo">
+
+            <div class="container">
+                <i class="far fa-heart"></i>
+                <p>Pet Name</p>
+             </div>
         </div>
     </section>
 </body>

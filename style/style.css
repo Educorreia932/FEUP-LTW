@@ -35,9 +35,16 @@ nav#menu a {
 }
 
 section#adoption {
+    display: flex;
+}
+
+div.pet-card {
+    width: 20%;
     background-color: wheat;
 }
 
-section#adoption {
-    display: flex;
+div.pet-card img {
+    width: 100%;
+    object-fit: cover;
 }
+
