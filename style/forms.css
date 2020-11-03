@@ -1,0 +1,56 @@
+section#login,
+section#register {
+    grid-column: start;
+}
+
+section#login h1,
+section#register h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+section#login form,
+section#register form {
+    background-color: white;
+    padding: 2rem;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section#login form *,
+section#register form * {
+    display: block;
+}
+
+section#login form label,
+section#register form label {
+    font-weight: bold;
+}
+
+section#login form label input ,
+section#register form label input {
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid black;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+section#login form input[type=submit],
+section#register form input[type=submit] {
+    margin-left: auto;
+    background-color: #2A2F33;
+    color: white;
+    padding: 0.8rem;
+    border: 0;
+}
+
+@media (max-width: 30em) {
+    section#register {
+        background-color: white;
+    }
+}
