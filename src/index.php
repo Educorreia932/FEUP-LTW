@@ -9,17 +9,30 @@
         </form>
     </div>
 
-    <h2>Pets for Adoption</h2>
+    <h2>Available Pets for Adoption</h2>
 
     <section id="adoption">
+
+    <?php
+        for ($i = 0; $i < 3; $i++) {
+    ?>
+
         <div class="pet-card">
+            <div class="favorite-icon">
+                <i class="far fa-heart"></i>
+            </div>
+
             <img src="http://placekitten.com/200/200" alt="Pet Photo">
 
             <div class="container">
-                <i class="far fa-heart"></i>
                 <p>Pet Name</p>
              </div>
         </div>
+
+    <?php 
+        } 
+    ?>
+
     </section>
 </body>
 

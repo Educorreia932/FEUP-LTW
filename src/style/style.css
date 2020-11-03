@@ -6,6 +6,10 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 header {
     background-color:white;
 }
@@ -18,8 +22,8 @@ header h1 {
     margin: 0;
 }
 
-a {
-    text-decoration: none;
+header a#sign-up, header a#login {
+
 }
 
 nav#menu {
@@ -39,12 +43,19 @@ section#adoption {
 }
 
 div.pet-card {
+    position: relative;
     width: 20%;
-    background-color: wheat;
+    background-color: white;
+    margin-left: 0.8em;
+}
+
+div.favorite-icon {
+    position: absolute;
 }
 
 div.pet-card img {
     width: 100%;
     object-fit: cover;
 }
+
 
