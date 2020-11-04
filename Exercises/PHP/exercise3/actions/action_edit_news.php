@@ -1,6 +1,6 @@
 <?php
-    include_once('database/connection.php');
-    include_once('database/news.php');
+    include_once(__DIR__ . '/../database/connection.php');
+    include_once(__DIR__ . '/../database/news.php');
 
     $id = $_POST['id'];
     $title = $_POST['title'];
@@ -9,5 +9,5 @@
 
     updateNews($id, $title, $introduction, $fulltext);
 
-    header("Location: news_item.php?id=$id");
+    header("Location: ../news_item.php?id=$id");
 ?>

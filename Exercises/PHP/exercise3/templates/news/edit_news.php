@@ -1,4 +1,4 @@
-<form action="action_edit_news.php" method="post">
+<form action="actions/action_edit_news.php" method="post">
     <input type="hidden" name="id" value=<?= $id?>>
     
     <label>Name<br>

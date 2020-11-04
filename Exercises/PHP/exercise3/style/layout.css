@@ -1,0 +1,72 @@
+body {
+    background-color: #EDEFF0;
+    width: 60em;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: [start] 4fr [middle] 1fr [end];
+    grid-template-rows: [start] auto [nav] auto [news] 1fr [footer] auto [end];
+}
+
+header {
+    display: grid;
+    grid-column: start / end;
+    grid-template-areas: 
+        "title ."
+        "subtitle signup";
+    grid-template-columns: 80% 20%;
+}
+
+header h1 {
+    grid-area: title;
+}
+
+header h2 {
+    grid-area: subtitle;
+}
+
+header #signup {
+    grid-area: signup;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+nav#menu {
+    grid-column: start;
+}
+
+nav#menu ul {
+    display: flex;
+}
+
+nav#menu ul li {
+    flex-grow: 1;
+}
+
+aside#related {
+    grid-column: middle;
+    grid-row: nav / end;
+}
+
+section#news {
+    grid-column: start;
+    margin-right: 1rem;
+}
+
+section#news article footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0rem;
+}
+
+section#news article footer .author {
+    margin-right: auto;
+}
+
+footer {
+    grid-column: start;
+    align-self: end;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}

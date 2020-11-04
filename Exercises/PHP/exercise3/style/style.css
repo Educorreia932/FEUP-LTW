@@ -1,0 +1,200 @@
+body {
+    font-family: Verdana;
+}
+
+a {
+    text-decoration: none;
+}
+
+article a {
+    color: white;
+}
+
+article p, footer p {
+    color: white;
+    font-family: Georgia;
+}
+
+img {
+    width: 100%;
+}
+
+nav#menu input#hamburger {
+    display: none;
+}
+
+/* Header */
+
+header {
+    background-color: #046DD5;
+    width: 100%;
+    padding-top: 1.2rem;
+    padding-bottom: 0.4rem;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    margin-left: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+header h2 {
+    font-size: 0.8rem;
+    margin: 0;
+    margin-left: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+header #signup {
+    margin: 0;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+} 
+
+header #signup a {
+    padding-right: 0.3rem;
+}
+
+header #signup a + a {
+    border-left: 1px solid white;
+    padding-left: 0.5rem;
+}
+
+header a {
+    color: white;
+}
+
+/* Navigaton menu */
+
+nav#menu {
+    background-color: white;
+}
+
+nav#menu li {
+    margin: 1rem;
+}
+
+nav#menu li a {
+    color: #2A2F33;
+    font-weight: bold;
+}
+
+nav#menu ul {
+    text-align: center;
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+nav#menu li {
+    margin: 0;
+    padding: 1rem;
+}
+
+nav#menu li:nth-child(1) {
+    border-top: 5px solid #E1493E;
+}
+
+nav#menu li:nth-child(2) {
+    border-top: 5px solid #8ABA56;
+}
+
+nav#menu li:nth-child(3) {
+    border-top: 5px solid #5B4282;
+}
+
+nav#menu li:nth-child(4) {
+    border-top: 5px solid #FF8932;
+}
+
+nav#menu li:nth-child(5) {
+    border-top: 5px solid #19B6E9;
+}
+
+nav#menu li:nth-child(6) {
+    border-top: 5px solid #E84C8B;
+}
+
+/* Aside */
+
+aside#related {
+    padding: 1rem;
+    background-color: #2A2F33;
+}
+
+aside#related p {
+    color: #EDEFF0;
+    line-height: 1.4rem;
+}
+
+/* News section */
+
+section#news article {
+    position: relative;
+    margin-top: 1rem;
+    background-color: white;
+}
+
+section#news article header {
+    position: absolute;
+    padding: 0;
+    top: 1.5rem;
+    text-shadow: 6px 6px 4px black;
+    background-color: transparent;
+    width: 16rem;
+}
+
+section#news article header h1 {
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+section#news article p {
+    color: #2A2F33;
+    margin-left: 1rem;
+}
+
+section#news article p:first-of-type::first-letter {
+    font-weight: bold;
+    font-size: 2rem;    
+}
+
+section#news article footer {
+    background-color: #F4655F;
+    color: white;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+}
+
+section#news article .author::before {
+    content: "By ";
+}
+
+section#news article .tags a, section#news article .comments {
+    text-underline-position: under; 
+    text-decoration: underline;
+}
+
+section#news article .date {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+section#news article .comments::after {
+    content: " comments";
+}
+
+footer {
+    background-color: #2A2F33;
+}
+
+footer p {
+    margin: 0;
+    margin-left: 1rem;
+    padding: 1rem;
+    padding-left: 0rem;
+}

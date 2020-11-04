@@ -1,0 +1,110 @@
+@media (max-width: 60em) {
+    body {
+        width: 100%;
+        display: block;
+    }
+
+    aside {
+        display: none;
+    }
+}
+
+@media (max-width: 30em) { 
+    body header {
+        display: block;
+    }
+
+    body header h2 {
+        display: block;
+    }
+
+    body header #signup {
+        margin-left: 1rem;
+    }
+
+    nav#menu {
+        background-color: #2A2F33;
+    }
+    
+    nav#menu label.hamburger {
+        color: white;
+        padding: 1rem;
+        display: block;
+    }
+
+    nav#menu input#hamburger + label.hamburger:before {
+        content: "☰";
+    }
+    
+    nav#menu input#hamburger:checked + label.hamburger:before {
+        content: "✕";
+    }
+
+    nav#menu input#hamburger:checked + label.hamburger + ul li {
+        max-height: 1000px;
+        opacity: 1;
+        display: block;
+    }
+
+    nav#menu ul {
+        flex-direction: column;
+        background-color: #EDEFF0;
+        text-align: left;
+    }
+
+    nav#menu ul li {
+        display: none;
+        max-height: 0px;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    nav#menu li a {
+        font-weight: normal;
+    }
+
+    nav#menu li:nth-child(1) {
+        border-top: 0;
+        border-left: 5px solid #E1493E;
+    }
+    
+    nav#menu li:nth-child(2) {
+        border-top: 0;
+        border-left: 5px solid #8ABA56;
+    }
+    
+    nav#menu li:nth-child(3) {
+        border-top: 0;
+        border-left: 5px solid #5B4282;
+    }
+    
+    nav#menu li:nth-child(4) {
+        border-top: 0;
+        border-left: 5px solid #FF8932;
+    }
+    
+    nav#menu li:nth-child(5) {
+        border-top: 0;
+        border-left: 5px solid #19B6E9;
+    }
+    
+    nav#menu li:nth-child(6) {
+        border-top: 0;
+        border-left: 5px solid #E84C8B;
+    }
+
+    section#news article:first-child  {
+       margin-top: 0;
+    }
+
+    section#news article header {
+        position: static;
+        text-shadow: none;
+        width: 100%;
+    }
+
+    section#news article header h1 a {
+        font-size: 1rem;
+        color: black;
+    }
+}

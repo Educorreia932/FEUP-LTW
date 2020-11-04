@@ -26,8 +26,6 @@
         return $stmt->fetch();
     }
 
-    
-
     function updateNews($id, $title, $introduction, $fulltext) {
         global $db;
 
@@ -36,5 +34,12 @@
                             WHERE id = ?');
 
         $stmt->execute(array($title, $introduction, $fulltext, $id));
+    }
+
+    function deleteNews($id) {
+        global $db;
+
+        $stmt = $db->prepare('DELETE FROM news WHERE id = ?');
+        $stmt->execute(array($id));
     }
 ?>
