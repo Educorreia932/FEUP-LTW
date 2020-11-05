@@ -18,12 +18,20 @@ div.pet-card {
     box-shadow: 3px 3px 3px lightgray;
 }
 
-div.favorite-icon {
+div.favorite-icon, div.post-icon {
     position: absolute;
-    top: 0.5em;
-    left: 0.5em;
     font-size: 1.3em;
     color: rgb(24, 24, 24);
+}
+
+div.post-icon {
+    top: 0.5em;
+    left: 0.5em;
+}
+
+div.favorite-icon {
+    top: 0.5em;
+    right: 0.5em;
 }
 
 div.pet-card img {
@@ -58,4 +66,8 @@ div.container footer {
 div.container footer * {
     width: 100%;
     text-align: center;
+}
+
+div.container footer p {
+   font-size: 0.95em;
 }

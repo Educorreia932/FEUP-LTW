@@ -15,6 +15,13 @@
                 </span>
             </div>
 
+            <div class="post-icon">
+                <span class="fa-stack fa-x">
+                    <i class="fas fa-square fa-stack-2x"></i>
+                    <i class="fas fa-external-link-alt fa-stack-1x fa-inverse""></i>
+                </span>
+            </div>
+
             <img src=<?= $pet["URL"] ?> alt="Pet Photo">
 
             <div class="container">
@@ -22,7 +29,6 @@
 
                 <footer>
                     <p><?= $pet["SpeciesName"]?> <?= $pet["Symbol"] ?></p>
-                    <i class="fas fa-external-link-alt fa-inverse""></i>
                 </footer>
             </div>
         </div>
