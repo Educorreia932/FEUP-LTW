@@ -26,7 +26,7 @@ header #account {
     margin-right: 1em;
 }
 
-header #account a {
+header #account > a {
     margin-left: 1em;
 }
 
@@ -41,5 +41,3 @@ nav#menu {
 nav#menu a {
     color: white;
 }
-
-

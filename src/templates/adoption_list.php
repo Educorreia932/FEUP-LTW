@@ -21,7 +21,7 @@
                 <p><?= $pet["Name"] ?></p>
 
                 <footer>
-                    <p><?= $pet["Symbol"] ?></p>
+                    <p><?= $pet["SpeciesName"]?> <?= $pet["Symbol"] ?></p>
                     <i class="fas fa-external-link-alt fa-inverse""></i>
                 </footer>
             </div>
