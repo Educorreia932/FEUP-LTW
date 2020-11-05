@@ -6,7 +6,7 @@
 
     $pets = getAllPets();
 
-    include_once("templates/list_pets.php");
+    include_once("templates/adoption_list.php");
 
     include_once("templates/common/footer.php");
 ?> 

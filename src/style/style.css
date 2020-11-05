@@ -13,14 +13,21 @@ a {
 
 header {
     background-color:white;
-}
-
-header * {
-    display: inline;
+    display: flex;
+    align-items: center;
 }
 
 header h1 {
     margin: 0;
+}
+
+header #account {
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+header #account a {
+    margin-left: 1em;
 }
 
 nav#menu {
@@ -35,52 +42,4 @@ nav#menu a {
     color: white;
 }
 
-section#adoption {
-    margin: 1em;
-}
 
-section#pets {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-div.pet-card {
-    justify-self: flex-start;
-    border-radius: 0.5em;
-    flex-shrink: 0;
-    position: relative;
-    width: 17em;
-    margin-right: 0.8em;
-    margin-bottom: 0.8em;
-    box-shadow: 3px 3px 3px lightgray;
-}
-
-div.favorite-icon {
-    position: absolute;
-    top: 0.5em;
-    left: 0.5em;
-    font-size: 1.3em;
-    color: rgb(24, 24, 24);
-}
-
-div.pet-card img {
-    display: block;
-    width: 100%;
-    height: 18em;
-    object-fit: cover;
-    border-radius: 0.5em 0.5em 0 0;
-}
-
-div.container {
-    border-radius: 0 0 0.5em 0.5em;
-    background-color: var(--boxColor);
-    padding: 0.5em;
-}
-
-div.container p {
-    margin: 0;
-    background-color: var(--boxColor);
-    text-align: center;
-    font-size: large;
-    color: white;
-}

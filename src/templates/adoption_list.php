@@ -19,8 +19,11 @@
 
             <div class="container">
                 <p><?= $pet["Name"] ?></p>
-                <p><?= $pet["Symbol"] ?></p>
-                <i class="fas fa-external-link-alt fa-inverse""></i>
+
+                <footer>
+                    <p><?= $pet["Symbol"] ?></p>
+                    <i class="fas fa-external-link-alt fa-inverse""></i>
+                </footer>
             </div>
         </div>
 

@@ -1,10 +1,16 @@
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Pets;
+DROP TABLE IF EXISTS PetSpecies;
 
 CREATE TABLE Users (
     Username TEXT PRIMARY KEY,  
     Password TEXT,
     Name TEXT
+);
+
+CREATE TABLE AdoptionPost (
+    ID INTEGER PRIMARY KEY,
+    Description TEXT
 );
 
 CREATE TABLE Pets (
@@ -41,6 +47,20 @@ VALUES(
     2,
     "Hedgehog",
     "🦔"    
+);
+
+INSERT INTO PetSpecies
+VALUES(
+    3,
+    "Hedgehog",
+    "🐹"    
+);
+
+INSERT INTO PetSpecies
+VALUES(
+    4,
+    "Fox",
+    "🦊"    
 );
 
 INSERT INTO Pets
@@ -92,3 +112,35 @@ VALUES(
     "https://cdn.discordapp.com/attachments/627876438216933419/773219910331531304/iu.png",
     1
 );
+
+INSERT INTO Pets
+VALUES(
+    NULL,
+    "Marbles",
+    1,
+    1,
+    "https://i.ytimg.com/vi/yXhz4F78s3Q/maxresdefault.jpg",
+    1
+);
+
+INSERT INTO Pets
+VALUES(
+    NULL,
+    "Staring Hamster",
+    1,
+    1,
+    "https://i.pinimg.com/originals/26/a5/60/26a5601513009385d63a8baf234153d5.jpg",
+    3
+);
+
+INSERT INTO Pets
+VALUES(
+    NULL,
+    "Finnegan",
+    1,
+    1,
+    "https://i.ytimg.com/vi/p_QdPLPmgO4/maxresdefault.jpg",
+    4
+);
+
+
