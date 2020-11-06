@@ -4,8 +4,8 @@
         session_start(); 
     } 
 
-    include_once('../database/connection.php'); 
-    include_once('../database/users.php');     
+    include_once(__DIR__.'/../database/connection.php'); 
+    include_once(__DIR__.'/../database/users.php');     
 
     // TODO: Verify if username already exists
 
