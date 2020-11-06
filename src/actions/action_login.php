@@ -1,8 +1,11 @@
 <?php
-    session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
-    include_once('database/connection.php'); 
-    include_once('database/users.php');     
+    include_once('../database/connection.php'); 
+    include_once('../database/users.php');     
 
     if (getUser($_POST['username'], $_POST['password'])) {
         $_SESSION['username'] = $_POST['username'];     

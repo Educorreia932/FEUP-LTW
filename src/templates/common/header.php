@@ -1,3 +1,10 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,6 +16,7 @@
     </head>
 
     <body>
+        
         <header>
             <h1><a href="index.php">Adoption Shelter</a></h1>
             <div id="account">  

@@ -1,8 +1,11 @@
 <?php
-    session_start();
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 
-    include_once('database/connection.php'); 
-    include_once('database/users.php');     
+    include_once('../database/connection.php'); 
+    include_once('../database/users.php');     
 
     // TODO: Verify if username already exists
 
