@@ -11,7 +11,8 @@ section#register h1 {
     padding-top: 1rem;
 }
 
-form {
+section#login form,
+section#register form {
     background-color: white;
     padding: 2rem;
     width: 40%;
@@ -19,15 +20,18 @@ form {
     margin-right: auto;
 }
 
-form * {
+section#login form *,
+section#register form * {
     display: block;
 }
 
-form label {
+section#login form label,
+section#register form label {
     font-weight: bold;
 }
 
-form label input {
+section#login form label input ,
+section#register form label input {
     background: transparent;
     border: none;
     border-bottom: 1.5px solid black;
@@ -36,22 +40,23 @@ form label input {
     margin-bottom: 2rem;
 }
 
-form button[type=submit] {
-    background-color: var(--color1);
-    color: white;
+section#login form input[type=submit],
+section#register form input[type=submit] {
     margin-left: auto;
-    margin-right: auto;
+    background-color: var(--boxColor);
+    color: white;
     padding: 0.8rem;
     border: 0;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 1em;
-    border-radius: 5px;
 }
 
 @media (max-width: 30em) {
     section#register {
         background-color: white;
     }
+}
+
+input[type=submit]{
+    font-family: 'Varela Round', sans-serif;
 }
 
 input[type=submit]{
@@ -126,4 +131,3 @@ form#submition_post button {
     background-color: darkblue;
     font-weight: bold;
 }
-
