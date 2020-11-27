@@ -1,8 +1,3 @@
-section#login,
-section#register {
-    grid-column: start;
-}
-
 section#login h1,
 section#register h1 {
     text-align: center;
@@ -11,8 +6,7 @@ section#register h1 {
     padding-top: 1rem;
 }
 
-section#login form,
-section#register form {
+form {
     background-color: white;
     padding: 2rem;
     width: 40%;
@@ -20,18 +14,15 @@ section#register form {
     margin-right: auto;
 }
 
-section#login form *,
-section#register form * {
+form * {
     display: block;
 }
 
-section#login form label,
-section#register form label {
+form label {
     font-weight: bold;
 }
 
-section#login form label input ,
-section#register form label input {
+form label input {
     background: transparent;
     border: none;
     border-bottom: 1.5px solid black;
@@ -40,21 +31,20 @@ section#register form label input {
     margin-bottom: 2rem;
 }
 
-section#login form input[type=submit],
-section#register form input[type=submit] {
-    margin-left: auto;
-    background-color: var(--boxColor);
+form button[type=submit] {
+    background-color: var(--color1);
     color: white;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0.8rem;
     border: 0;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1em;
+    border-radius: 5px;
 }
 
 @media (max-width: 30em) {
     section#register {
         background-color: white;
     }
-}
-
-input[type=submit]{
-    font-family: 'Varela Round', sans-serif;
 }

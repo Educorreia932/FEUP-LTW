@@ -35,6 +35,9 @@
             </div>
         </a>
 
+
+        <!-- Add a proposal card -->
+
     <?php 
         } 
     ?>
