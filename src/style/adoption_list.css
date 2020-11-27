@@ -71,3 +71,41 @@ div.container footer * {
 div.container footer p {
    font-size: 0.95em;
 }
+
+section#searchBar {
+    display: flex;
+    align-items: stretch;
+    text-align: center;
+}
+
+section#bar{
+    background-color: white;
+    width: fit-content;
+    padding: 0.5em;
+    border-radius: 0.6em;
+    border-width: 0;
+    box-shadow: 0em 0.1em 0.2em grey;
+}
+
+section#bar input#name{
+    border: none;
+    border-right: 0.01em solid black;
+}
+
+section#bar input#name:active {
+    border:none;
+}
+
+section#bar select#species{ 
+    border: none;
+}
+
+img.resize {
+    width: auto;
+    height: auto;
+}
+
+section#bar input[type="submit"] {
+    border: none;
+    background-color: white;
+}

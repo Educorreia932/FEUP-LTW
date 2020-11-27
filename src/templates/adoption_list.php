@@ -1,6 +1,10 @@
 <section id="adoption">
     <h2>Available Pets for Adoption</h2>
 
+    <?php
+        include_once("templates/search_bar.php");
+    ?>
+    
     <section id="pets">
 
     <?php
