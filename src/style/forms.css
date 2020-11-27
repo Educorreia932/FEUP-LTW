@@ -1,3 +1,5 @@
+
+
 section#login,
 section#register {
     grid-column: start;
@@ -58,3 +60,73 @@ section#register form input[type=submit] {
 input[type=submit]{
     font-family: 'Varela Round', sans-serif;
 }
+
+/* submition_form css */
+
+form#submition_post{
+    font-size: 2em;
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+    grid-template-rows: 60% 15% 5%;
+    grid-template-areas: 
+      ". Y Y"
+      "Description TextArea TextArea"
+      ". . Button";
+}
+
+form#submition_post textarea,
+form#submition_post input{
+    font-size:1em;
+    background-color: white;
+    border: none;
+    border-bottom: 1.5px solid black;
+    resize: none;
+}
+
+form#submition_post div#submits
+{
+    grid-area: Y;
+}
+
+
+
+form#submition_post button
+{
+    width: 10em;
+    height: 2em;
+    grid-area: Button;
+}
+
+form#submition_post textarea
+{
+    grid-area: TextArea;
+}
+form#submition_post label.description
+{
+    grid-area: Description;
+}
+
+form#submition_post * {
+    display: block;
+}
+
+form#submition_post label {
+    font-weight: bold;
+}
+
+form#submition_post select {
+    font-size: 1em;
+    
+}
+
+form#submition_post button {
+    color: white;
+    background-color: darkblue;
+    font-weight: bold;
+}
+
