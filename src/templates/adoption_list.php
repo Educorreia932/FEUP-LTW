@@ -16,10 +16,10 @@
             </div>
 
             <div class="post-icon">
-                <span class="fa-stack fa-x">
+                <a class="fa-stack fa-x" href="adoption_post.php">
                     <i class="fas fa-square fa-stack-2x"></i>
                     <i class="fas fa-external-link-alt fa-stack-1x fa-inverse""></i>
-                </span>
+                </a>
             </div>
 
             <img src=<?= $pet["URL"] ?> alt="Pet Photo">
@@ -32,6 +32,8 @@
                 </footer>
             </div>
         </div>
+
+        <!-- Add a proposal card -->
 
     <?php 
         } 

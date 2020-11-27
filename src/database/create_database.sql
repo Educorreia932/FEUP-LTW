@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS AdoptionPosts;
 DROP TABLE IF EXISTS Pets;
 DROP TABLE IF EXISTS PetSpecies;
 
@@ -8,7 +9,7 @@ CREATE TABLE Users (
     Name TEXT
 );
 
-CREATE TABLE AdoptionPost (
+CREATE TABLE AdoptionPosts (
     ID INTEGER PRIMARY KEY,
     Description TEXT
 );
@@ -19,13 +20,68 @@ CREATE TABLE Pets (
     Gender INTEGER,
     Age INTEGER,
     URL TEXT,
-    SpeciesID INTEGER REFERENCES PetSpecies(ID)
+    SpeciesID INTEGER REFERENCES PetSpecies(ID),
+    AdoptionPostsID INTEGER REFERENCES AdoptionPosts(ID)
 );
 
 CREATE TABLE PetSpecies (
     ID INTEGER PRIMARY KEY,
     SpeciesName TEXT,
     Symbol TEXT
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    0,
+    NULL
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    1,
+    NULL
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    2,
+    NULL
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    3,
+    NULL
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    4,
+    NULL
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    5,
+    NULL
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    6,
+    NULL
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    7,
+    NULL
+);
+
+INSERT INTO AdoptionPosts 
+VALUES (
+    8,
+    NULL
 );
 
 INSERT INTO PetSpecies
@@ -52,7 +108,7 @@ VALUES(
 INSERT INTO PetSpecies
 VALUES(
     3,
-    "Hedgehog",
+    "Hamster",
     "🐹"    
 );
 
@@ -70,6 +126,7 @@ VALUES(
     1,
     1,
     "https://i.insider.com/5654150584307663008b4ed8?width=1100&format=jpeg&auto=webp",
+    0,
     0
 );
 
@@ -80,7 +137,8 @@ VALUES(
     1,
     1,
     "https://media.wired.com/photos/5cdefb92b86e041493d389df/1:1/w_988,h_988,c_limit/Culture-Grumpy-Cat-487386121.jpg",
-    0
+    0,
+    1
 );
 
 INSERT INTO Pets
@@ -90,7 +148,8 @@ VALUES(
     1,
     1,
     "https://ourfunnylittlesite.com/wp-content/uploads/2018/07/1-4.jpg",
-    1
+    1,
+    2
 );
 
 INSERT INTO Pets
@@ -100,7 +159,8 @@ VALUES(
     1,
     1,
     "https://i2-prod.mirror.co.uk/incoming/article20090958.ece/ALTERNATES/s1227b/0_JS193011867.jpg",
-    2
+    2,
+    3
 );
 
 INSERT INTO Pets
@@ -110,7 +170,8 @@ VALUES(
     1,
     1,
     "https://cdn.discordapp.com/attachments/627876438216933419/773219910331531304/iu.png",
-    1
+    1,
+    4
 );
 
 INSERT INTO Pets
@@ -120,7 +181,8 @@ VALUES(
     1,
     1,
     "https://i.ytimg.com/vi/yXhz4F78s3Q/maxresdefault.jpg",
-    1
+    1,
+    5
 );
 
 INSERT INTO Pets
@@ -130,7 +192,8 @@ VALUES(
     1,
     1,
     "https://i.pinimg.com/originals/26/a5/60/26a5601513009385d63a8baf234153d5.jpg",
-    3
+    3,
+    6
 );
 
 INSERT INTO Pets
@@ -140,7 +203,8 @@ VALUES(
     1,
     1,
     "https://i.ytimg.com/vi/p_QdPLPmgO4/maxresdefault.jpg",
-    4
+    4,
+    7
 );
 
 
