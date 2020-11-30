@@ -13,6 +13,6 @@
 			Password <input type="password" name="password">
 		</label>
 
-		<button type="submit" form="form1" value="Submit">Register</button>
+		<button type="submit" form="register" value="Submit">Register</button>
 	</form>
 </section>

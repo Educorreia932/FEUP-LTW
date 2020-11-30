@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="style/style.css">
         <link rel="stylesheet" href="style/forms.css">
         <link rel="stylesheet" href="style/adoption_list.css">
+        <link rel="stylesheet" href="style/cards.css">
         <script src="https://kit.fontawesome.com/57668fbb45.js" crossorigin="anonymous"></script>
     </head>
 

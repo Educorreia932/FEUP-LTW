@@ -37,12 +37,12 @@ header #authentication {
     margin-right: 1em;
 }
 
-header #authentication > a {
+header #authentication a {
     padding-left: 0.7em;
     padding-right: 0.7em;
 }
 
-header #authentication > a + a {
+header #authentication a + a {
     border-left: 1px solid var(--color2);
 }
 
