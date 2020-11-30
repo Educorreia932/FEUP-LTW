@@ -10,24 +10,26 @@
     </label>
     
     <div id="extra-fields">
-        <label id="pet-species">
-            Species
-            <select name="species">
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="hamster">Hamster</option>
-                <option value="hedgehog">Hedgehog</option>
-                <option value="fox">Fox</option>
-            </select>
-        </label>
+        <div class="same-line">
+            <label for="pet-species">Species</label>
 
-        <label id="pet-age">
-            Age <input type="number" name="age">
-        </label>
+            <select id="pet-species">
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Hamster">Hamster</option>
+                <option value="Hedgehog">Hedgehog</option>
+                <option value="Fox">Fox</option>
+            </select>
+        </div>
+
+        <div class="same-line">
+            <label for="pet-age">Age</label>
+            <input type="number" id="pet-age">
+        </div>
 
         <div id="pet-gender">
-            <button id="male"><i class="fas fa-mars fa-4x"></i></button>
-            <button id="female"><i class="fas fa-venus fa-4x"></i></button>
+            <button type="button" id="male"><i class="fas fa-mars fa-4x"></i></button>
+            <button type="button" id="female"><i class="fas fa-venus fa-4x"></i></button>
         </div>
     </div>
 

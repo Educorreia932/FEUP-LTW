@@ -1,4 +1,4 @@
-<section id="register">
+<section class="authentication-form">
 	<h1>Create a new account</h1>
 	<form action="actions/action_register.php" method="post">
 		<label>
@@ -13,6 +13,6 @@
 			Password <input type="password" name="password">
 		</label>
 
-		<button type="submit" form="register" value="Submit">Register</button>
+		<input type="submit" value="Register ">	
 	</form>
 </section>

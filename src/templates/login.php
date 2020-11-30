@@ -1,4 +1,4 @@
-<section id="login">
+<section class="authentication-form">
 	<h1>Enter In Your Account</h1>
 	<form action="actions/action_login.php" method="post">
 		<label>

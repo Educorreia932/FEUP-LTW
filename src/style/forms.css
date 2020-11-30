@@ -6,21 +6,35 @@ button {
     font-family: 'Varela Round', sans-serif;
 }
 
-section#login,
-section#register {
+form input {
+    font-family: 'Varela Round', sans-serif;
+}
+
+form input[type=submit] {
+    background-color: var(--color1);
+    color: white;
+    border: 0;
+    margin: auto;
+    padding: 0.3em;
+    padding-left: 2.7em;
+    padding-right: 2.7em;
+    border-radius: 7px 7px 7px 7px;
+}
+
+/* Authentication Forms */
+
+section.authentication-form {
     grid-column: start;
 }
 
-section#login h1,
-section#register h1 {
+section.authentication-form h1 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 2rem;
     padding-top: 1rem;
 }
 
-section#login form,
-section#register form {
+section.authentication-form form {
     background-color: white;
     padding: 2rem;
     width: 40%;
@@ -28,36 +42,22 @@ section#register form {
     margin-right: auto;
 }
 
-section#login form label input ,
-section#register form label input {
-    background: transparent;
+section.authentication-form form label input {
+    background-color: var(--color3);
     border: none;
-    border-bottom: 1.5px solid black;
+    border-radius: 3px 3px 3px 3px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     width: 100%;
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
-section#login form input[type=submit],
-section#register form input[type=submit] {
-    margin-left: auto;
-    background-color: var(--boxColor);
-    color: white;
-    padding: 0.8rem;
-    border: 0;
+section.authentication-form form input[type=submit] {
+    font-size: 1.4em;
 }
 
-@media (max-width: 30em) {
-    section#register {
-        background-color: white;
-    }
-}
-
-/* Submition Form */    
-
-form#pet-submition form * {
-    display: block;
-}
+/* Adoption Post Submission Form */    
 
 form#pet-submition h2 {
     text-align: center;
@@ -98,7 +98,7 @@ div#pet-gender button {
     background-color: white;
     border: 0;
     border-radius: 3px 3px 3px 3px;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0em 0.1em 0.2em grey;
 }
 
 button#male {
@@ -117,42 +117,33 @@ div#extra-fields {
       "Age Gender";
 }
 
-div#extra-fields * {
-    display: inline-block;
-}
-
 #pet-species {
-    display: block;
     grid-area: Species;
 }
 
 #pet-age {
-    display: block;
     grid-area: Age;
 }
 
 #pet-gender {
-    display: block;
     grid-area: Gender;
     margin: auto;   
-    padding-left: 2em;
+    padding-left: 1em;
 }
 
 #pet-gender button {
     height: 5em;
     width: 5em;
-    display: inline-block; 
     margin: 0.5em;
 }
 
-form#pet-submition button[type=submit]{
-    background-color: var(--color1);
-    color: white;
-    border: 0;
-    font-size: 1.7em;
-    margin: auto;
-    padding: 0.3em;
-    padding-left: 2.7em;
-    padding-right: 2.7em;
-    border-radius: 7px 7px 7px 7px;
+form#pet-submition input[type=submit] {
+   font-size: 1.7em;
+}
+
+.same-line {
+    display:flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
 }

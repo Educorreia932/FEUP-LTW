@@ -1,4 +1,4 @@
-<section id="searchBar">
+<section id="search-bar">
     <section id="bar">
         <form action="actions/action_search.php" method="get">
             <input id="name" name="name" type="text" placeholder="Search..">
