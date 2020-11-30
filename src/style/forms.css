@@ -1,3 +1,15 @@
+form * {
+    display: block;
+}
+
+label {
+    font-size: 1.1em;
+}
+
+button {
+    font-family: 'Varela Round', sans-serif;
+}
+
 section#login,
 section#register {
     grid-column: start;
@@ -18,16 +30,6 @@ section#register form {
     width: 40%;
     margin-left: auto;
     margin-right: auto;
-}
-
-section#login form *,
-section#register form * {
-    display: block;
-}
-
-section#login form label,
-section#register form label {
-    font-weight: bold;
 }
 
 section#login form label input ,
@@ -55,79 +57,104 @@ section#register form input[type=submit] {
     }
 }
 
-input[type=submit]{
-    font-family: 'Varela Round', sans-serif;
+/* Submition Form */    
+
+h2 {
+    text-align: center;
 }
 
-input[type=submit]{
-    font-family: 'Varela Round', sans-serif;
-}
-
-/* submition_form css */
-
-form#submition_post{
-    font-size: 2em;
-    padding: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-
-    
-    display: grid;
-    grid-template-columns: 45% 10% 45%;
-    grid-template-rows: 60% 15% 5%;
-    grid-template-areas: 
-      ". Y Y"
-      "Description TextArea TextArea"
-      ". . Button";
-}
-
-form#submition_post textarea,
-form#submition_post input{
-    font-size:1em;
+input, select {
     background-color: white;
-    border: none;
-    border-bottom: 1.5px solid black;
+    border: 0;
+    border-radius: 3px 3px 3px 3px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    width: 100%;
+}
+
+
+
+form#pet-submition {
+    padding-left: 5em;  
+    padding-right: 5em;
+}
+
+form#pet-submition label {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+form#pet-submition label > * {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+textarea {
+    border: 0;
+    border-radius: 3px 3px 3px 3px;
+    width: 100%;
     resize: none;
 }
 
-form#submition_post div#submits
-{
-    grid-area: Y;
+div#pet-gender button {
+    background-color: white;
+    border: 0;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
-
-
-form#submition_post button
-{
-    width: 10em;
-    height: 2em;
-    grid-area: Button;
+button#male {
+    color: #00B2FF;
 }
 
-form#submition_post textarea
-{
-    grid-area: TextArea;
-}
-form#submition_post label.description
-{
-    grid-area: Description;
+button#female {
+    color: #E58BD2;
 }
 
-form#submition_post * {
+div#extra-fields {
+    display: grid;
+    grid-auto-columns: auto max-content;
+    grid-template-areas: 
+      "Species Gender"
+      "Age Gender";
+}
+
+div#extra-fields * {
+    display: inline-block;
+}
+
+#pet-species {
     display: block;
+    grid-area: Species;
 }
 
-form#submition_post label {
-    font-weight: bold;
+#pet-age {
+    display: block;
+    grid-area: Age;
 }
 
-form#submition_post select {
-    font-size: 1em;
-    
+#pet-gender {
+    display: block;
+    grid-area: Gender;
+    margin: auto;   
+    padding-left: 2em;
 }
 
-form#submition_post button {
+#pet-gender button {
+    height: 5em;
+    width: 5em;
+    display: inline-block; 
+    margin: 0.5em;
+}
+
+button[type=submit]{
+    background-color: var(--color1);
     color: white;
-    background-color: darkblue;
-    font-weight: bold;
+    border: 0;
+    font-size: 1.7em;
+    margin: auto;
+    padding: 0.3em;
+    padding-left: 2.7em;
+    padding-right: 2.7em;
+    border-radius: 7px 7px 7px 7px;
 }

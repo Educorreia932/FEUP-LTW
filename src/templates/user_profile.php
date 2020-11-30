@@ -1,6 +1,11 @@
-<p id="name"><?=$_SESSION['username']?></p>
+<div id="profile-information">
+    <p id="name"><?=$_SESSION['username']?></p>
+    <!-- <img id="avatar" src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Profile picture"> -->
+</div>
 
-<img id="profile-picture" src="https://picsum.photos/300/300">
+<div>
+    <h2>Favorite Pets</h2>
+</div>
 
 <div>
     <h2>Adoption Proposals</h2>
@@ -11,10 +16,5 @@
 </div>
 
 <div>
-    <h2>Timeline</h2>
+    <h2>Activity</h2>
 </div>  
-
-<a>
-    <i class="fas fa-heart"></i>    
-    Favorite Pets
-</a>  

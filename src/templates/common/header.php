@@ -25,10 +25,8 @@
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
             ?>
 
-                <div id="logged-in">
-                    <p>Greetings, <a href="user_profile.php"><?= $_SESSION['username']?></a></p>
-                    <img src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Avatar" id="avatar">
-                </div>
+            <p>Greetings, <a href="user_profile.php"><?= $_SESSION['username']?></a></p>
+            <img id="avatar" src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Avatar">
 
             <?php
                 }
@@ -36,10 +34,10 @@
                 else {
             ?>
 
-                <div id="logged-in">
-                    <a href="register.php" id="register">Register</a>
-                    <a href="login.php" id="login">Login</a>
-                </div>
+            <div id="logged-in">
+                <a href="register.php" id="register">Register</a>
+                <a href="login.php" id="login">Login</a>
+            </div>
 
             <?php
                 }

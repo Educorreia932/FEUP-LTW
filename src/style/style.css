@@ -3,11 +3,12 @@
 :root {
     --color1: #181818;
     --color2: #BEBEBE;
+    --color3: #EFEFEF;
 }
 
 body {
     font-family: 'Varela Round', sans-serif;
-    background-color:whitesmoke;
+    background-color: var(--color3);
     margin: 0;
 }
 
@@ -50,7 +51,9 @@ header #authentication p {
     color: var(--color2);
 }
 
-header #authentication #avatar {
+/* Avatar */
+
+img#avatar {
     height: 3em;
     vertical-align: middle;
     border-radius: 50%;
