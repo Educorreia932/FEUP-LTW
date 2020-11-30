@@ -1,6 +1,6 @@
 <section class="authentication-form">
 	<h1>Enter In Your Account</h1>
-	<form action="actions/action_login.php" method="post">
+	<form action="../actions/action_login.php" method="post">
 		<label>
 			Username <input type="text" name="username">
 		</label>
@@ -9,6 +9,6 @@
 			Password <input type="password" name="password">
 		</label>
 		
-		<button type="submit" form="form1" value="Submit">Login</button>
+		<button type="submit" value="Submit">Login</button>
 	</form>
 </section>

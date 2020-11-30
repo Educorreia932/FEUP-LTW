@@ -10,7 +10,7 @@ form input {
     font-family: 'Varela Round', sans-serif;
 }
 
-form input[type=submit] {
+form button[type=submit] {
     background-color: var(--color1);
     color: white;
     border: 0;
@@ -53,7 +53,7 @@ section.authentication-form form label input {
     margin-bottom: 2rem;
 }
 
-section.authentication-form form input[type=submit] {
+section.authentication-form form button[type=submit] {
     font-size: 1.4em;
 }
 
@@ -73,8 +73,8 @@ form#pet-submition input, form#pet-submition select {
 }
 
 form#pet-submition {
-    padding-left: 5em;  
-    padding-right: 5em;
+    padding-left: 10em;  
+    padding-right: 10em;
 }
 
 form#pet-submition label {
@@ -132,18 +132,43 @@ div#extra-fields {
 }
 
 #pet-gender button {
-    height: 5em;
-    width: 5em;
+    height: 7em;
+    width: 7em;
     margin: 0.5em;
 }
 
-form#pet-submition input[type=submit] {
+form#pet-submition button[type=submit] {
    font-size: 1.7em;
+   display: block;
+   margin: auto;
 }
 
-.same-line {
+div.same-line {
     display:flex; 
     flex-direction: row;
     justify-content: center;
     align-items: center
 }
+
+div.same-line label {
+    margin-right: 1em;
+}
+
+div#top {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: 
+      "Card Fields";
+    margin-bottom: 1em;
+}
+
+div.photo-card {
+    grid-area: Card;
+    margin: auto;
+    margin-right: 1em;
+}
+
+#fields {
+    grid-area: Fields;
+}
+

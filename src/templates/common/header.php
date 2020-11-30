@@ -1,12 +1,10 @@
 <?php
     if(!isset($_SESSION)) 
-    { 
         session_start(); 
-    } 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Adoption Shelter</title>
         <link rel="stylesheet" href="style/style.css">
