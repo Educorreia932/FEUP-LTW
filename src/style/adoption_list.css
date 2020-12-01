@@ -7,16 +7,11 @@ section#adoption {
 }
 
 section#pets {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 5em;
-    margin-right: 5em;
-}
-
-section#pets > * {
-    margin-bottom: 1em;
-    margin-right: 1em;
-    width: 17em;
+    display: grid;
+    margin-left: 7em;
+    margin-right: 7em;
+    grid-template-columns: repeat(auto-fill, minmax(14.5em, 1fr));
+    grid-gap: 1em;
 }
 
 footer.container {
