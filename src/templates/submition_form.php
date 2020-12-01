@@ -2,7 +2,7 @@
 
 <form action="actions/submit_pet.php" id="pet-submition" method="post">
     <div id="top">
-        <?php include("cards/photosearch-bar_card.php"); ?>
+        <?php include("cards/photo_card.php"); ?>
     
         <div id="fields">
             <label>

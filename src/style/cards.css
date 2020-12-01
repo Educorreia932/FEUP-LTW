@@ -33,13 +33,16 @@ div.pet-card img {
 }
 
 div.proposal-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
 }
 
 div.proposal-card i {
-    width: 100%;
+    display: block;
 }
 
 div.proposal-card p {
-    vertical-align: middle;
+    display: block;
 }
