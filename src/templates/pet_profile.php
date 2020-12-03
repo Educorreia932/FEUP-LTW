@@ -1,7 +1,5 @@
-<div id="pet_profile">
-    <h2>
-        <img src="<?= $pet["URL"] ?>" alt="Pet Photo">
-    </h2>
+<section id="pet_profile">
+    <h2><img src="<?= $pet["Photo"] ?>" alt="Pet Photo"></h2>
 
     <div id="grid">
         <div id="pet_info">

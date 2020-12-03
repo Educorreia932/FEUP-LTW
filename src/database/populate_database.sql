@@ -1,54 +1,5 @@
 INSERT INTO AdoptionPosts 
 VALUES (
-    0,
-    NULL
-);
-
-INSERT INTO AdoptionPosts 
-VALUES (
-    1,
-    NULL
-);
-
-INSERT INTO AdoptionPosts 
-VALUES (
-    2,
-    NULL
-);
-
-INSERT INTO AdoptionPosts 
-VALUES (
-    3,
-    NULL
-);
-
-INSERT INTO AdoptionPosts 
-VALUES (
-    4,
-    NULL
-);
-
-INSERT INTO AdoptionPosts 
-VALUES (
-    5,
-    NULL
-);
-
-INSERT INTO AdoptionPosts 
-VALUES (
-    6,
-    NULL
-);
-
-INSERT INTO AdoptionPosts 
-VALUES (
-    7,
-    NULL
-);
-
-INSERT INTO AdoptionPosts 
-VALUES (
-    8,
     NULL
 );
 

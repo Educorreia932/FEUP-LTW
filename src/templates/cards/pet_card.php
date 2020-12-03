@@ -7,7 +7,7 @@
             </span>
         </div>
 
-        <img src=<?= $pet["URL"] ?> alt="Pet Photo">
+        <img src=<?= $pet["Photo"] ?> alt="Pet Photo">
 
         <footer class="container">
             <p><?= $pet["Name"] ?></p>

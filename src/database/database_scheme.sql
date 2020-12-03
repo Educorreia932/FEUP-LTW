@@ -1,39 +1,51 @@
 DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS UserFavoritePets;
 DROP TABLE IF EXISTS AdoptionPosts;
 DROP TABLE IF EXISTS Pets;
 DROP TABLE IF EXISTS PetSpecies;
+DROP TABLE IF EXISTS Comments;
 
 CREATE TABLE Users (
-    Username TEXT PRIMARY KEY,  
+    UserID INTEGER PRIMARY KEY,
+    Username TEXT,  
     Password TEXT,
-    Name TEXT
+    Name TEXT,
+    ProfilePicture TEXT
 );
 
-CREATE TABLE AdoptionPosts (
-    ID INTEGER PRIMARY KEY,
-    Title TEXT,
-    Description TEXT,
-    Location TEXT,
+CREATE TABLE UserFavoritePets (
+    UserID INTEGER REFERENCES User(UserID),
+    PetID INTEGER REFERENCES Pets(PetID),
+    PRIMARY KEY (UserID, PetID)
 );
 
 CREATE TABLE Pets (
-    ID INTEGER PRIMARY KEY,
+    PetID INTEGER PRIMARY KEY,
     Name TEXT,
     Gender INTEGER,
     Age INTEGER,
-    URL TEXT,
+    Photo TEXT, 
     SpeciesID INTEGER REFERENCES PetSpecies(ID),
-    AdoptionPostsID INTEGER REFERENCES AdoptionPosts(ID)
+    AdoptionPostID INTEGER REFERENCES AdoptionPosts(ID)
 );
 
 CREATE TABLE PetSpecies (
-    ID INTEGER PRIMARY KEY,
+    PetSpeciesID INTEGER PRIMARY KEY,
     SpeciesName TEXT,
     Symbol TEXT
 );
 
+CREATE TABLE AdoptionPosts (
+    AdoptionPostID INTEGER PRIMARY KEY,
+    Title TEXT,
+    Description TEXT,
+    Location TEXT
+);
+
 CREATE TABLE Comments (
     ID INTEGER PRIMARY KEY,
-    Text TEXT
-)
+    Text TEXT,
+    AdoptionPostID INTEGER REFERENCES AdoptionPosts(AdoptionPostID),
+    AuthorID INTEGER REFERENCES Users(UserID)
+);
 

@@ -4,10 +4,11 @@
         
         $query =   'SELECT * FROM 
                     Pets JOIN PetSpecies 
-                    ON Pets.SpeciesID = PetSpecies.ID';
+                    ON Pets.SpeciesID = PetSpecies.PetSpeciesID';
         
         $stmt = $db->prepare($query);
         $stmt->execute();
+
         return $stmt->fetchAll();
     }
 
@@ -29,7 +30,7 @@
         global $db;
         $query =   'SELECT * FROM 
                     Pets JOIN PetSpecies 
-                    ON Pets.SpeciesID = PetSpecies.ID where Pets.ID = ?';
+                    ON Pets.SpeciesID = PetSpecies.PetSpeciesID where Pets.PetID = ?';
 
         $stmt = $db->prepare($query);
         $stmt->execute(array($id));
@@ -41,10 +42,11 @@
         global $db;
 
         $query =   'SELECT * FROM 
-                    PetSpecies where ID = ?';
+                    PetSpecies where PetSpeciesID = ?';
 
         $stmt = $db->prepare($query);
         $stmt->execute(array($id));
+
         return $stmt->fetchAll()[0];
     }
 

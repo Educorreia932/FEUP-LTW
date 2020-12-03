@@ -22,7 +22,7 @@
     function addUser($username, $password, $name) {
         global $db;
 
-        $stmt = $db->prepare('INSERT INTO Users VALUES (?, ?, ?)');
+        $stmt = $db->prepare('INSERT INTO Users VALUES (NULL, ?, ?, ?, NULL)');
         $stmt->execute(array($username, $password, $name));
     }
 ?>
