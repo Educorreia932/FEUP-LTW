@@ -1,0 +1,77 @@
+
+div#pet_profile div#pet_info{
+    border-radius:25px;
+    margin-right: 10em;
+    margin-left: 10em;
+    border: solid 1px black;
+}
+
+
+div#pet_profile button{
+    border-radius: 25px;
+    margin: 0.5em;
+    margin-right: 5em;
+    display:block;
+    font-size: 1.5em; 
+    padding:1em;
+    width: 8em;
+}
+
+div#pet_profile button#adopt{
+    grid-area: adopt;
+    outline:none;
+}
+div#pet_profile button#favorite{
+    grid-area: favorite;
+    background-color:var(--color1);
+    color: white;
+    outline:none;
+}
+
+div#pet_profile div#grid{
+    display:grid;
+    grid-template-columns: 70% 30%;
+}
+
+div#pet_profile h2{
+    display:block;
+    grid-area: img;
+    height: 15em;
+}
+
+div#pet_profile h2 img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+div#pet_profile div#pet_info {
+    grid-column-start: auto;
+    padding:1em;
+}
+
+div#pet_profile div#buttons {
+    grid-column-start: auto;
+}
+
+
+div#pet_profile div#pet_info hr{
+    margin: 0em;
+    width:30%;
+    border:0;
+    border-bottom: solid 1px var(--color2);
+}
+
+
+div#pet_profile div#pet_info p#info_bullets a{
+    color:black;
+}
+
+div#pet_profile div#pet_info p#info_bullets *+ :before{
+    content : "\2022";
+}
+
+
+
+
