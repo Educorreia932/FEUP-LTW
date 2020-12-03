@@ -21,9 +21,9 @@ form button[type=submit] {
     border-radius: 7px 7px 7px 7px;
 }
 
-/* input[type=file] {
+input[type=file] {
    display: none;
-} */
+}
 
 
 /* Authentication Forms */

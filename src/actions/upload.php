@@ -15,12 +15,10 @@
   var_dump($_POST["pet-species"]);
   var_dump($_POST["gender"]);
 
-  var_dump($_FILES['image']);
+  var_dump($_FILES['image']['name']);
 
-  $originalFileName = "images/test.jpg";
+  $originalFileName = "../images/pets/{$_FILES['image']['name']}";
 
   move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
-
-
 
 ?>

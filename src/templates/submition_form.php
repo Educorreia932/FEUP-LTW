@@ -1,6 +1,6 @@
 <h2>Submit Your Pets For Adoption</h2>
 
-<form action="actions/submit_pet.php" id="pet-submition" method="post" enctype="multipart/form-data">
+<form action="actions/upload.php" id="pet-submition" method="post" enctype="multipart/form-data">
     <div id="top">
         <?php include("cards/photo_card.php"); ?>
     
