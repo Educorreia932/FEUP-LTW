@@ -55,7 +55,7 @@ header #authentication p {
 /* Avatar */
 
 img#avatar {
-    height: 3em;
+    max-height: 2.5em;
     vertical-align: middle;
     border-radius: 50%;
     padding: 0.5em;

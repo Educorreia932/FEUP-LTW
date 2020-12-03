@@ -32,17 +32,9 @@ div.pet-card img {
     border-radius: 0.5em 0.5em 0 0;
 }
 
-div.proposal-card {
+div.card {
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-}
-
-div.proposal-card i {
-    display: block;
-}
-
-div.proposal-card p {
-    display: block;
 }
