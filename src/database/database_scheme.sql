@@ -49,3 +49,15 @@ CREATE TABLE Comments (
     AuthorID INTEGER REFERENCES Users(UserID)
 );
 
+CREATE TABLE AdoptionProposal (
+    ID INTEGER PRIMARY KEY,
+    Text TEXT,
+    AuthorID INTEGER REFERENCES Users(UserID)
+)
+
+CREATE TABLE ProposalPets (
+    ID INTEGER PRIMARY KEY,
+    ProposalID INTEGER REFERENCES AdoptionProposal(ID),
+    PetID INTEGER REFERENCES Pet(PetID)
+)
+

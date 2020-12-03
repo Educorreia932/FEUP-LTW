@@ -30,7 +30,7 @@
 
         $query = 'SELECT *
                   FROM Pets JOIN PetSpecies
-                  ON Pets.SpeciesID = PetSpecies.ID
+                  ON Pets.SpeciesID = PetSpecies.PetSpeciesID
                   WHERE PetSpecies.SpeciesName=? AND Pets.Name=?';
                 //   , NEAR((?, Pets.Name), 4)';
         
