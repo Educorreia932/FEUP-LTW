@@ -1,4 +1,4 @@
-<h2>Submition Your Pets For Adoption</h2>
+<h2>Submit Your Pets For Adoption</h2>
 
 <form action="actions/submit_pet.php" id="pet-submition" method="post">
     <div id="top">

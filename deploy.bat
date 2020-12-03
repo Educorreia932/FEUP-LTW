@@ -1,0 +1,1 @@
+scp -r "C:\Users\skelo\OneDrive\Universidade\3º ano\1º Semestre\Linguagens e Tecnologias Web\Project\src\*" up201806433@gnomo.fe.up.pt:public_html
