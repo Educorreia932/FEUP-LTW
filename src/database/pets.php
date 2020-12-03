@@ -12,13 +12,27 @@
         return $stmt->fetchAll();
     }
 
+    function getAllSpecies() {
+        global $db;
+
+        $query = 'SELECT *
+                  FROM PetSpecies';
+        
+        $stmt = $db->prepare($query);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     function getSearchedPets($name, $species) {
         global $db;
 
         $query = 'SELECT *
                   FROM Pets JOIN PetSpecies
                   ON Pets.SpeciesID = PetSpecies.ID
-                  WHERE PetSpecies.SpeciesName=?, MATCH(Pets.Name) AGAINST(? IN NATURAL LANGUAGE)';
+                  WHERE PetSpecies.SpeciesName=? AND Pets.Name=?';
+                //   , NEAR((?, Pets.Name), 4)';
         
         $stmt = $db->prepare($query);
         $stmt->execute(array($species, $name));

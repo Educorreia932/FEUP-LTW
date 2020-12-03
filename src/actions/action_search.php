@@ -10,5 +10,5 @@
     $name = $_GET['name'];
     $species = $_GET['species'];
 
-    header("Location: ../index?name=$name&species=$species.php");
+    header("Location: ../search.php?name=$name&species=$species");
 ?>
