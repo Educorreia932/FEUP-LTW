@@ -9,8 +9,8 @@
 
     // TODO: Verify if username already exists
 
-    var_dump($_POST["species"]);
     var_dump($_POST["name"]);
     var_dump($_POST["city"]);
-    var_dump($_POST["age"]);
+    var_dump($_POST["pet-species"]);
+    var_dump($_POST["gender"]);
 ?>
