@@ -32,8 +32,17 @@
                 </div>
     
                 <div id="pet-gender">
-                    <button type="button" id="male"><i class="fas fa-mars fa-4x"></i></button>
-                    <button type="button" id="female"><i class="fas fa-venus fa-4x"></i></button>
+                    
+                    
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">
+                        <i class="fas fa-mars fa-3x"></i>
+                    </label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">
+                    <i class="fas fa-venus fa-3x"></i>
+                    </label>
                 </div>
             </div>
         </div>
