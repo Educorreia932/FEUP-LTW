@@ -22,7 +22,8 @@ form button[type=submit] {
 }
 
 input[type=file] {
-   display: none;
+   opacity: 0;
+   height: 1px;
 }
 
 

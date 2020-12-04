@@ -30,7 +30,10 @@ function resetImage() {
     photoButton.setAttribute('id', 'photo_button');
     photoButton.innerHTML = '<label for="image"><i class="fas fa-plus fa-4x"></i><p>Submit a photo</p></label>';
 
+    let toClear = document.getElementById("image");
+    toClear.outerHTML='<input type="file" name="image" id="image" onchange="readURL(this);"/>';
     element.replaceWith(photoButton);
+
 
     let resetButton = document.getElementById("resetButton");
     resetButton.remove();
