@@ -10,6 +10,7 @@
 
   // TODO: Verify if username already exists
 
+  var_dump($_POST["post-title"]);
   var_dump($_POST["name"]);
   var_dump($_POST["city"]);
   var_dump($_POST["pet-species"]);

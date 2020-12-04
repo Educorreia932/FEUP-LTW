@@ -186,3 +186,18 @@ div.photo-card {
     grid-area: Fields;
 }
 
+div#postHead {
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+    grid-template-areas:
+        ". Title .";
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+#post-title {
+    font-size: 1.5em;
+    grid-area: Title;
+}
+
+
