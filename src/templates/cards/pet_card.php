@@ -1,4 +1,6 @@
-<a href="pet_profile.php?id=<?= $pet["PetID"] ?>"> 
+<script src="scripts/post_form.js"></script>
+
+<a href="#" onclick="post('pet_profile.php', {id:<?=$pet['PetID']?>})"> 
     <div class="card pet-card">
         <div class="favorite-icon">
             <span class="fa-stack fa-x">

@@ -6,7 +6,7 @@ include_once("templates/common/header.php");
 include_once("database/connection.php");
 include_once("database/pets.php");
 
-$pet = getPet($_GET['id']);
+$pet = getPet($_POST['id']);
 $specie = getSpecies($pet["SpeciesID"]);
 
 
