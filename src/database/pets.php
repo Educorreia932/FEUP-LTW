@@ -12,6 +12,17 @@
         return $stmt->fetchAll();
     }
 
+    function getPetMaxID() {
+        global $db;
+        
+        $query =   'SELECT MAX(PetID) AS M FROM Pets';
+        
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
     function getAllSpecies() {
         global $db;
 
