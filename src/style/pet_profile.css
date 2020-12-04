@@ -1,10 +1,4 @@
 
-div#pet_profile div#pet_info{
-    border-radius:25px;
-    margin-right: 10em;
-    margin-left: 10em;
-    border: solid 1px black;
-}
 
 
 div#pet_profile button{
@@ -34,21 +28,43 @@ div#pet_profile div#grid{
 }
 
 div#pet_profile h2{
-    display:block;
+    position: relative;
     grid-area: img;
     height: 15em;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-div#pet_profile h2 img{
-    display:block;
+div#pet_profile h2 img#front{
     margin-left: auto;
     margin-right: auto;
     height: 100%;
+    position: relative;
+    z-index:3;
 }
+
+div#pet_profile h2 img#background{
+    width:80%;
+    left:10%;
+    right:10%;
+    top:-60%;
+    position: absolute;
+    z-index:1;
+    filter:blur(7px);
+    
+}
+
 
 div#pet_profile div#pet_info {
     grid-column-start: auto;
     padding:1em;
+    border-radius:25px;
+    margin-left: auto;
+    margin-right: auto;
+    width:60%;
+    text-align: center;
+    border: solid 1px black;
 }
 
 div#pet_profile div#buttons {
@@ -57,7 +73,6 @@ div#pet_profile div#buttons {
 
 
 div#pet_profile div#pet_info hr{
-    margin: 0em;
     width:30%;
     border:0;
     border-bottom: solid 1px var(--color2);

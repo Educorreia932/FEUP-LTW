@@ -1,4 +1,4 @@
-<a href="pet_profile.php?id=1"> 
+<a href="pet_profile.php?id=<?= $pet["PetID"] ?>"> 
     <div class="card pet-card">
         <div class="favorite-icon">
             <span class="fa-stack fa-x">
