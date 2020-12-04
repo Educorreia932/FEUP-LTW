@@ -3,6 +3,7 @@
         session_start(); 
 
     include_once("templates/common/header.php");
+    drawHeader("Helper Shelter - Adoption Posts");
 
     include_once("templates/adoption_post.php");
 

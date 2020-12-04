@@ -3,6 +3,7 @@
         session_start(); 
 
     include_once("templates/common/header.php");
+    drawHeader("Helper Shelter - Submition");
 
     include_once("templates/submition_form.php");
 

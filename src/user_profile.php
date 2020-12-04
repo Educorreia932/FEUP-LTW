@@ -5,6 +5,7 @@
     } 
 
     include_once("templates/common/header.php");
+    drawHeader("Helper Shelter - User Profile");
 
     include_once("templates/user_profile.php");
 

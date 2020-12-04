@@ -3,6 +3,7 @@
         session_start(); 
 
     include_once("templates/common/header.php");
+    drawHeader("Helper Shelter - Main Page");
 
     include_once("database/connection.php");
     include_once("database/pets.php");

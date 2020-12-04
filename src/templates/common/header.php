@@ -3,10 +3,12 @@
         session_start(); 
 ?>
 
+
+<?php  function drawHeader($page_name){?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Adoption Shelter</title>
+        <title><?php echo "$page_name" ?></title>
         <link rel="stylesheet" href="style/style.css">
         <link rel="stylesheet" href="style/forms.css">
         <link rel="stylesheet" href="style/adoption_list.css">
@@ -44,3 +46,4 @@
             ?>
            </div>
         </header>
+<?php  }?>
