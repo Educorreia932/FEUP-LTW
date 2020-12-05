@@ -10,7 +10,7 @@ include_once("database/users.php");
 $pet = getPet($_POST['id']);
 $specie = getSpecies($pet["SpeciesID"]);
 $comments = getComments($pet['AdoptionPostID']);
-
+$post = getPost($pet['AdoptionPostID']);
 drawHeader("Helper Shelter - " . $pet['Name']);
 
 include_once("templates/pet_profile.php");

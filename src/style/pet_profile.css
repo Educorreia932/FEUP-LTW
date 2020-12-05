@@ -63,6 +63,7 @@ div#pet_profile div#pet_info {
     margin-left: auto;
     margin-right: auto;
     width:60%;
+    word-wrap: break-word;
     text-align: center;
     border: solid 1px black;
 }

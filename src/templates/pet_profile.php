@@ -10,7 +10,7 @@
                 <?= $pet["Name"] ?>
             </h3>
             <p>
-                Trofa, Portugal
+                <?= $post["Location"] ?>
             </p>
             <hr>
             <p id="info_bullets">
@@ -23,7 +23,12 @@
                 About
             </p>
             <p>
-                <?= "Hamilton is the best!" ?>
+                <?php
+                    if($post["Description"] != "")
+                        echo($post["Description"]);
+                    else
+                        echo("YEEEEEEEEEEEE BUDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
+                ?>
             </p>
         </div>
         <div id="buttons">

@@ -85,7 +85,18 @@
         return $r;
     }
 
-<<<<<<< HEAD
+    function getPost($post){
+        global $db;
+
+        $query =   'SELECT * FROM 
+                    AdoptionPosts where AdoptionPostID = ?';
+
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($post));
+
+        return $stmt->fetchAll()[0];
+    }
+
     function getComments($post){
         global $db;
 
@@ -98,7 +109,6 @@
         return $stmt->fetchAll();
     }
 
-=======
     function getPetProposal($proposal) {
         global $db;
         
@@ -111,5 +121,4 @@
 
         return $stmt->fetchAll();
     }
->>>>>>> f7c7b5c75fbb5f98124b62f70a9331696bafcdc0
 ?>
