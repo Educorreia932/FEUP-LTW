@@ -34,6 +34,20 @@
         return $user;
     }
 
+    function getUserByID($id) {
+
+        global $db;
+        $query =  'SELECT Name FROM 
+                   Users WHERE 
+                   UserID = ? ';
+
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($id));
+        $userName = $stmt->fetch()['Name'];
+
+        return $userName;
+    }
+
     function addUser($username, $password, $name) {
         global $db;
 

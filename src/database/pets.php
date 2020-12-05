@@ -84,4 +84,17 @@
         $r = ($age > 1) ? "$age Years" : "$age Year";
         return $r;
     }
+
+    function getComments($post){
+        global $db;
+
+        $query =   'SELECT * FROM 
+                    Comments where AdoptionPostID = ?';
+
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($post));
+
+        return $stmt->fetchAll();
+    }
+
 ?>
