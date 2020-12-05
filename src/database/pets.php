@@ -111,14 +111,14 @@
 
     function getPetProposal($proposal) {
         global $db;
-        
+
         $query =   'SELECT *
-                    FROM Pets JOIN ProposalPets
-                    WHERE Pets.PetID=ProposalPets.PetID, ProposalPets.ID=?';
+                    FROM Pets JOIN ProposalPets ON Pets.PetID=ProposalPets.PetID
+                    WHERE ProposalPets.ProposalID=?';
         
         $stmt = $db->prepare($query);
         $stmt->execute(array($proposal['ID']));
 
-        return $stmt->fetchAll();
+        return $stmt->fetch();
     }
 ?>
