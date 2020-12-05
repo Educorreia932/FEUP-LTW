@@ -2,8 +2,8 @@
     $favouritePets = getFavouritePets($user['Username']);
 ?>
 
+<h2>Favourite Pets</h2>
 <section id="favourites">
-    <h2>Favourite Pets</h2>
     <?php
         if(count($favouritePets) == 0)
             echo '<p>All your favourite pets will be displayed here</p>';

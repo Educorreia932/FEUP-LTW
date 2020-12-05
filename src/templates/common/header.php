@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="style/cards.css">
         <link rel="stylesheet" href="style/pet_profile.css">
         <link rel="stylesheet" href="style/user_profile.css">
+        <link rel="stylesheet" href="style/user_proposal.css">
         <script src="https://kit.fontawesome.com/57668fbb45.js" crossorigin="anonymous"></script>
     </head>
 

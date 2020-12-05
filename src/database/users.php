@@ -59,13 +59,17 @@
         global $db;
 
         $stmt = $db->prepare(
-            'SELECT PetID
-             FROM UserFavouritePets JOIN Users
-             ON Users.UserID=UserFavouritePets.UserID
-             WHERE Users.Username=?'
+            'SELECT *
+             FROM(
+                 (UserFavouritePets JOIN Users ON Users.UserID=UserFavouritePets.UserID)
+                 JOIN Pets ON UserFavouritePets.PetID=Pets.PetID
+                 )
+            WHERE Users.Username=?'
         );
 
         $stmt->execute(array($username));
+
+
         return $stmt->fetchAll();
     }
 
