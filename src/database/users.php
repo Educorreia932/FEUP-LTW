@@ -1,12 +1,12 @@
 <?php
-    function getUser($username, $password) {
+    function checkUser($username, $password) {
         $password = sha1($password);
 
         global $db;
 
         $query =  'SELECT * FROM 
                    Users WHERE 
-                   username = ? AND password = ?';
+                   Username = ? AND Password = ?';
 
         $stmt = $db->prepare($query);
         $stmt->execute(array($username, $password));
@@ -14,9 +14,24 @@
 
         if ($user) 
             return TRUE;
-            
         else 
             return FALSE;
+    }
+
+    function getUser($username, $password) {
+        $password = sha1($password);
+
+        global $db;
+
+        $query =  'SELECT * FROM 
+                   Users WHERE 
+                   Username = ? AND Password = ?';
+
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($username, $password));
+        $user = $stmt->fetch();
+
+        return $user;
     }
 
     function addUser($username, $password, $name) {
@@ -24,5 +39,19 @@
 
         $stmt = $db->prepare('INSERT INTO Users VALUES (NULL, ?, ?, ?, NULL)');
         $stmt->execute(array($username, $password, $name));
+    }
+
+    function getFavouritePets($username) {
+        global $db;
+
+        $stmt = $db->prepare(
+            'SELECT PetID
+             FROM UserFavouritePets JOIN Users
+             ON Users.UserID=UserFavouritePets.UserID
+             WHERE Users.Username=?'
+        );
+
+        $stmt->execute(array($username));
+        return $stmt->fetchAll();
     }
 ?>

@@ -1,11 +1,30 @@
-<div id="profile-information">
-    <p id="name"><?=$_SESSION['username']?></p>
-    <!-- <img id="avatar" src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Profile picture"> -->
-</div>
 
-<div>
-    <h2>Favorite Pets</h2>
-</div>
+<section id="user_profile">
+    <div id="profile_header">
+        <img id="profile_pic" src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Profile picture">
+        <div id="user_info">
+            <h2><?=$user['Name']?></h2>
+            <h3>@<?=$user['Username']?></h3>
+        </div>
+        <div id="user_edit">
+            <input type="button" id="edit_profile_button" value="Edit Profile">
+        </div>
+        <script src="scripts/edit_profile.js"></script>
+    </div>
+
+    <hr class="rounded">
+
+    <?php
+        include_once("templates/favourite_pets.php");
+    ?>
+
+    <hr class="rounded">
+
+    <?php
+
+    ?>
+</section>
+
 
 <div>
     <h2>Adoption Proposals</h2>

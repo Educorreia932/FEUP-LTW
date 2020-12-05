@@ -13,8 +13,8 @@ CREATE TABLE Users (
     ProfilePicture TEXT
 );
 
-CREATE TABLE UserFavoritePets (
-    UserID INTEGER REFERENCES User(UserID),
+CREATE TABLE UserFavouritePets (
+    UserID INTEGER REFERENCES Users(UserID),
     PetID INTEGER REFERENCES Pets(PetID),
     PRIMARY KEY (UserID, PetID)
 );
@@ -53,11 +53,11 @@ CREATE TABLE AdoptionProposal (
     ID INTEGER PRIMARY KEY,
     Text TEXT,
     AuthorID INTEGER REFERENCES Users(UserID)
-)
+);
 
 CREATE TABLE ProposalPets (
     ID INTEGER PRIMARY KEY,
     ProposalID INTEGER REFERENCES AdoptionProposal(ID),
     PetID INTEGER REFERENCES Pet(PetID)
-)
+);
 

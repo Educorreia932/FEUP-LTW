@@ -1,7 +1,4 @@
-INSERT INTO AdoptionPosts 
-VALUES (
-    NULL
-);
+
 
 INSERT INTO PetSpecies
 VALUES(
