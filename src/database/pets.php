@@ -84,4 +84,17 @@
         $r = ($age > 1) ? "$age Years" : "$age Year";
         return $r;
     }
+
+    function getPetProposal($proposal) {
+        global $db;
+        
+        $query =   'SELECT *
+                    FROM Pets JOIN ProposalPets
+                    WHERE Pets.PetID=ProposalPets.PetID, ProposalPets.ID=?';
+        
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($proposal['ID']));
+
+        return $stmt->fetchAll();
+    }
 ?>

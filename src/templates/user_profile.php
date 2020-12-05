@@ -12,27 +12,22 @@
         <script src="scripts/edit_profile.js"></script>
     </div>
 
-    <hr class="rounded">
-
     <?php
+        echo '<hr class="rounded">';
+
         include_once("templates/favourite_pets.php");
+
+        echo '<hr class="rounded">';
+
+        include_once("templates/adoption_proposals.php");
+
+        echo '<hr class="rounded">';
+
+        include_once("templates/adoption_posts.php");
     ?>
 
-    <hr class="rounded">
-
-    <?php
-
-    ?>
 </section>
 
-
-<div>
-    <h2>Adoption Proposals</h2>
-</div>
-
-<div>
-    <h2>Adoption Posts</h2>
-</div>
 
 <div>
     <h2>Activity</h2>

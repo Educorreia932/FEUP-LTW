@@ -39,7 +39,8 @@ CREATE TABLE AdoptionPosts (
     AdoptionPostID INTEGER PRIMARY KEY,
     Title TEXT,
     Description TEXT,
-    Location TEXT
+    Location TEXT,
+    AuthorID INTEGER REFERENCES Users(UserID)
 );
 
 CREATE TABLE Comments (

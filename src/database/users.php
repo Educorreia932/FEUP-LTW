@@ -54,4 +54,33 @@
         $stmt->execute(array($username));
         return $stmt->fetchAll();
     }
+
+    function getAdoptionProposals($username) {
+        global $db;
+
+        $stmt = $db->prepare(
+            'SELECT *
+            FROM AdoptionProposal JOIN Users
+            ON AdoptionProposal.AuthorID=Users.UserID
+            WHERE Users.Username=?'
+        );
+
+        $stmt->execute(array($username));
+        return $stmt->fetchAll();
+    }
+
+    function getAdoptionPosts($username) {
+        // global $db;
+
+        // $stmt = $db->prepare(
+        //     'SELECT *
+        //     FROM AdoptionPosts JOIN Users
+        //     ON AdoptionPosts.AuthorID=Users.UserID
+        //     WHERE Users.Username=?'
+        // );
+
+        // $stmt->execute(array($username));
+        // return $stmt->fetchAll();
+        return [];
+    }
 ?>
