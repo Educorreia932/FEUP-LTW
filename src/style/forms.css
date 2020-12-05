@@ -170,37 +170,31 @@ div.same-line label {
 }
 
 div#top {
-    display: grid;
+    display: flex;
     grid-template-columns: 20% 80%;
-    grid-template-areas: 
-      "Card Fields";
     margin-bottom: 1em;
 }
 
 div.photo-card {
-    grid-area: Card;
-    margin: auto;
     margin-right: 1em;
+    width: 17em;
 }
 
-#photo-preview {
+img#photo-preview {
+    display: block;
     width: 100%;
-    grid-area: Card;
     margin: auto;
-    margin-right: 100em;
 }
 
 #fields {
-    grid-area: Fields;
+    width: 100%;
 }
 
 div#postHead {
-    display: grid;
-    grid-template-columns: 35% 30% 35%;
-    grid-template-areas:
-        ". Title .";
     margin-bottom: 2em;
     text-align: center;
+    margin: auto;
+    width: 30%;
 }
 
 #post-title {

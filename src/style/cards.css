@@ -1,11 +1,16 @@
 div.card {
-    justify-self: flex-start;
-    border-radius: 0.5em;
-    flex-shrink: 0;
     position: relative;
-    box-shadow: 0em 0.1em 0.2em grey;
+    color: white;
     background-color: var(--color1);
+    box-shadow: 0em 0.1em 0.2em grey;
     height: 100%;
+    border-radius: 0.5em;
+    justify-self: flex-start;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 div.favorite-icon, div.post-icon {
@@ -32,10 +37,13 @@ div.pet-card img {
     border-radius: 0.5em 0.5em 0 0;
 }
 
-div.card {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+/* Photo Card */
+
+div.photo-card label {
+    height: 100%;
+}
+
+div.photo-card input#image {
+    display: none;
 }
 

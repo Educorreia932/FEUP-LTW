@@ -18,5 +18,4 @@ include_once("templates/pet_profile.php");
 include_once("templates/pet_profile_comments.php");
 
 include_once("templates/common/footer.php");
-
 ?>

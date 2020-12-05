@@ -41,10 +41,14 @@ div#proposal-pet-info img {
     width: min-content;
 }
 
-div#proposal-pet-info img {
-    display: block;
-    width: 100%;
-    max-height: fit-content;
-    object-fit: cover;
+div#pet-pic-proposal {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
     border-radius: 50%;
+}
+
+div#pet-pic-proposal img {
+    height: 100%;
+    width: auto;
 }

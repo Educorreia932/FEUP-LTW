@@ -26,6 +26,7 @@
                 <?php
                     if($post["Description"] != "")
                         echo($post["Description"]);
+                        
                     else
                         echo("YEEEEEEEEEEEE BUDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
                 ?>
@@ -36,5 +37,4 @@
             <button type="button" id="adopt">Adopt</button>
         </div>
     </div>
-
 </div>

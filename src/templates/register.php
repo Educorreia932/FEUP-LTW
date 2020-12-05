@@ -1,6 +1,6 @@
 <section class="authentication-form">
 	<h1>Create a new account</h1>
-	<form action="/actions/action_register.php" method="post">
+	<form action="actions/action_register.php" method="post">
 		<label>
 			Name <input type="text" name="name" required>
 		</label>

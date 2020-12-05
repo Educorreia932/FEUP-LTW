@@ -7,10 +7,9 @@
     <?php
         if(count($favouritePets) == 0)
             echo '<p>All your favourite pets will be displayed here</p>';
-        else {
-            foreach($favouritePets as $pet) {
+            
+        else
+            foreach($favouritePets as $pet)
                 include("cards/pet_card.php");
-            }
-        }
     ?>
 </section>
