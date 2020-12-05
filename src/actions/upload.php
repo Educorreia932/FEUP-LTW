@@ -12,15 +12,19 @@
     include_once(__DIR__.'/../database/connection.php'); 
     include_once(__DIR__.'/../database/pets.php');    
 
-    $petID = (int)getPetMaxID()[0]['M'] + 1;
+    $petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
+
+    $originalFileName = "../images/pets/".$petAndPostID."-{$_FILES['image']['name']}";
 
 
-
-    $originalFileName = "../images/pets/".$petID."-{$_FILES['image']['name']}";
+    $postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, datetime("now"), ?)');
   
+    $postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"],1));
+
     $stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?)');
 
-    $stmt->execute(array($petID, $_POST["name"], $_POST["gender"], $_POST["pet-age"],$originalFileName,(int)$_POST["pet-species"], 2));
+    $stmt->execute(array($petAndPostID, $_POST["name"], $_POST["gender"], $_POST["pet-age"],$originalFileName,
+                        (int)$_POST["pet-species"], $petAndPostID));
 
   
     move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
