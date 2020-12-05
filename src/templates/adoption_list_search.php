@@ -9,7 +9,7 @@
 
     <?php
         // include("cards/proposal_card.php");
-        $searchedPets = getSearchedPets($name, $species)
+        $searchedPets = getSearchedPets($name, $species);
         foreach ($pets as $pet)
             include("cards/pet_card.php");
     ?>

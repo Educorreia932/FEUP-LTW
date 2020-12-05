@@ -85,6 +85,7 @@
         return $r;
     }
 
+<<<<<<< HEAD
     function getComments($post){
         global $db;
 
@@ -97,4 +98,18 @@
         return $stmt->fetchAll();
     }
 
+=======
+    function getPetProposal($proposal) {
+        global $db;
+        
+        $query =   'SELECT *
+                    FROM Pets JOIN ProposalPets
+                    WHERE Pets.PetID=ProposalPets.PetID, ProposalPets.ID=?';
+        
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($proposal['ID']));
+
+        return $stmt->fetchAll();
+    }
+>>>>>>> f7c7b5c75fbb5f98124b62f70a9331696bafcdc0
 ?>

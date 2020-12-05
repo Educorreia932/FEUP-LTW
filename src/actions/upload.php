@@ -11,18 +11,21 @@
   if( in_array( $type, $extensions )){
     include_once(__DIR__.'/../database/connection.php'); 
     include_once(__DIR__.'/../database/pets.php');    
-  
-    // var_dump($_POST["post-title"]);
-    // var_dump($_POST["name"]);
-    // var_dump($_POST["city"]);
-    // var_dump($_POST["pet-species"]);
-    // var_dump($_POST["gender"]);
-    // var_dump($_FILES['image']['name']);
-    // var_dump($petID);
 
-    $petID = (int)getPetMaxID()[0]['M'] + 1;
+    $petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
+
+    $originalFileName = "../images/pets/".$petAndPostID."-{$_FILES['image']['name']}";
+
+
+    $postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, datetime("now"), ?)');
   
-    $originalFileName = "../images/pets/".$petID."-{$_FILES['image']['name']}";
+    $postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"],1));
+
+    $stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?)');
+
+    $stmt->execute(array($petAndPostID, $_POST["name"], $_POST["gender"], $_POST["pet-age"],$originalFileName,
+                        (int)$_POST["pet-species"], $petAndPostID));
+
   
     move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
     header("Location: /index.php");

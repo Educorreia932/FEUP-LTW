@@ -29,11 +29,11 @@
                     <label for="pet-species">Species</label>
 
                     <select id="pet-species" name="pet-species">
-                        <option value="Dog">Dog</option>
-                        <option value="Cat">Cat</option>
-                        <option value="Hamster">Hamster</option>
-                        <option value="Hedgehog">Hedgehog</option>
-                        <option value="Fox">Fox</option>
+                        <option value="1">Dog</option>
+                        <option value="0">Cat</option>
+                        <option value="3">Hamster</option>
+                        <option value="2">Hedgehog</option>
+                        <option value="4">Fox</option>
                     </select>
                 </div>
 
