@@ -31,7 +31,7 @@ function resetImage() {
     photoButton.innerHTML = '<label for="image"><i class="fas fa-plus fa-4x"></i><p>Submit a photo</p></label>';
 
     let toClear = document.getElementById("image");
-    toClear.outerHTML='<input type="file" name="image" id="image" onchange="readURL(this);"/>';
+    toClear.outerHTML='<input type="file" name="image" id="image" onchange="readURL(this);" required accept="image/*"/>';
     element.replaceWith(photoButton);
 
 

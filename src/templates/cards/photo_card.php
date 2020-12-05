@@ -4,7 +4,7 @@
 <a> <!--href="pet_submission_page.php"> -->
     <div class="card photo-card">
         
-        <input type="file" name="image" id="image" onchange="readURL(this);" required/>
+        <input type="file" name="image" id="image" onchange="readURL(this);" required accept="image/*"/>
         <div id="photo_button">
             <label for="image">  
                 <i class="fas fa-plus fa-4x"></i>
