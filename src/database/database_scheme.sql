@@ -40,6 +40,7 @@ CREATE TABLE AdoptionPosts (
     Title TEXT,
     Description TEXT,
     Location TEXT,
+    Date TEXT,
     AuthorID INTEGER REFERENCES Users(UserID)
 );
 

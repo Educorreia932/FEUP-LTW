@@ -11,18 +11,17 @@
   if( in_array( $type, $extensions )){
     include_once(__DIR__.'/../database/connection.php'); 
     include_once(__DIR__.'/../database/pets.php');    
-  
-    // var_dump($_POST["post-title"]);
-    // var_dump($_POST["name"]);
-    // var_dump($_POST["city"]);
-    // var_dump($_POST["pet-species"]);
-    // var_dump($_POST["gender"]);
-    // var_dump($_FILES['image']['name']);
-    // var_dump($petID);
 
     $petID = (int)getPetMaxID()[0]['M'] + 1;
-  
+
+
+
     $originalFileName = "../images/pets/".$petID."-{$_FILES['image']['name']}";
+  
+    $stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?)');
+
+    $stmt->execute(array($petID, $_POST["name"], $_POST["gender"], $_POST["pet-age"],$originalFileName,(int)$_POST["pet-species"], 2));
+
   
     move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
     header("Location: /index.php");
