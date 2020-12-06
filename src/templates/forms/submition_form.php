@@ -12,7 +12,7 @@
     </div>
 
     <div id="top">
-        <?php include("cards/photo_card.php"); ?>
+        <?php include(__DIR__ . "/../cards/photo_card.php"); ?>
 
         <div id="fields">
             <label>

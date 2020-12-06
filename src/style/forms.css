@@ -173,6 +173,7 @@ div#top {
     display: flex;
     grid-template-columns: 20% 80%;
     margin-bottom: 1em;
+    height: 15em;
 }
 
 div.photo-card {
@@ -194,7 +195,7 @@ div#postHead {
     margin-bottom: 2em;
     text-align: center;
     margin: auto;
-    width: 30%;
+    width: 20em;
 }
 
 #post-title {

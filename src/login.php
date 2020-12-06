@@ -3,7 +3,8 @@
     drawHeader("Helper Shelter - Login");
 
     if(!(array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])))
-        include_once("templates/login.php");
+        include_once("templates/forms/login.php");
+
     else{
         echo '<script language="javascript">
                 alert("Already logged in!");
@@ -12,4 +13,3 @@
         }
 
     include_once("templates/common/footer.php");
-?>

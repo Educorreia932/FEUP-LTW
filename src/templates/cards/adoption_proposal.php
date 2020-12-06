@@ -13,10 +13,11 @@
             <h5><?=$species['SpeciesName']?></h5>
             <h5>Age <?=$proposal_pet['Age']?></h5>
         </div>
+
         <div id="proposal-text">
             <p><?=$proposal['Text']?></p>
             <footer>
-                <p>Data</p>
+                <p>Date</p>
                 <!-- aqui vai ter a data do proposal-->
             </footer>
         </div>

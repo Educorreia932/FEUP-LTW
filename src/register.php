@@ -3,7 +3,7 @@
     drawHeader("Helper Shelter - Register");
 
     if(!(array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])))
-        include_once("templates/register.php");
+        include_once("templates/forms/register.php");
     else{
         echo '<script language="javascript">
                 alert("Already registered!");
