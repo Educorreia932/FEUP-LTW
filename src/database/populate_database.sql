@@ -123,4 +123,26 @@ VALUES(
     7
 );
 
+INSERT INTO AdoptionProposal 
+VALUES(
+    3,
+    "Isto é um texto de proposal. Quero este cute dog",
+    "06-12-2020 22:52:31",
+    1
+);
 
+INSERT INTO ProposalPets 
+VALUES(
+    NULL,
+    3,
+    1
+);
+
+INSERT INTO Users
+VALUES(
+    1,
+    "ltw2020",
+    "67b544aa527f72e69100d158a264e46496efe1dd",
+    "LTW 2020/21",
+    " "
+)

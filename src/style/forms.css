@@ -177,14 +177,23 @@ div#top {
 }
 
 div.photo-card {
+    width: 20%;
+    height: 20em;
     margin-right: 1em;
-    width: 17em;
 }
 
 img#photo-preview {
     display: block;
     width: 100%;
-    margin: auto;
+    max-height: 13.5em;
+    object-fit: scale-down;
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+#resetButton {
+    width: 100%;
+    border: none;
+    border-radius: 0 0 0.5em 0.5em;
 }
 
 #fields {

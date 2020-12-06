@@ -54,6 +54,7 @@ CREATE TABLE Comments (
 CREATE TABLE AdoptionProposal (
     ID INTEGER PRIMARY KEY,
     Text TEXT,
+    Date TEXT,
     AuthorID INTEGER REFERENCES Users(UserID)
 );
 

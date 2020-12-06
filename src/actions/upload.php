@@ -16,10 +16,12 @@
 
     $originalFileName = "../images/pets/".$petAndPostID."-{$_FILES['image']['name']}";
 
+    $date_now = new DateTime('NOW');
+    $date_text = $date_now->format('d-m-Y H:i:s');
 
-    $postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, datetime("now"), ?)');
+    $postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, ?, ?)');
   
-    $postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"],1));
+    $postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"], $date_text, 1));
 
     $stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?)');
 
