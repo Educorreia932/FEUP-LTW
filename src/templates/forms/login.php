@@ -6,7 +6,7 @@
 		</label>
 		
 		<label>
-			Password <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" name="password" required>
+			Password <input type="password" name="password" required>
 		</label>
 		
 		<button type="submit" value="Submit">Login</button>

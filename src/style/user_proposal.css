@@ -31,10 +31,22 @@ div#proposal-pet-info h5 {
 
 div#proposal-text {
     grid-area: Proposal;
+    display: grid;
+    grid-template-rows: 90% 10%;
+    grid-template-areas: 
+    "PropText"
+    "Footer";
+    padding-bottom: 1em;
+    padding-right: 2em;
 }
 
 div#proposal-text footer {
-    align-self: center;
+    text-align: end;
+    grid-area: Footer;
+}
+
+div#proposal-text p {
+    grid-area: PropText;
 }
 
 div#proposal-pet-info img {
@@ -46,6 +58,7 @@ div#pet-pic-proposal {
     height: 100px;
     overflow: hidden;
     border-radius: 50%;
+    margin: auto;
 }
 
 div#pet-pic-proposal img {
