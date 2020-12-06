@@ -2,11 +2,11 @@
 	<h1>Enter In Your Account</h1>
 	<form action="actions/action_login.php" method="post">
 		<label>
-			Username <input type="text" name="username" required>
+			Username <input type="text" pattern="[\w]{1,20}" name="username" required>
 		</label>
 		
 		<label>
-			Password <input type="password" name="password" required>
+			Password <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" name="password" required>
 		</label>
 		
 		<button type="submit" value="Submit">Login</button>
