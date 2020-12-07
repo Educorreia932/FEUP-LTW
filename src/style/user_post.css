@@ -1,4 +1,4 @@
-div.adoption-post-card {
+div#adoption-post-card {
     color: black;
     border-radius: 1rem;
     box-shadow: 0em 0.1em 0.2em grey;
@@ -7,9 +7,15 @@ div.adoption-post-card {
     padding-bottom: 0.1em;
 }
 
-div.adoption-post-card h2 {
+div#adoption-post-card h2 {
    margin-top: 0.3em;
-   padding-left: 2em;
+   /* padding-left: 2em; */
+   margin-bottom: 0.3em;
+   text-align: center;
+}
+
+div#adoption-post-card a {
+    color: black;
 }
 
 div#pet-pic-post {
@@ -37,24 +43,32 @@ div#post-pet-info {
 
 div#pet-pic-proposal {
     grid-area: Photo;
-    color: green;
 }
 
-div#pet_details {
+div#pet_details_description {
     border-left: solid grey;
     grid-area: Info;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-areas: 
-        "DetLeft DetRight"
-        "Description Description";
-    grid-template-rows: 30% 70%;
     margin-top: 1em;
 }
 
-div#pet_details p {
+div#pet_details_description h3 {
+    margin-top: 0;
+    margin-bottom: 0.7em;
+    padding-left: 1em;
+}
+
+div#pet_details_description p {
     margin-bottom: 0.2em;
-    margin-top: 0.2em;
+    margin-top: 0em;
+}
+
+div#pet_details {
+    padding-bottom: 0.5em;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: 
+        "DetLeft DetRight";
 }
 
 div#pet-details-left {
@@ -72,13 +86,19 @@ div#pet-details-right {
 
 div#pet-description {
     border-top: solid grey;
-    grid-area: Description;
     text-align: justify;
-    padding: 2em;
-    padding-top: 1.5em;
+    padding-top: 0.2em;
 }
 
-div.adoption-post-card footer{
+div#pet-description h3 {
+    margin-top: 0.5em;
+}
+
+div#pet-description p {
+    padding-left: 2em;
+}
+
+div#adoption-post-card footer{
     margin-top: 0;
     text-align: end;
 }
