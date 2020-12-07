@@ -1,3 +1,5 @@
+<script src="../scripts/alerts.js"></script>
+
 <?php
     if(!isset($_SESSION)) 
     { 
@@ -9,7 +11,13 @@
 
     // TODO: Verify if username already exists
 
-    addUser($_POST['username'], sha1($_POST['password']), $_POST['name']);
-
-    header('Location: ../index.php');
+    if (!checkUsername($_POST['username'])) {
+        addUser($_POST['username'], sha1($_POST['password']), $_POST['name']);
+        header('Location: /login.php');
+    }
+    else{
+        echo '<script type="text/javascript">
+                alertUsedUsername();
+            </script>';
+    }
 ?>

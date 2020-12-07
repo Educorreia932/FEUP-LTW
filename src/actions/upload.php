@@ -1,3 +1,5 @@
+<script src="../scripts/alerts.js"></script>
+
 <?php
 
   if(!isset($_SESSION)) 
@@ -33,10 +35,9 @@
     header("Location: /index.php");
   }
   else{
-    echo '<script language="javascript">
-            alert("Wrong image extention, please try again ");
-            window.location.href="/pet_submission_page.php";
-          </script>';
+    echo '<script type="text/javascript">
+              alertWrongImageExtention();
+            </script>';
   }
 
 
