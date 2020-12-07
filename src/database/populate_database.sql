@@ -145,4 +145,14 @@ VALUES(
     "67b544aa527f72e69100d158a264e46496efe1dd",
     "LTW 2020/21",
     " "
-)
+);
+
+INSERT INTO AdoptionPosts
+VALUES(
+    0,
+    "Cute mustache cat",
+    "Hamilton is a cute little cat just looking for a home :)",
+    "Trofa, Portugal",
+    "07-12-2020 15:16:12",
+    1
+);
