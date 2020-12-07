@@ -10,6 +10,7 @@ CREATE TABLE Users (
     Username TEXT,  
     Password TEXT,
     Name TEXT,
+    Biography TEXT,
     ProfilePicture TEXT
 );
 
@@ -24,6 +25,9 @@ CREATE TABLE Pets (
     Name TEXT,
     Gender INTEGER,
     Age INTEGER,
+    Color TEXT,
+    Weight FLOAT,
+    Size INTEGER,
     Photo TEXT, 
     SpeciesID INTEGER REFERENCES PetSpecies(ID),
     AdoptionPostID INTEGER REFERENCES AdoptionPosts(ID)
@@ -47,6 +51,7 @@ CREATE TABLE AdoptionPosts (
 CREATE TABLE Comments (
     ID INTEGER PRIMARY KEY,
     Text TEXT,
+    Date TEXT,
     AdoptionPostID INTEGER REFERENCES AdoptionPosts(AdoptionPostID),
     AuthorID INTEGER REFERENCES Users(UserID)
 );
