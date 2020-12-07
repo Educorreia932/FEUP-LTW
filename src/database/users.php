@@ -18,6 +18,23 @@
             return FALSE;
     }
 
+    function checkUsername($username) {
+        global $db;
+
+        $query =  'SELECT * FROM 
+                   Users WHERE 
+                   Username = ?';
+
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($username));
+        $user = $stmt->fetch();
+
+        if ($user) 
+            return TRUE;
+        else 
+            return FALSE;
+    }
+
     function getUser($username, $password) {
         $password = sha1($password);
 
