@@ -64,7 +64,7 @@ div#pet_details_description p {
 }
 
 div#pet_details {
-    padding-bottom: 0.5em;
+    padding-bottom: 2em;
     padding-top: 0;
     display: grid;
     grid-template-columns: 40% 60%;

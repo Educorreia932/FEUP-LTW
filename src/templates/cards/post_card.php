@@ -21,13 +21,13 @@
                 <div id="pet_details">
                     <div id="pet-details-left">
                         <p><b>Age: </b><?=$post_pet['Age']?></p>
-                        <p><b>Size: </b>Small</p> <!-- TODO: ADD TO DATABASE-->
-                        <p><b>Color: </b>Brown</p>
+                        <p><b>Size: </b><?=convertSize($post_pet['Size'])?></p> 
+                        <p><b>Color: </b><?=$post_pet['Color']?></p>
                     </div>
                     <div id="pet-details-right">
                         <p><b>Species: </b><?=$postpet_species['SpeciesName']?></p>
-                        <p><b>Race: </b>Persa</p>
-                        <p><b>Gender: </b><?=convertGender($post_pet['Gender'])?></p> <!-- Change to read from db-->
+                        <p><b>Weight </b><?=$post_pet['Weight']?>kg</p>
+                        <p><b>Gender: </b><?=convertGender($post_pet['Gender'])?></p>
                     </div>
                 </div>
                 <div id="pet-description">

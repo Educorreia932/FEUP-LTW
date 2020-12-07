@@ -85,6 +85,11 @@
         return $r;
     }
 
+    function convertSize($size) {
+        $r = ($size == 0) ? "Small" : ($size == 1 ? "Medium" : "Large");
+        return $r;
+    }
+
     function getPost($post){
         global $db;
 
