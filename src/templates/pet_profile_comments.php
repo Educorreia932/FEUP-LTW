@@ -2,7 +2,7 @@
 
 
 <div id="pet_profile_comments">
-    <form action="actions/action_addComment.php" method="post" onsubmit="addComment('<?=$_SESSION['username']?>',<?=$pet['PetID']?>);">
+    <form method="post" onsubmit="addComment('<?=$_SESSION['username']?>','<?=$pet['PetID']?>',event);">
         <label class="input-comment">
             Add a New Comment! <textarea id="commentText" name="comment" rows="5"></textarea> 
         </label>
