@@ -11,8 +11,9 @@
  
   $extensions=array( 'image/jpeg', 'image/png', 'image/gif');
   if( in_array( $type, $extensions )){
-    include_once(__DIR__.'/../database/connection.php'); 
-    include_once(__DIR__.'/../database/pets.php');    
+    include_once(__DIR__.'/../database/connection.php');
+    include_once(__DIR__.'/../database/pets.php');
+    include_once(__DIR__.'/../database/users.php');
 
     $petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
 
@@ -23,7 +24,9 @@
 
     $postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, ?, ?)');
   
-    $postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"], $date_text, 1));
+    $posterID = (int)getUser($_SESSION['username'],$_SESSION['password'])['UserID'];
+
+    $postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"], $date_text, $posterID));
 
     $stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?)');
 
