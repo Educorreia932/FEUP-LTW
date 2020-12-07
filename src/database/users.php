@@ -88,17 +88,16 @@
     }
 
     function getAdoptionPosts($username) {
-        // global $db;
+        global $db;
 
-        // $stmt = $db->prepare(
-        //     'SELECT *
-        //     FROM AdoptionPosts JOIN Users
-        //     ON AdoptionPosts.AuthorID=Users.UserID
-        //     WHERE Users.Username=?'
-        // );
+        $stmt = $db->prepare(
+            'SELECT *
+            FROM AdoptionPosts JOIN Users
+            ON AdoptionPosts.AuthorID=Users.UserID
+            WHERE Users.Username=?'
+        );
 
-        // $stmt->execute(array($username));
-        // return $stmt->fetchAll();
-        return [];
+        $stmt->execute(array($username));
+        return $stmt->fetchAll();
     }
 ?>
