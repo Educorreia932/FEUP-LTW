@@ -121,4 +121,17 @@
 
         return $stmt->fetch();
     }
+
+    function getPetPost($post) {
+        global $db;
+
+        $query =   'SELECT *
+                    FROM Pets
+                    WHERE Pets.AdoptionPostID = ?';
+        
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($post['AdoptionPostID']));
+
+        return $stmt->fetch();
+    }
 ?>
