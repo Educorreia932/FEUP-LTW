@@ -52,7 +52,7 @@ Eduardo 3 ❌
 
 ### Password
 
-Minimum eight characters, at least one uppercase letter, one lowercase letter and one number.
+Minimum eight characters, at least one special character, one lowercase/uppercase letter and one number.
 
 ```
 ltw2020! ✔️
@@ -62,4 +62,4 @@ abc ❌
 
 #### Regular expression
 
-`(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}`
+`(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_])[A-Za-z\d@$!%*#?&_]{8,}`
