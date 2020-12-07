@@ -173,7 +173,6 @@ div#top {
     display: flex;
     grid-template-columns: 20% 80%;
     margin-bottom: 1em;
-    height: 15em;
 }
 
 div.photo-card {

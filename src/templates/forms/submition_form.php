@@ -23,6 +23,13 @@
                 Location <input type="text" name="city" required>
             </label>
             
+            <label>
+                Weight <input type="number" name="weight" required>
+            </label>
+
+            <label>
+                Color <input type="text" name="color" required>
+            </label>
             
             <div id="extra-fields">
                 <div class="same-line">
@@ -36,6 +43,17 @@
                         <option value="4">Fox</option>
                     </select>
                 </div>
+
+                <div class="same-line">
+                    <label for="pet-size">Size</label>
+
+                    <select id="pet-size" name="pet-size">
+                        <option value="0">Small</option>
+                        <option value="1">Medium</option>
+                        <option value="2">Large</option>
+                    </select>
+                </div>
+
 
                 <div class="same-line">
                     <label for="pet-age">Age</label>

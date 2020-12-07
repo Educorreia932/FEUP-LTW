@@ -21,6 +21,7 @@
 
     $date_now = new DateTime('NOW');
     $date_text = $date_now->format('d-m-Y H:i:s');
+  
 
     $postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, ?, ?)');
   
@@ -28,10 +29,10 @@
 
     $postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"], $date_text, $posterID));
 
-    $stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?)');
+    $stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-    $stmt->execute(array($petAndPostID, $_POST["name"], $_POST["gender"], $_POST["pet-age"],$originalFileName,
-                        (int)$_POST["pet-species"], $petAndPostID));
+    $stmt->execute(array($petAndPostID, $_POST["name"], $_POST["gender"], $_POST["pet-age"], $_POST["color"], $_POST["weight"],
+                         (int)$_POST["pet-size"] ,$originalFileName, (int)$_POST["pet-species"], $petAndPostID));
 
   
     move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
