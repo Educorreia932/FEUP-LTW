@@ -1,19 +1,20 @@
-<script src="scripts/addComment.js"></script>
-
+<script defer src="scripts/comments.js"></script>
 
 <div id="pet_profile_comments">
-    <form method="post" onsubmit="addComment('<?=$_SESSION['username']?>','<?=$pet['PetID']?>',event);">
+    <form method="post" onsubmit="submitComment(event)">
         <label class="input-comment">
-            Add a New Comment! <textarea id="commentText" name="comment" rows="5"></textarea> 
+            Add a new comment! <textarea id="commentText" name="text" rows="5"></textarea> 
         </label>
-        <input type="hidden" value=<?=$pet['PetID']?> name ="pet">
+        
+        <input type="hidden" value=<?=$pet['PetID']?> name="pet_id">
+        <input type="hidden" value=<?=$user['Username']?> name="username">
         <input type="submit"></input>
     </form>
-    <div id = "comments">
-    <?php
-        foreach ($comments as $comment)
-            include("templates/comment.php");
-    ?>
-    </div>
 
+    <div id="comments">
+        <?php
+            foreach ($comments as $comment)
+                include("templates/comment.php");
+        ?>
+    </div>
 </div>

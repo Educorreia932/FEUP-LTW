@@ -1,48 +1,55 @@
 <script src="../scripts/alerts.js"></script>
 
 <?php
+	if (!isset($_SESSION))
+		session_start();
 
-  if(!isset($_SESSION)) 
-  { 
-      session_start(); 
-  } 
+	$type = $_FILES['image']['type'];
 
-  $type = $_FILES[ 'image' ][ 'type' ];     
- 
-  $extensions=array( 'image/jpeg', 'image/png', 'image/gif');
-  if( in_array( $type, $extensions )){
-    include_once(__DIR__.'/../database/connection.php');
-    include_once(__DIR__.'/../database/pets.php');
-    include_once(__DIR__.'/../database/users.php');
+	$extensions = array('image/jpeg', 'image/png', 'image/gif');
+	if (in_array($type, $extensions)) {
+		include_once(__DIR__ . '/../database/connection.php');
+		include_once(__DIR__ . '/../database/pets.php');
+		include_once(__DIR__ . '/../database/users.php');
 
-    $petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
+		$petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
 
-    $originalFileName = "../images/pets/".$petAndPostID."-{$_FILES['image']['name']}";
+		$originalFileName = "../images/pets/" . $petAndPostID . "-{$_FILES['image']['name']}";
 
-    $date_now = new DateTime('NOW');
-    $date_text = $date_now->format('d-m-Y H:i:s');
-  
+		$date_now = new DateTime('NOW');
+		$date_text = $date_now->format('d-m-Y H:i:s');
 
-    $postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, ?, ?)');
-  
-    $posterID = (int)getUser($_SESSION['username'],$_SESSION['password'])['UserID'];
+		$postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, ?, ?)');
 
-    $postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"], $date_text, $posterID));
+		$posterID = (int)getUser($_SESSION['username'], $_SESSION['password'])['UserID'];
 
-    $stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+		$postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"], $date_text, $posterID));
 
-    $stmt->execute(array($petAndPostID, $_POST["name"], $_POST["gender"], $_POST["pet-age"], $_POST["color"], $_POST["weight"],
-                         (int)$_POST["pet-size"] ,$originalFileName, (int)$_POST["pet-species"], $petAndPostID));
+		$stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
-  
-    move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
-    header("Location: /index.php");
-  }
-  else{
-    echo '<script type="text/javascript">
-              alertWrongImageExtention();
-            </script>';
-  }
+		$stmt->execute(
+			array(
+				$petAndPostID,
+				$_POST["name"], 
+				$_POST["gender"],
+				$_POST["pet-age"], 
+				$_POST["color"], 
+				$_POST["weight"],
+				(int) $_POST["pet-size"], 
+				$originalFileName, 
+				(int) $_POST["pet-species"], 
+				$petAndPostID
+			)
+		);
 
 
+		move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
+		header("Location: /index.php");
+	} 
+
+	else {
+		echo '<script type="text/javascript">
+				alertWrongImageExtention();
+				</script>';
+	}
 ?>

@@ -14,6 +14,7 @@
 
         if ($user) 
             return TRUE;
+
         else 
             return FALSE;
     }
@@ -31,6 +32,7 @@
 
         if ($user) 
             return TRUE;
+            
         else 
             return FALSE;
     }
@@ -49,6 +51,20 @@
         $user = $stmt->fetch();
 
         return $user;
+    }
+
+    function getUserID($username) {
+        global $db;
+
+        $query =  'SELECT UserID FROM 
+                   Users WHERE 
+                   Username = ?';
+
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($username));
+        $user_id = $stmt->fetch()["UserID"];
+
+        return $user_id;
     }
 
     function getUserByID($id) {

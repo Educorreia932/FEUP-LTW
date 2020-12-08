@@ -5,6 +5,7 @@
     } 
 
     include_once("templates/common/header.php");
+    
     if(array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])){
         include_once("database/connection.php");
         include_once("database/users.php");

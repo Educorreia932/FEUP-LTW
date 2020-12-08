@@ -5,8 +5,8 @@
             echo($username);
         ?>
     </p>
+    
     <p>
         <?= $comment["Text"] ?>
     </p>
-
 </div>

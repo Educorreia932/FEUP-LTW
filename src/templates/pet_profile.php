@@ -28,10 +28,11 @@
                         echo($post["Description"]);
                         
                     else
-                        echo("YEEEEEEEEEEEE BUDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
+                        echo("YEEEEEEEEEEEE BUDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
                 ?>
             </p>
         </div>
+        
         <div id="buttons">
             <button type="button" id="favorite">Favorite</button>
             <button type="button" id="adopt">Adopt</button>

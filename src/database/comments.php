@@ -1,8 +1,24 @@
 <?php
-    function addComment($comment,$date,$petID,$username){
+    function addComment($text, $date, $pet_id, $username) {
         global $db;
 
+        $user_id = getUserID($username);
+
         $stmt = $db->prepare('INSERT INTO Comments VALUES (NULL, ?, ?, ?, ?)');
-        $stmt->execute(array($comment,$date,$petID,$username));
+        $stmt->execute(array($text, $date, $pet_id, $user_id));
+
+        $stmt = $db->prepare('SELECT MAX(ID) as LastCommentID FROM Comments');
+        $stmt->execute();
+
+        return $stmt->fetch()["LastCommentID"];
+    }
+
+    function fecthAfterComments($comment_id) {
+        global $db;
+
+        $stmt = $db->prepare('SELECT * FROM Comments NATURAL JOIN Users WHERE Comments.ID = ?');
+        $stmt->execute(array($comment_id));
+
+        return $stmt->fetchAll();
     }
 ?>

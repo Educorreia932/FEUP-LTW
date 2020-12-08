@@ -9,11 +9,11 @@
     $specie = getSpecies($pet["SpeciesID"]);
     $comments = getComments($pet['AdoptionPostID']);
     $post = getPost($pet['AdoptionPostID']);
+    $user = getUser($_SESSION['username'], $_SESSION['password']);
 
     drawHeader("Helper Shelter - " . $pet['Name']);
 
     include_once("templates/pet_profile.php");
-
     include_once("templates/pet_profile_comments.php");
 
     include_once("templates/common/footer.php");
