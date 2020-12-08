@@ -31,7 +31,17 @@
             ?>
             <p><a href="actions/log_out.php"> Log Out   |</a></p>
             <p>Greetings, <a href="user_profile.php"><?= $_SESSION['username']?></a></p>
-            <img id="avatar" src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Avatar">
+            
+            <script src="scripts/user_menu.js"></script>
+            <img id="avatar" onclick="toggleMenuDisplay();" src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Avatar">
+            
+            <div id="avatar_dropdown" style="display: none">
+                <ul>
+                    <li><a href="user_profile.php">Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="actions/log_out.php">Log Out</a></li>
+                </ul>
+            </div>
 
             <?php
                 }
