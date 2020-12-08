@@ -9,6 +9,7 @@
 	$type = $_FILES['image']['type'];
 
 	$extensions = array('image/jpeg', 'image/png', 'image/gif');
+
 	if (in_array($type, $extensions)) {
 		include_once(ROOT . '/database/connection.php');
 		include_once(ROOT . '/database/pets.php');
@@ -16,7 +17,7 @@
 
 		$petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
 
-		$originalFileName = "/images/pets/" . $petAndPostID . "-{$_FILES['image']['name']}";
+		$originalFileName = ROOT . "/images/pets/" . $petAndPostID . "-{$_FILES['image']['name']}";
 
 		$date_now = new DateTime('NOW');
 		$date_text = $date_now->format('d-m-Y H:i:s');

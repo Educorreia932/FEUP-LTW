@@ -1,6 +1,8 @@
 <script src="../scripts/alerts.js"></script>
 
 <?php
+    include_once(__DIR__ . "/../config.php");
+
     if(!isset($_SESSION)) //TODO: Useless?
         session_start(); 
 

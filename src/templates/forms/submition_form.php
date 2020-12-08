@@ -79,5 +79,5 @@
         Description <textarea id="description" name="description" rows="5"></textarea>
     </label>
 
-    <button type="submit">Submit</button>
+    <input type="submit" value="Submit">
 </form>
