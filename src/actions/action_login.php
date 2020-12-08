@@ -13,8 +13,7 @@
 
         header('Location: ../index.php');
     }
-    
-    else{
+
+    else 
         header('Location: ../login.php');
-    }
 ?>  
