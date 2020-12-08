@@ -4,11 +4,11 @@
         session_start(); 
     } 
 
-    include_once(__DIR__.'/../database/connection.php'); 
-    include_once(__DIR__.'/../database/pets.php');     
+    include_once(ROOT . "/database/connection.php"); 
+    include_once(ROOT . "/database/pets.php");     
 
     $name = $_GET['name'];
     $species = $_GET['species'];
 
-    header("Location: ../search.php?name=$name&species=$species");
+    header("Location: ../pages/search.php?name=$name&species=$species");
 ?>

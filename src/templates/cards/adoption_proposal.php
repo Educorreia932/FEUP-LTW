@@ -8,7 +8,7 @@
     <div class="user-proposal-card">
         <div id="proposal-pet-info">
         <div id="pet-pic-proposal" >
-            <img src="<?=$proposal_pet['Photo']?>" alt="Pet photo">
+            <img src="../<?=$proposal_pet['Photo']?>" alt="Pet photo">
         </div>
             <h4><?=$proposal_pet['Name']?></h4>
             <h5><?=$species['SpeciesName']?></h5>

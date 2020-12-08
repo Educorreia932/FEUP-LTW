@@ -14,7 +14,7 @@ function submitComment(event) {
     let request = new XMLHttpRequest();
 
     request.addEventListener("load", receiveComments)
-    request.open("post", "api/api_add_comment.php", true);
+    request.open("post", "../api/api_add_comment.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(
         encodeForAjax({ 
@@ -26,6 +26,7 @@ function submitComment(event) {
 }
 
 function receiveComments() {
+    console.log(this.responseText);
     const comments = JSON.parse(this.responseText);
 
     for (const comment of comments) {

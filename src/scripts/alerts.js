@@ -7,12 +7,11 @@ function alertUsedUsername()
 function alertNoLoginSubmition()
 {
     alert("Please log in to submit new pets!");
-    window.location.href="/index.php";
-
+    window.location.href="../index.php";
 }
 
 function alertWrongImageExtention()
 {
     alert("Wrong image extention, please try again!");
-    window.location.href="/pet_submission_page.php";
+    window.location.href="../pet_submission_page.php";
 }

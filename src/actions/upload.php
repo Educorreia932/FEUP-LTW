@@ -1,6 +1,8 @@
 <script src="../scripts/alerts.js"></script>
 
 <?php
+	include_once(__DIR__ . "/../config.php");
+
 	if (!isset($_SESSION))
 		session_start();
 
@@ -8,13 +10,13 @@
 
 	$extensions = array('image/jpeg', 'image/png', 'image/gif');
 	if (in_array($type, $extensions)) {
-		include_once(__DIR__ . '/../database/connection.php');
-		include_once(__DIR__ . '/../database/pets.php');
-		include_once(__DIR__ . '/../database/users.php');
+		include_once(ROOT . '/database/connection.php');
+		include_once(ROOT . '/database/pets.php');
+		include_once(ROOT . '/database/users.php');
 
 		$petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
 
-		$originalFileName = "../images/pets/" . $petAndPostID . "-{$_FILES['image']['name']}";
+		$originalFileName = "/images/pets/" . $petAndPostID . "-{$_FILES['image']['name']}";
 
 		$date_now = new DateTime('NOW');
 		$date_text = $date_now->format('d-m-Y H:i:s');
@@ -42,9 +44,8 @@
 			)
 		);
 
-
 		move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
-		header("Location: /index.php");
+		header("Location: ../index.php");
 	} 
 
 	else {

@@ -1,16 +1,17 @@
 <div id="search-bar">
-    <form action="actions/action_search.php" method="get">
+    <form action="../actions/action_search.php" method="get">
         <input id="name" name="name" type="text" placeholder="Search..">
 
         <select name="species" id="species">
             <?php
-                include_once(__DIR__.'/../database/connection.php'); 
-                include_once(__DIR__.'/../database/pets.php');  
+                include_once(ROOT . '/database/connection.php'); 
+                include_once(ROOT . '/database/pets.php');  
 
                 $species = getAllSpecies();
 
                 foreach($species as $sp) {
                     $speciesname = $sp['SpeciesName'];
+
                     echo("<option value='$speciesname'>$speciesname</option>");
                 }
             ?>

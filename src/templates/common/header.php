@@ -1,45 +1,46 @@
 <?php
+
     if(!isset($_SESSION)) 
         session_start(); 
+
+    function drawHeader($page_name) {
 ?>
 
-
-<?php  function drawHeader($page_name){?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title><?php echo "$page_name" ?></title>
-        <link rel="stylesheet" href="style/style.css">
-        <link rel="stylesheet" href="style/forms.css">
-        <link rel="stylesheet" href="style/adoption_list.css">
-        <link rel="stylesheet" href="style/cards.css">
-        <link rel="stylesheet" href="style/pet_profile.css">
-        <link rel="stylesheet" href="style/user_profile.css">
-        <link rel="stylesheet" href="style/user_proposal.css">
-        <link rel="stylesheet" href="style/user_post.css">
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/forms.css">
+        <link rel="stylesheet" href="../style/adoption_list.css">
+        <link rel="stylesheet" href="../style/cards.css">
+        <link rel="stylesheet" href="../style/pet_profile.css">
+        <link rel="stylesheet" href="../style/user_profile.css">
+        <link rel="stylesheet" href="../style/user_proposal.css">
+        <link rel="stylesheet" href="../style/user_post.css">
         <script src="https://kit.fontawesome.com/57668fbb45.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <header>
-            <h1><a href="index.php">Helper Shelter</a></h1>
+            <h1><a href="../">Helper Shelter</a></h1>
             <div id="authentication">  
 
             <?php
                 // Check if user is logged in
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
             ?>
-            <p><a href="actions/log_out.php"> Log Out   |</a></p>
-            <p>Greetings, <a href="user_profile.php"><?= $_SESSION['username']?></a></p>
+            <p><a href="../actions/log_out.php"> Log Out   |</a></p>
+            <p>Greetings, <a href="../pages/user_profile.php"><?= $_SESSION['username']?></a></p>
             
-            <script src="scripts/user_menu.js"></script>
+            <script src="../scripts/user_menu.js"></script>
             <img id="avatar" onclick="toggleMenuDisplay();" src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Avatar">
             
             <div id="avatar_dropdown" style="display: none">
                 <ul>
-                    <li><a href="user_profile.php">Profile</a></li>
+                    <li><a href="../pages/user_profile.php">Profile</a></li>
                     <li><a href="#">Settings</a></li>
-                    <li><a href="actions/log_out.php">Log Out</a></li>
+                    <li><a href="../actions/log_out.php">Log Out</a></li>
                 </ul>
             </div>
 
@@ -50,13 +51,15 @@
             ?>
 
             <div id="logged-in">
-                <a href="register.php" id="register">Register</a>
-                <a href="login.php" id="login">Login</a>
+                <a href="../pages/register.php">Register</a>
+                <a href="../pages/login.php">Login</a>
             </div>
 
             <?php
                 }
             ?>
-           </div>
+        </div>
         </header>
-<?php  }?>
+<?php  
+    }
+?>

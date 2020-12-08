@@ -9,21 +9,21 @@
         <div id="user_edit">
             <input type="button" id="edit_profile_button" value="Edit Profile">
         </div>
-        <script src="scripts/edit_profile.js"></script>
+        <script src="../scripts/edit_profile.js"></script>
     </div>
 
     <?php
         echo '<hr class="rounded">';
 
-        include_once("templates/favourite_pets.php");
+        include_once(ROOT . "/templates/favourite_pets.php");
 
         echo '<hr class="rounded">';
 
-        include_once("templates/adoption_proposals.php");
+        include_once(ROOT . "/templates/adoption_proposals.php");
 
         echo '<hr class="rounded">';
 
-        include_once("templates/adoption_posts.php");
+        include_once(ROOT . "/templates/adoption_posts.php");
     ?>
 
 </section>

@@ -1,6 +1,6 @@
-<script src="scripts/post_form.js"></script>
+<script src="../scripts/post_form.js"></script>
 
-<a href="#" onclick="post('adoption_post.php', {id:<?=$pet['PetID']?>})"> 
+<a href="../pages/adoption_post.php?id=<?= $pet['PetID'] ?>"> 
     <div class="card pet-card">
         <div class="favorite-icon">
             <span class="fa-stack fa-x">
@@ -9,7 +9,7 @@
             </span>
         </div>
 
-        <img src=<?= $pet["Photo"] ?> alt="Pet Photo">
+        <img src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
 
         <footer class="container">
             <p><?= $pet["Name"] ?></p>

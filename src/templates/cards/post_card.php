@@ -12,7 +12,7 @@
 
         <div id="post-pet-info">
             <div id="pet-pic-post" >
-                <img src="<?=$post_pet['Photo']?>" alt="Pet photo">
+                <img src="../<?=$post_pet['Photo']?>" alt="Pet photo">
                 <h3><?=$post_pet['Name']?></h3>
                 <h4><?=$post['Location']?></h4>
             </div>

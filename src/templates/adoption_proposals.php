@@ -8,7 +8,7 @@
             echo '<p>All your adoption proposals will be displayed here</p>';
         else {
             foreach($proposals as $proposal) {
-                include("cards/adoption_proposal.php");
+                include(ROOT . "/templates/cards/adoption_proposal.php");
             }
         }
     ?>

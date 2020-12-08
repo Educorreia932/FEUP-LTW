@@ -1,6 +1,6 @@
 <h2>Submit Your Pets For Adoption</h2>
 
-<form action="actions/upload.php" id="pet-submition" method="post" enctype="multipart/form-data">
+<form action="../actions/upload.php" id="pet-submition" method="post" enctype="multipart/form-data">
 
     <div id="postHead">
 
@@ -12,7 +12,7 @@
     </div>
 
     <div id="top">
-        <?php include(__DIR__ . "/../cards/photo_card.php"); ?>
+        <?php include(ROOT . "/templates/cards/photo_card.php"); ?>
 
         <div id="fields">
             <label>

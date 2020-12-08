@@ -1,5 +1,5 @@
 
-<script src="scripts/photo_upload.js"></script>
+<script src="../scripts/photo_upload.js"></script>
 
 <div class="card photo-card">
     <input type="file" name="image" id="image" onchange="readURL(this);" required accept="image/*"/>

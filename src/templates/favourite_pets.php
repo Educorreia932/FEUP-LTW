@@ -12,7 +12,7 @@
         echo '<section id="favourites">';
         
         foreach($favouritePets as $pet)
-            include("cards/pet_card.php");
+            include(ROOT . "/cards/pet_card.php");
 
         echo '</section>';
     }
