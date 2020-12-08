@@ -10,9 +10,11 @@
         
     else {
         echo '<section id="favourites">';
+
+        include(ROOT . "/templates/cards/pet_card.php");
         
         foreach($favouritePets as $pet)
-            include(ROOT . "/templates/cards/pet_card.php");
+            drawPetCard($pet["PetID"], $pet["Photo"], $pet["Name"]);
 
         echo '</section>';
     }

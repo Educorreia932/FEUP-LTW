@@ -11,8 +11,10 @@
         if(array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))
             include(ROOT . "/templates/cards/proposal_card.php");
 
+        include(ROOT . "/templates/cards/pet_card.php");
+
         foreach ($pets as $pet)
-            include(ROOT . "/templates/cards/pet_card.php");
+            drawPetCard($pet["PetID"], $pet["Photo"], $pet["Name"])
     ?>
 
     </section>
