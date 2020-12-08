@@ -44,7 +44,7 @@
 			)
 		);
 
-		move_uploaded_file($_FILES['image']['tmp_name'], $originalFileName);
+		move_uploaded_file($_FILES['image']['tmp_name'], ROOT . $originalFileName);
 		header("Location: ../index.php");
 	} 
 
