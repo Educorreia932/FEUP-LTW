@@ -11,9 +11,8 @@
 
     if (!checkUsername($_POST['username'])) {
         addUser($_POST['username'], sha1($_POST['password']), $_POST['name']);
-        header('Location: /login.php');
+        header('Location: ../pages/login.php');
     }
-    
     else{
         echo '<script type="text/javascript">
                 alertUsedUsername();

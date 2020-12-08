@@ -1,7 +1,7 @@
 function alertUsedUsername()
 {
     alert("Username alredy used!");
-    window.location.href="../register.php";
+    window.location.href="../pages/register.php";
 }
 
 function alertNoLoginSubmition()
@@ -13,5 +13,5 @@ function alertNoLoginSubmition()
 function alertWrongImageExtention()
 {
     alert("Wrong image extention, please try again!");
-    window.location.href="../pet_submission_page.php";
+    window.location.href="../pages/pet_submission_page.php";
 }
