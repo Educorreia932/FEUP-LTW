@@ -70,13 +70,13 @@
     function getUserByID($id) {
 
         global $db;
-        $query =  'SELECT Name FROM 
+        $query =  'SELECT Username FROM 
                    Users WHERE 
                    UserID = ? ';
 
         $stmt = $db->prepare($query);
         $stmt->execute(array($id));
-        $userName = $stmt->fetch()['Name'];
+        $userName = $stmt->fetch()['Username'];
 
         return $userName;
     }

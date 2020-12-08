@@ -11,5 +11,5 @@
     // Add comment to database
     $comment_id = addComment($text, $date, $pet_id, $username);
 
-    echo json_encode(fecthAfterComments($comment_id));
+    echo json_encode(fecthAfterComments($comment_id,$username));
 ?>

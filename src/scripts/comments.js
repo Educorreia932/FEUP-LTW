@@ -26,19 +26,21 @@ function submitComment(event) {
 }
 
 function receiveComments() {
-    const comments = JSON.parse(this.responseText)
+    const comments = JSON.parse(this.responseText);
 
     for (const comment of comments) {
-        console.log(comment)
-        document.getElementById("comments");
 
-        const username = document.createElement("strong");
+        let newComment = document.createElement("div");
+        newComment.setAttribute("id","comment");
+
+        const username = document.createElement("p");
         username.innerHTML = comment.Username;
 
         const text = document.createElement("p");
         text.innerHTML = comment.Text;
 
-        document.getElementById("comments").prepend(text);
-        document.getElementById("comments").prepend(username);
+        newComment.prepend(text);
+        newComment.prepend(username);
+        document.getElementById("comments").prepend(newComment)
     }
 }
