@@ -17,7 +17,7 @@
 
 		$petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
 
-		$originalFileName = ROOT . "/images/pets/" . $petAndPostID . "-{$_FILES['image']['name']}";
+		$originalFileName = "/images/pets/" . $petAndPostID . "-{$_FILES['image']['name']}";
 
 		$date_now = new DateTime('NOW');
 		$date_text = $date_now->format('d-m-Y H:i:s');
