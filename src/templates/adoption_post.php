@@ -1,3 +1,4 @@
+<script defer src="../scripts/addProposal.js"></script>
 <div id="pet_profile">
     <h2>
         <img id="front" src="../<?= $pet->photo ?>" alt="Pet Photo">
@@ -35,7 +36,7 @@
         
         <div id="buttons">
             <button type="button" id="favorite">Favorite</button>
-            <button type="button" id="adopt">Adopt</button>
+            <button type="button" id="adopt" onClick="addAdoptionPorp()">Adopt</button>
         </div>
     </div>
 </div>

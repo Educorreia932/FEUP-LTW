@@ -8,7 +8,7 @@
 
 <a> 
     <div id="adoption-post-card">
-        <h2><a href="#" onclick="post('adoption_post.php', {id:<?=$post_pet['PetID']?>})"><?=$post['Title']?></a></h2>
+        <h2><a href="../pages/adoption_post.php?id=<?= $post_pet['PetID'] ?>"><?=htmlspecialchars($post['Title'])?></a></h2>
 
         <div id="post-pet-info">
             <div id="pet-pic-post" >
