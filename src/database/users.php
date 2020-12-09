@@ -130,4 +130,32 @@
         $stmt->execute(array($username));
         return $stmt->fetchAll();
     }
+
+    function changePassword($username, $old, $new) {
+        global $db;
+
+        $stmt = $db->prepare(
+            'SELECT *
+            FROM Users
+            WHERE Username=?'
+        );
+
+        $stmt->execute(array($username));
+        $currentPass = ($stmt->fetch())['Password'];
+
+        if($old == $currentPass) {
+            if($currentPass != $new) {
+                $stmt = $db->prepare(
+                    'UPDATE Users
+                    SET Password=?
+                    WHERE Username=?'
+                );
+                $stmt->execute(array($new, $username));
+                $currentPass = $stmt->fetch();
+                return 0;
+            }
+            return -1;
+        } 
+        return -2;
+    }
 ?>

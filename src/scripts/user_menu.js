@@ -3,7 +3,6 @@ function toggleMenuDisplay() {
 
     if(currentDisplay == "none")
         document.getElementById("avatar_dropdown").style.display = "block";
-        
     else
         document.getElementById("avatar_dropdown").style.display = "none";
 }

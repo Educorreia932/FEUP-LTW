@@ -5,6 +5,8 @@
     include_once(ROOT . '/database/comments.php'); 
     include_once(ROOT . '/database/users.php'); 
 
+    
+
     $text = $_POST["text"];
     $date = (new DateTime('NOW'))->format('d-m-Y H:i:s');
     $pet_id = $_POST["pet_id"]; 
