@@ -2,9 +2,7 @@
     include_once(__DIR__ . "/../config.php");
 
     if(!isset($_SESSION)) 
-    { 
         session_start(); 
-    } 
 
     include_once(ROOT . "/templates/common/header.php");
     
@@ -12,6 +10,8 @@
         include_once(ROOT . "/database/connection.php");
         include_once(ROOT . "/database/users.php");
         include_once(ROOT . "/database/pets.php");
+
+        include_once(ROOT . "/classes/Pet.php");
 
         $user = getUser($_SESSION['username'], $_SESSION['password']);
 
@@ -21,9 +21,9 @@
         include_once(ROOT . "/templates/user_profile.php");
     }
     
-    else{
+    else {
         echo '<script language="javascript">
-                alert("Please log in to acces user profile!");
+                alert("Please log in to access user profile!");
                 window.location.href="/index.php";
                 </script>';
         }

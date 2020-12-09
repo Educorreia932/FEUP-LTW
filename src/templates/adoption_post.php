@@ -11,15 +11,15 @@
             </h3>
 
             <p>
-                <?= "WIP" //$post["Location"] ?>
+                <?= $adoption_post->location ?>
             </p>
 
             <hr>
             
             <p id="info_bullets">
                 <a> <?= $pet->pet_species ?> </a>
-                <a> <?= $pet->gender ?> </a>
-                <a> <?= getAge($pet->age) ?> </a> 
+                <a> <?= $pet->getGender() ?> </a>
+                <a> <?= $pet->getAge() ?> </a> 
             </p>
             
             <hr>

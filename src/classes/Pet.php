@@ -54,7 +54,7 @@
                     $this->gender,
                     $this->age, 
                     $this->color, 
-                    $this->weight, // TODO: Is it necessary to convert or does the database handle it?
+                    $this->weight,
                     $this->size, 
                     $this->photo, 
                     $this->pet_species_id,
@@ -63,7 +63,7 @@
             );
         }
 
-        public static function getByID($id) {
+        public static function fetchByID($id) {
             global $db;
     
             $query = 'SELECT *
@@ -94,43 +94,22 @@
             return $stmt->fetchAll();
         }
     
-        public function getSpecies($id){
-            global $db;
-    
-            $query =   'SELECT * FROM 
-                        PetSpecies where PetSpeciesID = ?';
-    
-            $stmt = $db->prepare($query);
-            $stmt->execute(array($id));
-    
-            return $stmt->fetchAll()[0];
-        }
-    
-        public function convertGender($gender){
-            $r  = ($gender == 1) ?  "Male" :  "Female";
+        public function getGender(){
+            $r  = ($this->gender == 1) ?  "Male" :  "Female";
+
             return $r;
         }
     
-        public function getAge($age){
-            $r = ($age > 1) ? "$age Years" : "$age Year";
+        public function getAge(){
+            $r = ($this->age > 1) ? $this->age . " Years" :  $this->age . " Year";
+
             return $r;
         }
     
-        public function convertSize($size) {
-            $r = ($size == 0) ? "Small" : ($size == 1 ? "Medium" : "Large");
+        public function getSize() {
+            $r = ($this->size == 0) ? "Small" : ($this->size == 1 ? "Medium" : "Large");
+
             return $r;
-        }
-    
-        public function getPost($post){
-            global $db;
-    
-            $query =   'SELECT * FROM 
-                        AdoptionPosts where AdoptionPostID = ?';
-    
-            $stmt = $db->prepare($query);
-            $stmt->execute(array($post));
-    
-            return $stmt->fetchAll()[0];
         }
     
         public function getComments($post){

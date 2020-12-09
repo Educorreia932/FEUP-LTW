@@ -15,7 +15,7 @@
 
 
     $adoption_post = AdoptionPost::getByID($_GET["id"]);
-    $pet = Pet::getByID($_GET["id"]);
+    $pet = Pet::fetchByID($_GET["id"]);
     $comments = getComments($pet->id);
 
     drawHeader("Helper Shelter - " . $pet->name);
