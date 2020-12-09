@@ -39,6 +39,13 @@
             if (!is_between($min_age, $max_age, $pet["Age"]))
                 continue;
 
+            if (((int) $species) != $pet["SpeciesID"] && $species != "none")
+                continue;
+
+            if ($size != $pet["Size"] && $size != "none")
+                continue;
+
+
             drawPetCard($pet);
         }
     }

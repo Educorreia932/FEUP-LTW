@@ -63,7 +63,7 @@
         return $stmt->fetchAll()[0];
     }
 
-    function getSpecies($id){
+    function getSpeciesName($id){
         global $db;
 
         $query =   'SELECT * FROM 
@@ -72,7 +72,7 @@
         $stmt = $db->prepare($query);
         $stmt->execute(array($id));
 
-        return $stmt->fetchAll()[0];
+        return $stmt->fetch()["SpeciesName"];
     }
 
     function getGender($gender){
@@ -85,8 +85,9 @@
         return $r;
     }
 
-    function convertSize($size) {
+    function getSize($size) {
         $r = ($size == 0) ? "Small" : ($size == 1 ? "Medium" : "Large");
+        
         return $r;
     }
 

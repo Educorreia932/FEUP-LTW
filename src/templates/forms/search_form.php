@@ -22,9 +22,12 @@
             $species = getAllSpecies();
 
             foreach($species as $sp) {
-                $speciesname = $sp['SpeciesName'];
+                echo $sp['PetSpeciesID'];
+        ?>
 
-                echo("<option value='$speciesname'>$speciesname</option>");
+            <option value="<?= $sp['PetSpeciesID'] ?>"><?= $sp['SpeciesName'] ?></option>")
+
+        <?php
             }
         ?>
     </select>
