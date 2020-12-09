@@ -2,6 +2,9 @@
     <h2>Available Pets for Adoption</h2>
 
     <?php
+        include_once(ROOT . "/classes/PetsList.php");
+        include_once(ROOT . "/templates/search_bar.php");
+
         $pets_list = (new PetsList())->pets;
     ?>
 

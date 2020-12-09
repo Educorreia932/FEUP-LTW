@@ -7,20 +7,10 @@
         public $pets = array();
 
         public function __construct() {
-            $stored_pets = $this->getPets();
+            $pet_entries = $this->getPets();
 
-            foreach ($stored_pets as $stored_pet) {
-                $pet = new Pet(
-                    $stored_pet["PetID"],
-                    $stored_pet["Name"],
-                    $stored_pet["Gender"],
-                    $stored_pet["Age"],
-                    $stored_pet["Color"],
-                    $stored_pet["Weight"],
-                    $stored_pet["Size"],
-                    $stored_pet["Photo"],
-                    $stored_pet["SpeciesID"],
-                );
+            foreach ($pet_entries as $pet_entry) {
+                $pet = Pet::fromArray($pet_entry);
 
                 array_push($this->pets, $pet);
             }

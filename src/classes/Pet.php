@@ -28,6 +28,20 @@
             $this->adoption_post = $id;
         }
 
+        public static function fromArray($pet_entry) {
+            return new Pet(
+                $pet_entry["PetID"],
+                $pet_entry["Name"],
+                $pet_entry["Gender"],
+                $pet_entry["Age"],
+                $pet_entry["Color"],
+                $pet_entry["Weight"],
+                $pet_entry["Size"],
+                $pet_entry["Photo"],
+                $pet_entry["SpeciesID"],
+            );
+        }
+
         public function addToDatabase() {
             global $db;
 
@@ -47,6 +61,22 @@
                     $this->id
                 )
             );
+        }
+
+        public static function getPetByID($id) {
+            global $db;
+    
+            $query = 'SELECT *
+                      FROM Pets
+                      WHERE PetID = ?';
+            
+            $stmt = $db->prepare($query);
+            $stmt->execute(array($id));
+
+            $pet_entry = $stmt->fetch();
+            $pet = Pet::fromArray($pet_entry);
+    
+            return $pet;
         }
     
         public function getSearchedPets($name, $species) {

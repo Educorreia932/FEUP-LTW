@@ -1,24 +1,25 @@
 <div id="pet_profile">
     <h2>
-        <img id="front" src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
-        <img id="background" src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
+        <img id="front" src="../<?= $pet->photo ?>" alt="Pet Photo">
+        <img id="background" src="../<?= $pet->photo ?>" alt="Pet Photo">
     </h2>
 
     <div id="grid">
         <div id="pet_info">
             <h3>
-                <?= $pet["Name"] ?>
+                <?= $pet->name ?>
             </h3>
+
             <p>
-                <?= $post["Location"] ?>
+                <?= "WIP" //$post["Location"] ?>
             </p>
 
             <hr>
             
             <p id="info_bullets">
-                <a> <?= $specie["SpeciesName"] ?> </a>
-                <a> <?= convertGender($pet["Gender"]) ?> </a>
-                <a> <?= getAge($pet["Age"]) ?> </a> 
+                <a> <?= $pet->pet_species ?> </a>
+                <a> <?= convertGender($pet->gender) ?> </a>
+                <a> <?= getAge($pet->age) ?> </a> 
             </p>
             
             <hr>
@@ -26,13 +27,14 @@
             <p>
                 About
             </p>
+
             <p>
                 <?php
-                    if($post["Description"] != "")
-                        echo($post["Description"]);
+                    // if($post["Description"] != "")
+                    //     echo($post["Description"]);
                         
-                    else
-                        echo("YEEEEEEEEEEEE BUDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
+                    // else
+                    //     echo("YEEEEEEEEEEEE BUDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
                 ?>
             </p>
         </div>

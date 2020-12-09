@@ -11,8 +11,6 @@
     include_once(ROOT . "/database/connection.php");
     include_once(ROOT . "/database/pets.php");
     
-    $pets = getAllPets();
-
-    include_once(ROOT . "/templates/adoption_list.php");
+    include_once(ROOT . "/templates/adoption_grid.php");
     include_once(ROOT . "/templates/common/footer.php");
 ?>
