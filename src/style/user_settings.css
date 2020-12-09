@@ -13,3 +13,7 @@ span#password_error {
 input#submit_password:disabled {
     background-color: gray;
 }
+
+span#username_error {
+    color: red;
+}

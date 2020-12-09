@@ -7,9 +7,8 @@
     include_once(ROOT . '/database/connection.php'); 
     include_once(ROOT . '/database/users.php'); 
 
-    $oldPass = sha1($_POST["oldPassword"]);
-    $newPass = sha1($_POST["newPassword"]);
-    $username = $_POST["username"];
+    $currUsername = $_POST["currentUsername"];
+    $newUsername = $_POST["newUsername"];
 
-    echo changePassword($username, $oldPass, $newPass);
+    echo changeUsername($currUsername, $newUsername);
 ?>

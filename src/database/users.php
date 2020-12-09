@@ -154,8 +154,36 @@
                 $currentPass = $stmt->fetch();
                 return 0;
             }
-            return -1;
+            return 1;
         } 
-        return -2;
+        return 2;
+    }
+
+    function changeUsername($currentUsername, $newUsername) {
+        global $db;
+
+        $stmt = $db->prepare(
+            'SELECT *
+            FROM Users
+            WHERE Username=?'
+        );
+
+        $stmt->execute(array($newUsername));
+        $conflicts = $stmt->fetchAll();
+
+        if($currentUsername != $newUsername) {
+            if(count($conflicts) == 0) {
+                $stmt = $db->prepare(
+                    'UPDATE Users
+                    SET Username=?
+                    WHERE Username=?'
+                );
+        
+                $stmt->execute(array($newUsername, $currentUsername));
+                return 0;
+            } 
+            return 1;
+        } 
+        return 2;
     }
 ?>
