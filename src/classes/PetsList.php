@@ -24,8 +24,6 @@
 
                 array_push($this->pets, $pet);
             }
-
-            var_dump($this->pets);
         }
 
         // Retrieves all pets for adoption from database

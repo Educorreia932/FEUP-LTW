@@ -1,5 +1,9 @@
 <?php
    require_once("classes/PetsList.php");
 
-   $pets = new PetsList();
+   require_once("templates/common/header.php");
+
+   drawHeader("Debug");
+
+   require_once("templates/adoption_grid.php");
 ?> 
