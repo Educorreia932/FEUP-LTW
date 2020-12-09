@@ -16,8 +16,8 @@
             <hr>
             
             <p id="info_bullets">
-                <a> <?= $specie["SpeciesName"] ?> </a>
-                <a> <?= convertGender($pet["Gender"]) ?> </a>
+                <a> <?= htmlspecialchars($specie["SpeciesName"]) ?> </a>
+                <a> <?= htmlspecialchars(convertGender($pet["Gender"])) ?> </a>
                 <a> <?= getAge($pet["Age"]) ?> </a> 
             </p>
             
@@ -29,7 +29,7 @@
             <p>
                 <?php
                     if($post["Description"] != "")
-                        echo($post["Description"]);
+                        echo(nl2br(htmlspecialchars($post["Description"])));
                         
                     else
                         echo("YEEEEEEEEEEEE BUDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");

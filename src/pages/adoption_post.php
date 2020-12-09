@@ -15,7 +15,7 @@
     if(array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))
         $user = getUser($_SESSION['username'], $_SESSION['password']);
 
-    drawHeader("Helper Shelter - " . $pet['Name']);
+    drawHeader("Helper Shelter - " . htmlspecialchars($pet['Name']));
 
     include_once(ROOT . "/templates/adoption_post.php");
     

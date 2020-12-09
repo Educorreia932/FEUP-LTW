@@ -1,6 +1,6 @@
 <script src="../scripts/post_form.js"></script>
 
-<a href="../pages/adoption_post.php?id=<?= $pet['PetID'] ?>"> 
+<a href="../pages/adoption_post.php?id=<?= htmlspecialchars($pet['PetID']) ?>"> 
     <div class="card pet-card">
         <div class="favorite-icon">
             <span class="fa-stack fa-x">
@@ -12,7 +12,7 @@
         <img src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
 
         <footer class="container">
-            <p><?= $pet["Name"] ?></p>
+            <p><?= htmlspecialchars($pet["Name"]) ?></p>
         </footer>
     </div>
 </a>
