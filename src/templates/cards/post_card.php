@@ -1,7 +1,7 @@
 <?php
     $post_pet = getPetPost($post);
     $postDate = DateTime::createFromFormat('d-m-Y H:i:s', $post['Date'])->format('j M Y \a\t H:i');
-    $postpet_species = getSpecies($post_pet['SpeciesID']);
+    $postpet_species = getSpeciesName($post_pet['SpeciesID']);
 ?>
 
 <script src="../scripts/post_form.js"></script>
@@ -21,7 +21,7 @@
                 <div id="pet_details">
                     <div id="pet-details-left">
                         <p><b>Age: </b><?=$post_pet['Age']?></p>
-                        <p><b>Size: </b><?=convertSize($post_pet['Size'])?></p> 
+                        <p><b>Size: </b><?=getSize($post_pet['Size'])?></p> 
                         <p><b>Color: </b><?=htmlspecialchars($post_pet['Color'])?></p>
                     </div>
                     <div id="pet-details-right">

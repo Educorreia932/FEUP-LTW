@@ -17,14 +17,14 @@
     <?php
         echo '<hr class="rounded">';
 
-        include_once(ROOT . "/templates/favourite_pets.php");
+        require_once(ROOT . "/templates/favourite_pets.php");
 
         echo '<hr class="rounded">';
 
-        include_once(ROOT . "/templates/adoption_proposals.php");
+        require_once(ROOT . "/templates/adoption_proposals.php");
 
         echo '<hr class="rounded">';
 
-        include_once(ROOT . "/templates/adoption_posts.php");
+        require_once(ROOT . "/templates/adoption_posts.php");
     ?>
 </section>
