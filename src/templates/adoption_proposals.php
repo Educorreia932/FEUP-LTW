@@ -1,4 +1,3 @@
-
 <section id="user_proposals">
     <h2>Adoption Proposals</h2>
     <?php

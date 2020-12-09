@@ -18,7 +18,7 @@
             <hr>
             
             <p id="info_bullets">
-                <a> <?= htmlspecialchars(getSpecies($pet["SpeciesID"])["SpeciesName"]) ?> </a>
+                <a> <?= htmlspecialchars(getSpeciesName($pet["SpeciesID"])) ?> </a>
                 <a> <?= htmlspecialchars(getGender($pet["Gender"])) ?> </a>
                 <a> <?= $pet["Age"] ?> </a> 
             </p>

@@ -1,6 +1,6 @@
 <?php
     $proposal_pet = getPetProposal($proposal);
-    $species = getSpecies($proposal_pet['SpeciesID']);
+    $speciesName = getSpeciesName($proposal_pet['SpeciesID']);
     $propDate = DateTime::createFromFormat('d-m-Y H:i:s', $proposal['Date'])->format('j M Y \a\t H:i');
 ?>
 
@@ -11,7 +11,7 @@
             <img src="../<?=$proposal_pet['Photo']?>" alt="Pet photo">
         </div>
             <h4><?=htmlspecialchars($proposal_pet['Name'])?></h4>
-            <h5><?=htmlspecialchars($species['SpeciesName'])?></h5>
+            <h5><?=htmlspecialchars($speciesName)?></h5>
             <h5>Age <?=htmlspecialchars($proposal_pet['Age'])?></h5>
         </div>
 
