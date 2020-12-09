@@ -11,8 +11,6 @@
         include_once(ROOT . "/database/users.php");
         include_once(ROOT . "/database/pets.php");
 
-        include_once(ROOT . "/classes/Pet.php");
-
         $user = getUser($_SESSION['username'], $_SESSION['password']);
 
         $user_name = $user['Name'];

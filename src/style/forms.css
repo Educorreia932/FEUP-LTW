@@ -211,4 +211,44 @@ div#postHead {
     grid-area: Title;
 }
 
+/* Search Bar */
+
+form#search-bar {
+    display: flex;
+    text-align: center;
+    background-color: white;
+    width: fit-content;
+    padding: 0.5em;
+    border-radius: 0.6em;
+    box-shadow: 0em 0.1em 0.2em grey;   
+    margin: auto;
+    margin-bottom: 1.5em;
+}
+
+form#search-bar * {
+    border: none;
+    outline: none;
+    color: var(--color4);
+}
+
+form#search-bar * + * {
+    border-left: 2px solid var(--color2);
+    padding-left: 1em;
+    padding-right: 1em;
+}   
+
+form#search-bar * + *::after {
+    content: "";
+    width: 1em;
+}
+
+form#search-bar input:active {
+    border: none;
+}
+
+form#search-bar button[type="submit"] {
+    border: none;
+    background-color: transparent;
+}
+
 

@@ -27,5 +27,4 @@
 
         include_once(ROOT . "/templates/adoption_posts.php");
     ?>
-
 </section>

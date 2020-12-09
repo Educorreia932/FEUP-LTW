@@ -2,10 +2,7 @@
     <h2>Available Pets for Adoption</h2>
 
     <?php
-        include_once(ROOT . "/classes/PetsList.php");
-        include_once(ROOT . "/templates/search_bar.php");
-
-        $pets_list = (new PetsList())->pets;
+        include_once(ROOT . "/templates/forms/search_bar.php");
     ?>
 
     <section id="pets">
@@ -16,8 +13,8 @@
 
         include(ROOT . "/templates/cards/pet_card.php");
 
-        foreach ($pets_list as $pet)
-            drawPetCard($pet);
+        foreach ($pets as $pet)
+            drawPetCard($pet); 
     ?>
 
     </section>

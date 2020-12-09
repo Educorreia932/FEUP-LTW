@@ -7,17 +7,14 @@
     require_once(ROOT . "/database/pets.php");
     require_once(ROOT . "/database/users.php");
 
-    require_once(ROOT . "/classes/AdoptionPost.php");
-    require_once(ROOT . "/classes/Pet.php");
-
     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))
         $user = getUser($_SESSION['username'], $_SESSION['password']);
 
-    $adoption_post = AdoptionPost::getByID($_GET["id"]);
-    $pet = Pet::fetchByID($_GET["id"]);
-    $comments = getComments($pet->id);
+    $adoption_post = getPost($_GET["id"]);
+    $pet = getPet($_GET["id"]);
+    $comments = getComments($pet["PetID"]);
 
-    drawHeader("Helper Shelter - " . htmlspecialchars($pet->name));
+    drawHeader("Helper Shelter - " . htmlspecialchars($pet["Name"]));
 
     require_once(ROOT . "/templates/adoption_post.php");
     require_once(ROOT . "/templates/adoption_post_comments.php");

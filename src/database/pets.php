@@ -12,17 +12,6 @@
         return $stmt->fetchAll();
     }
 
-    function getPetMaxID() {
-        global $db;
-        
-        $query =   'SELECT MAX(PetID) AS M FROM Pets';
-        
-        $stmt = $db->prepare($query);
-        $stmt->execute();
-
-        return $stmt->fetchAll();
-    }
-
     function getAllSpecies() {
         global $db;
 
@@ -31,6 +20,17 @@
         
         $stmt = $db->prepare($query);
 
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    function getPetMaxID() {
+        global $db;
+        
+        $query =   'SELECT MAX(PetID) AS M FROM Pets';
+        
+        $stmt = $db->prepare($query);
         $stmt->execute();
 
         return $stmt->fetchAll();
@@ -75,7 +75,7 @@
         return $stmt->fetchAll()[0];
     }
 
-    function convertGender($gender){
+    function getGender($gender){
         $r  = ($gender == 1) ?  "Male" :  "Female";
         return $r;
     }

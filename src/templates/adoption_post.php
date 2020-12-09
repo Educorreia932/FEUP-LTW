@@ -1,26 +1,26 @@
 <script defer src="../scripts/addProposal.js"></script>
 <div id="pet_profile">
     <h2>
-        <img id="front" src="../<?= $pet->photo ?>" alt="Pet Photo">
-        <img id="background" src="../<?= $pet->photo ?>" alt="Pet Photo">
+        <img id="front" src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
+        <img id="background" src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
     </h2>
 
     <div id="grid">
         <div id="pet_info">
             <h3>
-                <?= $pet->name ?>
+                <?= $pet["Name"] ?>
             </h3>
 
             <p>
-                <?= $adoption_post->location ?>
+                <?= $adoption_post["Location"] ?>
             </p>
 
             <hr>
             
             <p id="info_bullets">
-                <a> <?= htmlspecialchars($pet->getSpecies()) ?> </a>
-                <a> <?= htmlspecialchars($pet->getGender()) ?> </a>
-                <a> <?= $pet->getAge() ?> </a> 
+                <a> <?= htmlspecialchars(getSpecies($pet["SpeciesID"])["SpeciesName"]) ?> </a>
+                <a> <?= htmlspecialchars(getGender($pet["Gender"])) ?> </a>
+                <a> <?= $pet["Age"] ?> </a> 
             </p>
             
             <hr>
@@ -30,7 +30,7 @@
             </p>
 
             <p>
-                <?= $adoption_post->description ?>
+                <?= $adoption_post["Description"] ?>
             </p>
         </div>
         
