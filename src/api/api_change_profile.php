@@ -10,6 +10,6 @@
     $username = $_POST["username"];
     $newName = $_POST["newName"];
     $newBio = $_POST["newBio"];
-
+    
     echo changeProfileInfo($username, $newName, $newBio);
 ?>

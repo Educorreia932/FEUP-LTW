@@ -97,9 +97,11 @@ function submitNewProfile(event) {
 
     let newName = document.querySelector("input[name=newName]").value;
     let username = document.querySelector("input[name=user_username]").value;
-    let newBio = document.getElementsByTagName("textarea").value;
+    let newBio = document.getElementById("newBio").value;
     if(newBio == null) 
         newBio = "";
+
+    console.log(newBio);
 
 
     let request = new XMLHttpRequest();

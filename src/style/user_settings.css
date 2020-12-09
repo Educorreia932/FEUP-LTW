@@ -91,8 +91,14 @@ form#password_change label {
     font-size: 1em;
 }
 
+form#password_change input[type="password"] {
+    margin-bottom: 0.5em;
+}
+
 form#password_change input[type="submit"] {
     display: block;
     width: fit-content;
-    margin-top: 1.5em;
+    margin-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
 }

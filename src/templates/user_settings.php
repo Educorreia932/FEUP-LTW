@@ -15,7 +15,7 @@
                 title="Capitalized first and last name, separated by a single space." value="<?=$user_name?>">
         
             <label for="newBio">Bio</label>
-            <textarea id="newBio" pattern="[\w]{0,300}" title="Max length of 300 characters." name="newBio" rows="5" value="<?=$user['Bio']?>"></textarea> 
+            <textarea id="newBio" pattern="[\w]{0,300}" title="Max length of 300 characters." name="newBio" rows="5"><?=$user['Biography']?></textarea> 
 
             <span id="info_error"></span>
         </div>
