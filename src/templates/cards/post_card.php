@@ -4,7 +4,7 @@
     $postpet_species = getSpecies($post_pet['SpeciesID']);
 ?>
 
-<script src="scripts/post_form.js"></script>
+<script src="../scripts/post_form.js"></script>
 
 <a> 
     <div id="adoption-post-card">

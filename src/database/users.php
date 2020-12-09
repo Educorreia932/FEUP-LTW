@@ -92,16 +92,13 @@
         global $db;
 
         $stmt = $db->prepare(
-            'SELECT *
-             FROM(
-                 (UserFavouritePets JOIN Users ON Users.UserID=UserFavouritePets.UserID)
-                 JOIN Pets ON UserFavouritePets.PetID=Pets.PetID
-                 )
-            WHERE Users.Username=?'
+            'SELECT Pets.* FROM 
+             (UserFavouritePets JOIN Pets ON UserFavouritePets.PetID = Pets.PetID) 
+             JOIN Users ON UserFavouritePets.UserID = Users.UserID
+             WHERE Username = ?;'
         );
 
         $stmt->execute(array($username));
-
 
         return $stmt->fetchAll();
     }

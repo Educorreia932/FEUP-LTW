@@ -2,17 +2,19 @@
     $favouritePets = getFavouritePets($user['Username']);
 ?>
 
-<h2>Favourite Pets</h2>
+<h2>Favorite Pets</h2>
 
 <?php
-    if(count($favouritePets) == 0)
+    if (count($favouritePets) == 0)
         echo '<p>All your favourite pets will be displayed here</p>';
         
     else {
         echo '<section id="favourites">';
+
+        include(ROOT . "/templates/cards/pet_card.php");
         
         foreach($favouritePets as $pet)
-            include(ROOT . "/cards/pet_card.php");
+            drawPetCard($pet["PetID"], $pet["Photo"], $pet["Name"]);
 
         echo '</section>';
     }
