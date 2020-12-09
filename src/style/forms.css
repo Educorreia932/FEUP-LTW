@@ -215,6 +215,7 @@ div#postHead {
 
 form#search-bar {
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
     background-color: white;
     width: fit-content;

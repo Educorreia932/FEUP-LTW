@@ -4,8 +4,8 @@
     function drawPetCard($pet) {
 ?>
 
-<a href="../pages/adoption_post.php?id=<?= $pet["PetID"] ?>"> 
-    <div class="card pet-card">
+<div class="card pet-card">
+    <a href="../pages/adoption_post.php?id=<?= $pet["PetID"] ?>"> 
         <div class="favorite-icon">
             <span class="fa-stack fa-x">
                 <i class="fas fa-square fa-stack-2x"></i>
@@ -18,8 +18,8 @@
         <footer class="container">
             <p><?= htmlspecialchars($pet["Name"]) ?></p>
         </footer>
-    </div>
-</a>
+    </a>
+</div>
 
 <?php
     }

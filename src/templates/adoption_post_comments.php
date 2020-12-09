@@ -2,6 +2,8 @@
 
 <div id="pet_profile_comments">
     <?php
+    //TODO: Move to forms
+
     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
 
     ?>

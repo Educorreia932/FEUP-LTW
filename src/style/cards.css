@@ -37,6 +37,12 @@ div.pet-card img {
     border-radius: 0.5em 0.5em 0 0;
 }
 
+/* Post Card */
+
+div.proposal-card {
+    width: 100%;
+}
+
 /* Photo Card */
 
 div.photo-card label {
@@ -46,4 +52,6 @@ div.photo-card label {
 div.photo-card input#image {
     display: none;
 }
+
+
 

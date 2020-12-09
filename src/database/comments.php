@@ -13,7 +13,7 @@
         return $stmt->fetch()["LastCommentID"];
     }
 
-    function fecthAfterComments($comment_id,$username) {
+    function fecthAfterComments($comment_id, $username) {
         global $db;
 
         $stmt = $db->prepare('SELECT * FROM Comments NATURAL JOIN Users WHERE Comments.ID = ? AND Users.Username = ?' );

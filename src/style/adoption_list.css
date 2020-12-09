@@ -6,7 +6,7 @@ section#adoption {
     margin: 1em;
 }
 
-section#pets {
+section#pet-grid {
     display: grid;
     margin-left: 7em;
     margin-right: 7em;
@@ -27,8 +27,6 @@ footer.container p {
     font-size: large;
     color: white;
 }
-
-
 
 img.resize {
     width: auto;

@@ -139,6 +139,4 @@
 
         return $stmt->fetch();
     }
-
-    
 ?>

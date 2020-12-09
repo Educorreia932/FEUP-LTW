@@ -1,14 +1,19 @@
-<form id="search-bar" action="../actions/action_search.php" method="get">
-    <!-- <input id="title" name="title" type="text" placeholder="Adoption Post Title"> -->
+<script defer src="../scripts/search.js"></script>
+
+<form id="search-bar" method="post" onsubmit="search(event)">
     <input id="name" name="name" type="text" placeholder="Pet Name">
     <input id="location" name="location" type="text" placeholder="Location">
     <input id="color" name="color" type="text" placeholder="Color">
     <div id="weight">
-        <input id="min-weight" type="number" name="max-weight" placeholder="Minimum Weight">
-        <input id="max-weight" type="number" name="min-weight" placeholder="Maximum Weight">
+        <input id="min-weight" name="min-weight" type="number" placeholder="Minimum Weight">
+        <input id="max-weight" name="max-weight" type="number" placeholder="Maximum Weight">
+    </div>
+    <div id="age">
+        <input id="min-age" name="min-age" type="number" placeholder="Minimum Age">
+        <input id="max-age" name="max-age" type="number" placeholder="Maximum Age">
     </div>
 
-    <select name="species" id="species">
+    <select id="species" name="species">
         <option value="none" selected disabled hidden>Pet Species</option> 
         <?php
             include_once(ROOT . '/database/connection.php'); 
