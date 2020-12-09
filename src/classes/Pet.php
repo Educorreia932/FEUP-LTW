@@ -24,7 +24,7 @@
             $this->weight = floatval($weight);
             $this->size = $size;
             $this->photo = $photo;
-            $this->pet_species = $this->fetchSpeciesName($pet_species_id);
+            $this->pet_species_id = $pet_species_id;
             $this->adoption_post = $id;
         }
 
@@ -109,28 +109,13 @@
             return $species_id;
         }
     
-        public function getSearchedPets($name, $species) {
-            global $db;
-    
-            $query = 'SELECT *
-                      FROM Pets JOIN PetSpecies
-                      ON Pets.SpeciesID = PetSpecies.PetSpeciesID
-                      WHERE PetSpecies.SpeciesName=? AND Pets.Name=?';
-                    //   , NEAR((?, Pets.Name), 4)';
-            
-            $stmt = $db->prepare($query);
-            $stmt->execute(array($species, $name));
-    
-            return $stmt->fetchAll();
-        }
-    
-        public function getGender(){
+        public function getGender() {
             $r  = ($this->gender == 1) ?  "Male" :  "Female";
 
             return $r;
         }
     
-        public function getAge(){
+        public function getAge() {
             $r = ($this->age > 1) ? $this->age . " Years" :  $this->age . " Year";
 
             return $r;
@@ -141,17 +126,11 @@
 
             return $r;
         }
-    
-        public function getComments($post){
-            global $db;
-    
-            $query =   'SELECT * FROM 
-                        Comments where AdoptionPostID = ?';
-    
-            $stmt = $db->prepare($query);
-            $stmt->execute(array($post));
-    
-            return $stmt->fetchAll();
+
+        public function getSpecies() {
+            $r = $this->fetchSpeciesName($this->pet_species_id);
+
+            return $r;
         }
     
         public function getPetProposal($proposal) {

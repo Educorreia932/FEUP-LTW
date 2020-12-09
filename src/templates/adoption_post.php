@@ -18,7 +18,7 @@
             <hr>
             
             <p id="info_bullets">
-                <a> <?= htmlspecialchars($pet->pet_species) ?> </a>
+                <a> <?= htmlspecialchars($pet->getSpecies()) ?> </a>
                 <a> <?= htmlspecialchars($pet->getGender()) ?> </a>
                 <a> <?= $pet->getAge() ?> </a> 
             </p>
