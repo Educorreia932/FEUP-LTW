@@ -2,11 +2,11 @@
     <p>
         <?php 
             $username = getUserByID($comment["AuthorID"]);
-            echo($username);
+            echo(htmlspecialchars($username));
         ?>
     </p>
     
     <p>
-        <?= $comment["Text"] ?>
+        <?= htmlspecialchars($comment["Text"]) ?>
     </p>
 </div>

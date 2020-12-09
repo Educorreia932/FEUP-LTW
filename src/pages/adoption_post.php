@@ -13,12 +13,11 @@
     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))
         $user = getUser($_SESSION['username'], $_SESSION['password']);
 
-
     $adoption_post = AdoptionPost::getByID($_GET["id"]);
     $pet = Pet::fetchByID($_GET["id"]);
     $comments = getComments($pet->id);
 
-    drawHeader("Helper Shelter - " . $pet->name);
+    drawHeader("Helper Shelter - " . htmlspecialchars($pet->name));
 
     require_once(ROOT . "/templates/adoption_post.php");
     require_once(ROOT . "/templates/adoption_post_comments.php");

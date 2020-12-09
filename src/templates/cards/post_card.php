@@ -13,8 +13,8 @@
         <div id="post-pet-info">
             <div id="pet-pic-post" >
                 <img src="../<?=$post_pet['Photo']?>" alt="Pet photo">
-                <h3><?=$post_pet['Name']?></h3>
-                <h4><?=$post['Location']?></h4>
+                <h3><?=htmlspecialchars($post_pet['Name'])?></h3>
+                <h4><?=htmlspecialchars($post['Location'])?></h4>
             </div>
             <div id="pet_details_description">
                 <h3>Pet Details</h3>
@@ -22,23 +22,23 @@
                     <div id="pet-details-left">
                         <p><b>Age: </b><?=$post_pet['Age']?></p>
                         <p><b>Size: </b><?=convertSize($post_pet['Size'])?></p> 
-                        <p><b>Color: </b><?=$post_pet['Color']?></p>
+                        <p><b>Color: </b><?=htmlspecialchars($post_pet['Color'])?></p>
                     </div>
                     <div id="pet-details-right">
-                        <p><b>Species: </b><?=$postpet_species['SpeciesName']?></p>
+                        <p><b>Species: </b><?=htmlspecialchars($postpet_species['SpeciesName'])?></p>
                         <p><b>Weight </b><?=$post_pet['Weight']?>kg</p>
-                        <p><b>Gender: </b><?=convertGender($post_pet['Gender'])?></p>
+                        <p><b>Gender: </b><?=htmlspecialchars(convertGender($post_pet['Gender']))?></p>
                     </div>
                 </div>
                 <div id="pet-description">
                     <h3>Description</h3>
-                    <p><?=$post['Description']?></p>
+                    <p><?=htmlspecialchars($post['Description'])?></p>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p><?=$postDate?></p>
+            <p><?=htmlspecialchars($postDate)?></p>
         </footer>
     </div>
 </a> 

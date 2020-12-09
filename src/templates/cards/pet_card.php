@@ -16,7 +16,7 @@
         <img src="../<?= $pet->photo ?>" alt="Pet Photo">
 
         <footer class="container">
-            <p><?= $pet->name ?></p>
+            <p><?= htmlspecialchars($pet->name) ?></p>
         </footer>
     </div>
 </a>
