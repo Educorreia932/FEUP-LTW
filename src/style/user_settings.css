@@ -1,0 +1,15 @@
+section#user_settings {
+    margin: auto;
+    margin-top: 0em;
+    padding-top: 1em;
+    background-color: white;
+    width: 70%;
+}
+
+span#password_error {
+    color: red;
+}
+
+input#submit_password:disabled {
+    background-color: gray;
+}

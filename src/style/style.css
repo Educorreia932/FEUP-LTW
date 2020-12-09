@@ -58,8 +58,13 @@ img#avatar {
     max-height: 2.5em;
     vertical-align: middle;
     border-radius: 50%;
-    padding: 0.5em;
+    padding: 0em;
     padding-right: 0;
+    border: solid black;
+}
+
+img#avatar:hover {
+    border: solid white;
 }
 
 div#avatar_dropdown {
@@ -83,6 +88,7 @@ div#avatar_dropdown li {
 div#avatar_dropdown a {
     color: black;
 }
+
 
 /* Footer */
 
