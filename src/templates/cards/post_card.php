@@ -27,7 +27,7 @@
                     <div id="pet-details-right">
                         <p><b>Species: </b><?=htmlspecialchars($postpet_species['SpeciesName'])?></p>
                         <p><b>Weight </b><?=$post_pet['Weight']?>kg</p>
-                        <p><b>Gender: </b><?=htmlspecialchars(convertGender($post_pet['Gender']))?></p>
+                        <p><b>Gender: </b><?=htmlspecialchars(getGender($post_pet['Gender']))?></p>
                     </div>
                 </div>
                 <div id="pet-description">

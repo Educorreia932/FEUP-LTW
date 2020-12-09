@@ -36,7 +36,7 @@
         
         <div id="buttons">
             <button type="button" id="favorite">Favorite</button>
-            <button type="button" id="adopt" onClick="addAdoptionPorp()">Adopt</button>
+            <button type="button" id="adopt" onclick='addAdoptionProp(<?= $pet["PetID"] . "," . getUser($_SESSION["username"], $_SESSION["password"])["UserID"] ?>)'> Adopt </button>
         </div>
     </div>
 </div>
