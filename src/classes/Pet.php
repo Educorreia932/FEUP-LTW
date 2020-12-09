@@ -63,7 +63,7 @@
             );
         }
 
-        public static function getPetByID($id) {
+        public static function getByID($id) {
             global $db;
     
             $query = 'SELECT *

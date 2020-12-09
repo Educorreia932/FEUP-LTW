@@ -18,7 +18,7 @@
             
             <p id="info_bullets">
                 <a> <?= $pet->pet_species ?> </a>
-                <a> <?= convertGender($pet->gender) ?> </a>
+                <a> <?= $pet->gender ?> </a>
                 <a> <?= getAge($pet->age) ?> </a> 
             </p>
             
@@ -29,13 +29,7 @@
             </p>
 
             <p>
-                <?php
-                    // if($post["Description"] != "")
-                    //     echo($post["Description"]);
-                        
-                    // else
-                    //     echo("YEEEEEEEEEEEE BUDDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY");
-                ?>
+                <?= $adoption_post->description ?>
             </p>
         </div>
         
