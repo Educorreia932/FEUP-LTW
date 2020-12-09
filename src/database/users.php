@@ -186,4 +186,18 @@
         } 
         return 2;
     }
-?>
+
+    function changeProfileInfo($username, $newName, $newBio) {
+        global $db;
+
+        $stmt = $db->prepare(
+            'UPDATE Users
+            SET Name=?, Biography=?
+            WHERE Username=?'
+        );
+
+        if($stmt->execute(array($newName, $newBio, $username)))
+            return 0;   
+        return 1;     
+    }
+?> 

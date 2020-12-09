@@ -3,20 +3,22 @@
 
 <section id="user_settings">
     <h2>User settings</h2>
-    <form method="post" action="../actions/update_info.php">
+    <form method="post" onsubmit="submitNewProfile(event);">
         <label>Name 
             <input type="text" pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)" name="newName" required
                 title="Capitalized first and last name, separated by a single space." value="<?=$user_name?>">
         </label>
         
-        <label class="input-comment">
-            Bio <textarea id="newBio" pattern="[\w]{0,300}" title="Max length of 300 characters." name="text" rows="5"></textarea> 
+        <label>
+            Bio <textarea id="newBio" pattern="[\w]{0,300}" title="Max length of 300 characters." name="text" rows="5" value="<?=$user['Bio']?>"></textarea> 
         </label>
+
+        <span id="info_error"></span>
 
         <input type="submit" value="Save changes">
     </form>
 
-    <form id="username_change" method="post" onsubmit="submitNewUsername(event)">
+    <form id="username_change" method="post" onsubmit="submitNewUsername(event);">
         <input type="hidden" value="<?=$user['Username']?>" name="user_username">
         <label>
             Username <input type="text" pattern="[\w]{4,20}" name="newUsername" required title="Must have length between 4 and 20."

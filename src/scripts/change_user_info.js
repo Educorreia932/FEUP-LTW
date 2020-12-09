@@ -37,7 +37,7 @@ function submitNewPass(event) {
 }
 
 function receivePasswordResponse() {
-    switch(this.responseText) {
+    switch(this.responseText.trim('\n')) {
         case "0":
             alert("Password changed successfuly! Please log in again.");
             document.getElementById('password_error').innerHTML = "";
@@ -75,8 +75,7 @@ function submitNewUsername(event) {
 }
 
 function receiveUsernameResponse() {
-    console.log(this.responseText);
-    switch(this.responseText) {
+    switch(this.responseText.trim('\n')) {
         case "0":
             alert("Username changed successfuly! Please log in again.");
             document.getElementById('username_error').innerHTML = "";
@@ -87,6 +86,44 @@ function receiveUsernameResponse() {
             break;
         case "2":
             document.getElementById('username_error').innerHTML = "New username cannot be the same as the current username!";
+            break;
+        default:
+            break;
+    }
+}
+
+function submitNewProfile(event) {
+    event.preventDefault();
+
+    let newName = document.querySelector("input[name=newName]").value;
+    let username = document.querySelector("input[name=user_username]").value;
+    let newBio = document.getElementsByTagName("textarea").value;
+    if(newBio == null) 
+        newBio = "";
+
+
+    let request = new XMLHttpRequest();
+
+    request.addEventListener("load", receiveProfileResponse);
+    request.open("post", "../api/api_change_profile.php", true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(
+        encodeForAjax({ 
+            username: username,
+            newName: newName,
+            newBio: newBio
+        })
+    );
+}
+
+function receiveProfileResponse() {
+    switch(this.responseText.trim('\n')) {
+        case "0":
+            alert("Profile info saved successfuly!");
+            document.getElementById('info_error').innerHTML = "";
+            break;
+        case "1":
+            document.getElementById('info_error').innerHTML = "An error ocurred while saving changes";
             break;
         default:
             break;

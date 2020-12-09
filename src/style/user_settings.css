@@ -17,3 +17,7 @@ input#submit_password:disabled {
 span#username_error {
     color: red;
 }
+
+span#info_error {
+    color: red;
+}
