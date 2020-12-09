@@ -7,7 +7,7 @@
         public $pets = array();
 
         public function __construct() {
-            $pet_entries = $this->getPets();
+            $pet_entries = $this->fetchPets();
 
             foreach ($pet_entries as $pet_entry) {
                 $pet = Pet::fromArray($pet_entry);
@@ -17,7 +17,7 @@
         }
 
         // Retrieves all pets for adoption from database
-        public function getPets() {
+        public function fetchPets() {
             global $db;
         
             $query =   'SELECT * FROM 

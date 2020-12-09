@@ -24,7 +24,7 @@
             $this->weight = floatval($weight);
             $this->size = $size;
             $this->photo = $photo;
-            $this->pet_species = $pet_species_id;
+            $this->pet_species = $this->fetchSpeciesName($pet_species_id);
             $this->adoption_post = $id;
         }
 
@@ -57,7 +57,7 @@
                     $this->weight,
                     $this->size, 
                     $this->photo, 
-                    $this->pet_species_id,
+                    $this->fetchSpeciesID($this->pet_species),
                     $this->id
                 )
             );
@@ -77,6 +77,36 @@
             $pet = Pet::fromArray($pet_entry);
     
             return $pet;
+        }
+
+        public static function fetchSpeciesName($species_id) {
+            global $db;
+    
+            $query = 'SELECT SpeciesName
+                      FROM PetSpecies
+                      WHERE PetSpeciesID = ?';
+            
+            $stmt = $db->prepare($query);
+            $stmt->execute(array($species_id));
+
+            $species_name = $stmt->fetch()["SpeciesName"];
+    
+            return $species_name;
+        }
+
+        public static function fetchSpeciesID($species_name) {
+            global $db;
+    
+            $query = 'SELECT PetSpeciesID
+                      FROM PetSpecies
+                      WHERE SpeciesName = ?';
+            
+            $stmt = $db->prepare($query);
+            $stmt->execute(array($species_name));
+
+            $species_id = $stmt->fetch()["SpeciesName"];
+    
+            return $species_id;
         }
     
         public function getSearchedPets($name, $species) {
