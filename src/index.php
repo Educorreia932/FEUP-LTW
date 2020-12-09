@@ -1,3 +1,5 @@
 <?php
-   die(header('Location: pages/homepage.php'));
+   require_once("classes/PetsList.php");
+
+   $pets = new PetsList();
 ?> 
