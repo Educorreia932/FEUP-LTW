@@ -1,5 +1,4 @@
 <?php
-
     function is_similar($source, $target) {
         $source = strtolower($source);
         $target = strtolower($target);
@@ -10,14 +9,14 @@
     }
 
     function is_between($lower_bound, $higher_bound, $target) {
-        if ($lower_bound == "none") 
+        if ($lower_bound == NULL && $higher_bound == NULL)
+            return True;
+
+        if ($lower_bound == NULL && $higher_bound != NULL) 
             return $target <= $higher_bound;
 
-        if ($lower_bound == "none")
+        if ($higher_bound == NULL && $lower_bound != NULL)
             return $lower_bound <= $target;
-
-        if ($lower_bound == "none" && $higher_bound == "none")
-            return True;
 
         return $lower_bound <= $target && $target <= $higher_bound;
     }
@@ -34,8 +33,11 @@
             if (!is_similar($color, $pet["Color"]))
                 continue;
 
-            // if (!is_between($lower_bound, $higher_bound, $target))
-            //     continue;
+            if (!is_between($min_weight, $max_weight, $pet["Weight"]))
+                continue;
+
+            if (!is_between($min_age, $max_age, $pet["Age"]))
+                continue;
 
             drawPetCard($pet);
         }
