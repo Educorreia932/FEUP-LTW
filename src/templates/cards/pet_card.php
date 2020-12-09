@@ -1,10 +1,10 @@
 <script src="../scripts/post_form.js"></script>
 
 <?php
-    function drawPetCard($PetID, $Photo, $Name) {
+    function drawPetCard($pet) {
 ?>
 
-<a href="../pages/adoption_post.php?id=<?= $PetID ?>"> 
+<a href="../pages/adoption_post.php?id=<?= $pet->id ?>"> 
     <div class="card pet-card">
         <div class="favorite-icon">
             <span class="fa-stack fa-x">
@@ -13,10 +13,10 @@
             </span>
         </div>
 
-        <img src="../<?= $Photo ?>" alt="Pet Photo">
+        <img src="../<?= $pet->photo ?>" alt="Pet Photo">
 
         <footer class="container">
-            <p><?= htmlspecialchars($Name) ?></p>
+            <p><?= htmlspecialchars($pet->name) ?></p>
         </footer>
     </div>
 </a>

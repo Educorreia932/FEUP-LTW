@@ -13,8 +13,8 @@
 
         include(ROOT . "/templates/cards/pet_card.php");
         
-        foreach($favouritePets as $pet)
-            drawPetCard($pet["PetID"], $pet["Photo"], $pet["Name"]);
+        foreach($favouritePets as $pet_entry)
+            drawPetCard(Pet::fromArray($pet_entry));
 
         echo '</section>';
     }
