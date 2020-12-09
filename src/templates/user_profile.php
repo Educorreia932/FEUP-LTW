@@ -5,11 +5,15 @@
         <div id="user_info">
             <h2><?=htmlspecialchars($user['Name'])?></h2>
             <h3>@<?=htmlspecialchars($user['Username'])?></h3>
+            <div id="user_bio">
+                <?=htmlspecialchars($user['Biography'])?>
+            </div>
         </div>
 
-        <div id="user_edit">
+        <!-- <div id="user_edit">
             <input type="button" id="edit_profile_button" value="Edit Profile">
-        </div>
+        </div> -->
+
         
         <script src="../scripts/edit_profile.js"></script>
     </div>
