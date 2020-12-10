@@ -6,7 +6,9 @@
     if(!isset($_SESSION)) 
         session_start(); 
 
-    include_once(ROOT . "/templates/common/header.php");
+    require_once(ROOT . "/database/connection.php");
+    require_once(ROOT . "/database/users.php");
+    require_once(ROOT . "/templates/common/header.php");
     drawHeader("Helper Shelter - Submition");
 
     if(array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))
