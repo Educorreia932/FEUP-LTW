@@ -36,21 +36,6 @@
         return $stmt->fetchAll();
     }
 
-    function getSearchedPets($name, $species) {
-        global $db;
-
-        $query = 'SELECT *
-                  FROM Pets JOIN PetSpecies
-                  ON Pets.SpeciesID = PetSpecies.PetSpeciesID
-                  WHERE PetSpecies.SpeciesName=? AND Pets.Name=?';
-                //   , NEAR((?, Pets.Name), 4)';
-        
-        $stmt = $db->prepare($query);
-        $stmt->execute(array($species, $name));
-
-        return $stmt->fetchAll();
-    }
-
     function getPet($id){
         global $db;
         $query =   'SELECT * FROM 
@@ -77,11 +62,13 @@
 
     function getGender($gender){
         $r  = ($gender == 1) ?  "Male" :  "Female";
+
         return $r;
     }
 
     function getAge($age){
         $r = ($age > 1) ? "$age Years" : "$age Year";
+
         return $r;
     }
 
@@ -153,5 +140,25 @@
                 return true;
 
         return false;
+    }
+
+    // Adds a pet to a user's favorite pets list
+    function addFavoritePet($pet_id, $username) {
+        global $db;
+
+        $user_id = getUserID($username);
+
+        $stmt = $db->prepare('INSERT INTO UserFavouritePets VALUES (?, ?)');
+        $stmt->execute(array($user_id, $pet_id));
+    }
+
+    // Removes a pet from a user's favorite pets list
+    function removeFavoritePet($pet_id, $username) {
+        global $db;
+
+        $user_id = getUserID($username);
+
+        $stmt = $db->prepare('DELETE FROM UserFavouritePets WHERE UserID = ? AND PetID = ?');
+        $stmt->execute(array($user_id, $pet_id));
     }
 ?>

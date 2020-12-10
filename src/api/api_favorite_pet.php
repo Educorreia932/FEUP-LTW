@@ -4,6 +4,7 @@
     if (!isset($_SESSION)) 
         session_start(); 
 
+    // User is logged in
     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
         require_once(ROOT . "/database/connection.php");
         require_once(ROOT . "/database/users.php");
@@ -13,14 +14,22 @@
         $username = $user['Username'];
         $pet_id = $_POST["pet_id"];
 
-        if (!favoritedPet($username, $pet_id))
-            echo "Added to favroites" ;
+        // Pet wasn't already in favorites list
+        if (!favoritedPet($username, $pet_id)) {
+            addFavoritePet($pet_id, $username);
+            echo "Added to favorites";
+        }
+            
 
-        else 
+        // Pet was already in favorites list
+        else {
+            removeFavoritePet($pet_id, $username);
             echo "Removed from favorites";
+        }
     }
 
+    // User is not logged in
     else {
-        echo "Not logged in";
+        var_dump(http_response_code(401));
     }
 ?>
