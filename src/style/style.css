@@ -95,3 +95,9 @@ div#avatar_dropdown a {
 body > footer {
     text-align: center;
 }
+
+section#invalid_page_message {
+    margin: 2em;
+    text-align: center;
+    font-size: 4em;
+}
