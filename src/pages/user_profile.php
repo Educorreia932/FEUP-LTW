@@ -13,8 +13,8 @@
 
         $user = getUser($_SESSION['username'], $_SESSION['password']);
 
-        $user_name = $user['Name'];
-        drawHeader("Helper Shelter - $user_name's Profile");
+        $username = $user['Name'];
+        drawHeader("Helper Shelter - $username's Profile");
 
         require_once(ROOT . "/templates/user_profile.php");
     }

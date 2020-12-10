@@ -19,7 +19,6 @@
             addFavoritePet($pet_id, $username);
             echo "Added to favorites";
         }
-            
 
         // Pet was already in favorites list
         else {

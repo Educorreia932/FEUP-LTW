@@ -15,7 +15,6 @@
         <!-- <div id="user_edit">
             <input type="button" id="edit_profile_button" value="Edit Profile">
         </div> -->
-
         
         <script src="../scripts/edit_profile.js"></script>
     </div>

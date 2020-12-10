@@ -1,9 +1,3 @@
-function encodeForAjax(data) {
-    return Object.keys(data).map(function (k) {
-        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-    }).join('&')
-}
-
 function receivePost() {
     if (this.responseText == 'error')
         alert("Proposal has already been submited!");
