@@ -30,12 +30,13 @@
             <?php
                 // Check if user is logged in
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
+                    $user = getUser($_SESSION['username'], $_SESSION['password']);
             ?>
             <p>Greetings, <a href="../pages/user_profile.php"><?= $_SESSION['username']?></a></p>
             
             <script src="../scripts/user_menu.js"></script>
             
-            <img id="avatar" onclick="toggleMenuDisplay();" src="https://i.pinimg.com/564x/ea/8a/7f/ea8a7fb3b3230019a2f397b01cfe2d0c.jpg" alt="Avatar">
+            <img id="avatar" onclick="toggleMenuDisplay();" src="<?=$user['ProfilePicture']?>" alt="Avatar">
             
             <div id="avatar_dropdown" style="display: none">
                 <ul>

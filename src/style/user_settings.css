@@ -75,10 +75,16 @@ form#username_change {
     margin-bottom: 3em;
 }
 
+form#username_change label {
+    margin-bottom: 0.8em;
+}
+
 form#username_change input[type="submit"] {
+    display: block;
     width: fit-content;
     padding-left: 1em;
     padding-right: 1em;
+    margin-top: 1em;
 }
 
 form#password_change {

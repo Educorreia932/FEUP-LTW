@@ -81,11 +81,11 @@
         return $userName;
     }
 
-    function addUser($username, $password, $name) {
+    function addUser($username, $password, $name, $photo) {
         global $db;
 
-        $stmt = $db->prepare('INSERT INTO Users VALUES (NULL, ?, ?, ?, ?, NULL)');
-        $stmt->execute(array($username, $password, $name, ""));
+        $stmt = $db->prepare('INSERT INTO Users VALUES (NULL, ?, ?, ?, ?, ?)');
+        $stmt->execute(array($username, $password, $name, "", $photo));
     }
 
     function getFavouritePets($username) {

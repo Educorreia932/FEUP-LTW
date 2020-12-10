@@ -7,7 +7,7 @@ function encodeForAjax(data) {
 let fields = document.querySelectorAll("input, select");
 
 for (let field of fields)
-    field.addEventListener("change", (event) => {search(event)})
+    field.addEventListener("keyup", (event) => {search(event)})
 
 function search(event) {
     event.preventDefault();

@@ -4,11 +4,13 @@
     if(!isset($_SESSION)) 
         session_start(); 
 
+    include_once(ROOT . "/database/connection.php");~
+    include_once(ROOT . "/database/users.php");
+
     include_once(ROOT . "/templates/common/header.php");
     
     drawHeader("Helper Shelter - Main Page");
 
-    include_once(ROOT . "/database/connection.php");
     include_once(ROOT . "/database/pets.php");
         
     $pets = getAllPets();
