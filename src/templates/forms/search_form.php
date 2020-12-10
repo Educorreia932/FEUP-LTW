@@ -24,7 +24,7 @@
             foreach($species as $sp) {
         ?>
 
-            <option value="<?= $sp['PetSpeciesID'] ?>"><?= $sp['SpeciesName'] ?></option>")
+            <option value="<?= $sp['PetSpeciesID'] ?>"><?= $sp['SpeciesName'] ?></option>
 
         <?php
             }

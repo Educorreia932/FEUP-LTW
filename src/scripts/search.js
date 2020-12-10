@@ -1,7 +1,9 @@
 let fields = document.querySelectorAll("input, select");
 
-for (let field of fields)
+for (let field of fields) {
     field.addEventListener("keyup", (event) => {search(event)})
+    field.addEventListener("change", (event) => {search(event)})
+}
 
 function search(event) {
     event.preventDefault();
