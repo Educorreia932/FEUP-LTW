@@ -16,8 +16,7 @@
 
     <?php
         foreach ($pets as $pet)
-            drawPetCard($pet); 
-
+            drawPetCard($username, $pet); 
     ?>
 
     </section>

@@ -140,4 +140,18 @@
 
         return $stmt->fetch();
     }
+
+    // Checks if a user has a pet in their favorites
+    function favoritedPet($username, $pet_id) {
+        if (!$username)
+            return false;
+            
+        $favourite_pets = getFavouritePets($username);
+
+        foreach ($favourite_pets as $favourite_pet)
+            if ($favourite_pet["PetID"] == $pet_id)
+                return true;
+
+        return false;
+    }
 ?>

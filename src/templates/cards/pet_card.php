@@ -1,7 +1,7 @@
 <script src="../scripts/post_form.js"></script>
 
 <?php
-    function drawPetCard($pet) {
+    function drawPetCard($username, $pet) {
 ?>
 
 <div class="card pet-card">
@@ -9,7 +9,25 @@
 
     <span class="fa-stack fa-x favorite-icon" onclick="favoritePet(event)">
         <i class="fas fa-square fa-stack-2x"></i>
+
+        <?php
+            if(favoritedPet($username, $pet["PetID"])) {
+        ?>
+
+        <i class="fas fa-heart fa-stack-1x fa-inverse"></i>
+
+        <?php
+            }
+
+            else {
+        ?>
+
         <i class="far fa-heart fa-stack-1x fa-inverse"></i>
+
+        <?php
+            }
+        ?>
+    
     </span>
 
     <a href="../pages/adoption_post.php?id=<?= $pet["PetID"] ?>"> 
