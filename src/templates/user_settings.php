@@ -2,6 +2,14 @@
 <script defer src="../scripts/change_user_info.js"></script>
 
 <section id="user_settings">
+    <h2>User Photo</h2>
+
+    <form action="../actions/action_change_photo.php" id="user_photo" method="post" enctype="multipart/form-data">
+        <?php require("cards/photo_card.php") ?>
+        <input type="submit" value="Save changes">
+    </form>
+
+    
     <h2>User settings</h2>
     <form id="profile_change" method="post" onsubmit="submitNewProfile(event);">
 

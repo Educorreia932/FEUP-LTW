@@ -98,6 +98,11 @@ function submitNewProfile(event) {
     let newName = document.querySelector("input[name=newName]").value;
     let username = document.querySelector("input[name=user_username]").value;
     let newBio = document.getElementById("newBio").value;
+
+    var file = document.getElementById("image").value;
+
+    console.log(file);
+    
     if(newBio == null) 
         newBio = "";
 

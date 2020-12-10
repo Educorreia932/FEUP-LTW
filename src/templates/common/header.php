@@ -37,7 +37,7 @@
             
             <script src="../scripts/user_menu.js"></script>
             
-            <img id="avatar" onclick="toggleMenuDisplay();" src="<?=$user['ProfilePicture']?>" alt="Avatar">
+            <img id="avatar" onclick="toggleMenuDisplay();" src="../<?=$user['ProfilePicture']?>" alt="Avatar">
             
             <div id="avatar_dropdown" style="display: none">
                 <ul>
