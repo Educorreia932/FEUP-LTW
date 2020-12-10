@@ -14,6 +14,14 @@
     include_once(ROOT . "/database/pets.php");
         
     $pets = getAllPets();
+
+    if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
+        $user = getUser($_SESSION['username'], $_SESSION['password']);
+        $username = $user['Username'];
+    }
+
+    else 
+        $username = NULL;
     
     include_once(ROOT . "/templates/adoption_grid.php");
     include_once(ROOT . "/templates/common/footer.php");
