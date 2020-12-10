@@ -5,14 +5,14 @@
 ?>
 
 <div class="card pet-card">
-    <a href="../pages/adoption_post.php?id=<?= $pet["PetID"] ?>"> 
-        <div class="favorite-icon">
-            <span class="fa-stack fa-x">
-                <i class="fas fa-square fa-stack-2x"></i>
-                <i class="far fa-heart fa-stack-1x fa-inverse"></i>
-            </span>
-        </div>
+    <span class="pet-id"><?= $pet["PetID"] ?></span>
 
+    <span class="fa-stack fa-x favorite-icon" onclick="favoritePet(event)">
+        <i class="fas fa-square fa-stack-2x"></i>
+        <i class="far fa-heart fa-stack-1x fa-inverse"></i>
+    </span>
+
+    <a href="../pages/adoption_post.php?id=<?= $pet["PetID"] ?>"> 
         <img src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
 
         <footer class="container">

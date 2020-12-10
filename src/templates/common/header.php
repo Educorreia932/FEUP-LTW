@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="../style/user_proposal.css">
         <link rel="stylesheet" href="../style/user_post.css">
         <link rel="stylesheet" href="../style/user_settings.css">
+        <script defer src="../scripts/favorite_pets.js"></script>
         <script src="https://kit.fontawesome.com/57668fbb45.js" crossorigin="anonymous"></script>
     </head>
 

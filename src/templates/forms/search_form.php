@@ -5,12 +5,12 @@
     <input id="location" name="location" type="text" placeholder="Location">
     <input id="color" name="color" type="text" placeholder="Color">
     <div id="weight">
-        <input id="min-weight" name="min-weight" type="number" placeholder="Minimum Weight">
-        <input id="max-weight" name="max-weight" type="number" placeholder="Maximum Weight">
+        <input id="min-weight" name="min-weight" type="number" min="0" placeholder="Minimum Weight">
+        <input id="max-weight" name="max-weight" type="number" min="0" placeholder="Maximum Weight">
     </div>
     <div id="age">
-        <input id="min-age" name="min-age" type="number" placeholder="Minimum Age">
-        <input id="max-age" name="max-age" type="number" placeholder="Maximum Age">
+        <input id="min-age" name="min-age" type="number" min="0" placeholder="Minimum Age">
+        <input id="max-age" name="max-age" type="number" min="0" placeholder="Maximum Age">
     </div>
 
     <select id="species" name="species">
@@ -22,7 +22,6 @@
             $species = getAllSpecies();
 
             foreach($species as $sp) {
-                echo $sp['PetSpeciesID'];
         ?>
 
             <option value="<?= $sp['PetSpeciesID'] ?>"><?= $sp['SpeciesName'] ?></option>")

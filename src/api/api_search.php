@@ -45,7 +45,6 @@
             if ($size != $pet["Size"] && $size != "none")
                 continue;
 
-
             drawPetCard($pet);
         }
     }

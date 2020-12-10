@@ -9,7 +9,7 @@
 
     <?php
         if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))
-            include(ROOT . "/templates/cards/proposal_card.php");
+            include(ROOT . "/templates/cards/submit_pet_card.php");
 
         include(ROOT . "/templates/cards/pet_card.php");
     ?>

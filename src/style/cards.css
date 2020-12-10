@@ -11,9 +11,18 @@ div.card {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    transition: all 0.5s;
 }
 
-div.favorite-icon, div.post-icon {
+div.card:hover {
+    transform: scale(1.03);
+}
+
+span.pet-id {
+    display: none;
+}
+
+span.favorite-icon, div.post-icon {
     position: absolute;
     font-size: 1.3em;
     color: var(--color1);
@@ -24,9 +33,10 @@ div.post-icon {
     left: 0.5em;
 }
 
-div.favorite-icon {
+span.favorite-icon {
     top: 0.5em;
     right: 0.5em;
+    cursor: pointer;
 }
 
 div.pet-card img {
@@ -37,9 +47,9 @@ div.pet-card img {
     border-radius: 0.5em 0.5em 0 0;
 }
 
-/* Post Card */
+/* Submit a Pet For Adoption Card */
 
-div.proposal-card {
+div.submit-pet-card {
     width: 100%;
 }
 
