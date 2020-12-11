@@ -1,7 +1,7 @@
 let pet_cards = document.querySelectorAll(".pet-card");
 
 for (pet_card of pet_cards)
-    pet_card.addEventListener("click", sendRequest.bind(pet_card));
+    pet_card.querySelector(".favorite-icon").addEventListener("click", sendRequest.bind(pet_card));
 
 let favorite_button = document.getElementById("favorite") 
 
