@@ -38,9 +38,30 @@
         </div>
         
         <div id="buttons">
+            <button type="button" id="favorite">
+                <span class="pet-id"><?= $pet["PetID"] ?></span>
+                Favorite
+                <?php
+                    if(favoritedPet($user["Username"], $pet["PetID"])) {
+                ?>
+
+                <i class="fas fa-heart fa-inverse"></i>
+
+                <?php
+                    }
+
+                    else {
+                ?>
+
+                <i class="far fa-heart fa-inverse"></i>
+
+                <?php
+                    }
+                ?>
+            </button>
+
             <?php
-                include_once(ROOT . '/database/users.php');
-                $id = getUser($_SESSION["username"], $_SESSION["password"])["UserID"];
+                $id = $user["UserID"];
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])){
                     if($adoption_post["AuthorID"] == $id){
             ?>
@@ -49,7 +70,6 @@
                     }
                     else{
             ?>
-                    <button type="button" id="favorite">Favorite</button>
                     <button type="button" id="adopt" onclick='addAdoptionProp(<?= $pet["PetID"] . "," . $id ?>)'> Adopt </button>
             <?php
                     }
