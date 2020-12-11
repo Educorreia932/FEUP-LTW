@@ -22,23 +22,13 @@
     }
 
     function getSearchResults($name, $location, $color, $min_weight, $max_weight, $min_age, $max_age, $species, $size) {
-        require_once(ROOT . "/templates/cards/pet_card.php");
+        $searchResults = array();
 
         if (!isset($_SESSION)) 
             session_start(); 
 
-        if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
-            require_once(ROOT . "/database/connection.php");
-            require_once(ROOT . "/database/users.php");
-            require_once(ROOT . "/database/pets.php");
-
-            $user = getUser($_SESSION['username'], $_SESSION['password']);
-            $username = $user['Username'];
-        }
-
-        else {
-            $username = NULL;
-        }
+        if (!array_key_exists('username', $_SESSION) || empty($_SESSION['username'])) 
+            return;
 
         $pets = getAllPets();
 
@@ -61,8 +51,10 @@
             if ($size != $pet["Size"] && $size != "none")
                 continue;
 
-            drawPetCard($username, $pet);
+            array_push($searchResults, $pet["PetID"]);
         }
+
+        echo json_encode($searchResults);
     }
 
     include_once(__DIR__ . "/../config.php");

@@ -103,3 +103,7 @@ div#adoption-post-card footer{
     margin-top: 0;
     text-align: end;
 }
+
+div#buttons button {
+    cursor: pointer;
+}

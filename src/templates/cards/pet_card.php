@@ -7,7 +7,7 @@
 <div class="card pet-card">
     <span class="pet-id"><?= $pet["PetID"] ?></span>
 
-    <span class="fa-stack fa-x favorite-icon" onclick="favoritePet(event)">
+    <span class="fa-stack fa-x favorite-icon">
         <i class="fas fa-square fa-stack-2x"></i>
 
         <?php
