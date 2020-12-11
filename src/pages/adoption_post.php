@@ -10,6 +10,9 @@
     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))
         $user = getUser($_SESSION['username'], $_SESSION['password']);
 
+    else
+        $user = null;
+
     $adoption_post = getPost($_GET["id"]);
     $pet = getPet($_GET["id"]);
     $comments = getComments($pet["PetID"]);

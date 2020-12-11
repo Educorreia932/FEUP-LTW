@@ -42,7 +42,7 @@
                 <span class="pet-id"><?= $pet["PetID"] ?></span>
                 Favorite
                 <?php
-                    if(favoritedPet($user["Username"], $pet["PetID"])) {
+                    if(favoritedPet($user? $user["Username"] : null, $pet["PetID"])) {
                 ?>
 
                 <i class="fas fa-heart fa-inverse"></i>
@@ -61,8 +61,9 @@
             </button>
 
             <?php
-                $id = $user["UserID"];
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])){
+                    $id = $user["UserID"];
+
                     if($adoption_post["AuthorID"] == $id){
             ?>
                     <button type="button" id="edit" onclick='<?= 'window.location.href = "../pages/edit_post.php?id=' . $adoption_post["AdoptionPostID"] . '"'?> '>Edit</button>
