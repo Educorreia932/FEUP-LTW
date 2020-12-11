@@ -8,6 +8,12 @@ function receivePost() {
 function addAdoptionProp(pet, userID) {
     var text = prompt("Enter a brief description why you want to adopt the pet.");
 
+    if(text == null)
+    {
+        alert("Canceled Proposal.");
+        return;
+    }
+
     let request = new XMLHttpRequest();
 
     request.addEventListener("load", receivePost);
