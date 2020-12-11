@@ -39,3 +39,11 @@ function receiveComments() {
         document.getElementById("comments").prepend(newComment)
     }
 }
+
+function toggleReplyBox() {
+    
+}
+
+function submitReply(event) {
+
+}

@@ -2,7 +2,6 @@
 
 <div id="pet_profile_comments">
     <?php
-    //TODO: Move to forms
 
     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
 
@@ -14,7 +13,7 @@
             
             <input type="hidden" value=<?=$pet["PetID"] ?> name="pet_id">
             <input type="hidden" value=<?=$user['Username'] ?> name="username">
-            <input type="submit"></input>
+            <input type="submit" value="Submit"></input>
         </form>
 
     <?php
@@ -23,7 +22,7 @@
 
     <div id="comments">
         <?php
-            foreach ($comments as $comment)
+            foreach ($comments as $comment) 
                 include(__DIR__ . "/comment.php");
         ?>
     </div>

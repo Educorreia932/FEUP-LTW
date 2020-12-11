@@ -56,6 +56,13 @@ CREATE TABLE Comments (
     AuthorID INTEGER REFERENCES Users(UserID)
 );
 
+CREATE TABLE Replies (
+    ID INTEGER PRIMARY KEY,
+    Text TEXT,
+    Date TEXT,
+    QuestionID INTEGER REFERENCES Comments(ID)
+);
+
 CREATE TABLE AdoptionProposal (
     ID INTEGER PRIMARY KEY,
     Text TEXT,

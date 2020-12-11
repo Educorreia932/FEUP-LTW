@@ -147,3 +147,22 @@ div#pet_profile_comments div#comments div#comment p{
     margin-left: 1em;
 }
 
+div#pet_profile_comments div#comments div#comment footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    padding-right: 1em;
+    width: 100%;
+    padding-bottom: 0.5em;
+}
+
+div#pet_profile_comments div#comments div#comment footer span#question_date{
+    margin-right: 1em;
+    font-weight: normal;
+}
+
+div#pet_profile_comments div#comments div#comment footer span#reply_button{
+    margin-left: 3em;
+    font-weight: normal;
+}
+

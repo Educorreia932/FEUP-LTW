@@ -44,7 +44,7 @@ VALUES(
     "Brown",
     5.1,
     1,
-    "https://i.insider.com/5654150584307663008b4ed8?width=1100&format=jpeg&auto=webp",
+    "/images/pets/Hamilton.jpg",
     0,
     1
 );
@@ -58,7 +58,7 @@ VALUES(
     "Brown",
     5.1,
     1,
-    "https://media.wired.com/photos/5cdefb92b86e041493d389df/1:1/w_988,h_988,c_limit/Culture-Grumpy-Cat-487386121.jpg",
+    "/images/pets/GrumpyCat.jpg",
     0,
     2
 );
@@ -72,7 +72,7 @@ VALUES(
     "White",
     25.2,
     2,
-    "https://ourfunnylittlesite.com/wp-content/uploads/2018/07/1-4.jpg",
+    "/images/pets/Maya.jpg",
     1,
     3
 );
@@ -86,7 +86,7 @@ VALUES(
     "Brown",
     2.1,
     0,
-    "https://i2-prod.mirror.co.uk/incoming/article20090958.ece/ALTERNATES/s1227b/0_JS193011867.jpg",
+    "/images/pets/Herbee.jpg",
     2,
     4
 );
@@ -100,7 +100,7 @@ VALUES(
     "Brown",
     4.9,
     1,
-    "https://cdn.discordapp.com/attachments/627876438216933419/773219910331531304/iu.png",
+    "/images/pets/Kermit.jpg",
     1,
     5
 );
@@ -114,7 +114,7 @@ VALUES(
     "Black/White",
     5.0,
     1,
-    "https://i.ytimg.com/vi/yXhz4F78s3Q/maxresdefault.jpg",
+    "/images/pets/Marbles.jpg",
     1,
     6
 );
@@ -128,7 +128,7 @@ VALUES(
     "Brown",
     0.5,
     0,
-    "https://i.pinimg.com/originals/26/a5/60/26a5601513009385d63a8baf234153d5.jpg",
+    "/images/pets/StaringHamster.jpg",
     3,
     7
 );
@@ -142,7 +142,7 @@ VALUES(
     "Brown",
     5.1,
     1,
-    "https://i.ytimg.com/vi/p_QdPLPmgO4/maxresdefault.jpg",
+    "/images/pets/Finnegan.jpg",
     4,
     8
 );
@@ -169,7 +169,7 @@ VALUES(
     "67b544aa527f72e69100d158a264e46496efe1dd",
     "LTW 2020/21",
     "LTW in 2020/21",
-    " "
+    "/images/users/1.png"
 );
 
 INSERT INTO Users
@@ -179,7 +179,7 @@ VALUES(
     "0a5c6c4d0379637341f316a773efa9c50af1ac49",
     "Padoru Padoru",
     "Some know me as Track-tor. The rest don't know me at all.",
-    " "
+    "/images/default-avatar.png"
 );
 
 
@@ -266,8 +266,33 @@ VALUES(
 INSERT INTO Comments
 VALUES(
     1,
-    "This dog is so cute omg",
+    "Where did you find it?",
     "07-12-2020 17:40:34",
     3,
     2
-)
+);
+
+INSERT INTO Comments
+VALUES(
+    2,
+    "Test comment",
+    "07-12-2020 17:40:34",
+    1,
+    1
+);
+
+INSERT INTO Replies
+VALUES(
+    1,
+    "In the streets",
+    "11-12-2020 11:30:21",
+    1
+);
+
+INSERT INTO Replies
+VALUES(
+    2,
+    "Test Reply",
+    "11-12-2020 11:30:21",
+    2
+);
