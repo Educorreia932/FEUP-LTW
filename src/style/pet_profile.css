@@ -1,4 +1,7 @@
 
+div#pet_profile h1{
+    text-align: center;
+}
 
 div#pet_profile button{
     border-radius: 25px;
@@ -15,6 +18,13 @@ div#pet_profile button#adopt{
     outline:none;
 }
 div#pet_profile button#favorite{
+    grid-area: favorite;
+    background-color:var(--color1);
+    color: white;
+    outline:none;
+}
+
+div#pet_profile button#edit{
     grid-area: favorite;
     background-color:var(--color1);
     color: white;
