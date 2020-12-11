@@ -1,8 +1,12 @@
 let pet_cards = document.querySelectorAll(".pet-card");
 
-for (pet_card of pet_cards) {
-    pet_card.addEventListener("click", sendRequest.bind(pet_card));
-}
+for (pet_card of pet_cards)
+    pet_card.querySelector(".favorite-icon").addEventListener("click", sendRequest.bind(pet_card));
+
+let favorite_button = document.getElementById("favorite") 
+
+if (favorite_button != null)
+    favorite_button.addEventListener("click", sendRequest.bind(favorite_button));
 
 function sendRequest() {
     let pet_id = this.querySelector("span.pet-id").textContent;
@@ -27,6 +31,8 @@ function sendRequest() {
 }
 
 function updatePet(element, status, responseText) {
+    console.log(responseText)
+    
     if (status == 401)
         alert("You should be logged in to perform this action.");
 
@@ -40,17 +46,16 @@ function updatePet(element, status, responseText) {
 }
 
 function changeAppearance(element, favorited) {
-    if (element.classList.contains("pet-card")) {
-        let icon_classes = element.querySelector("span.favorite-icon i.fa-heart").classList;
+    console.log(element)
+    let icon_classes = element.querySelector("i.fa-heart").classList;
 
-        if (favorited) {
-            icon_classes.add("fas");
-            icon_classes.remove("far");
-        }
-    
-        else {
-            icon_classes.add("far");
-            icon_classes.remove("fas");
-        }
+    if (favorited) {
+        icon_classes.add("fas");
+        icon_classes.remove("far");
+    }
+
+    else {
+        icon_classes.add("far");
+        icon_classes.remove("fas");
     }
 }

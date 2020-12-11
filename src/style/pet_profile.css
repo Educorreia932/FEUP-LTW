@@ -19,15 +19,13 @@ div#pet_profile button#adopt{
 }
 div#pet_profile button#favorite{
     grid-area: favorite;
-    background-color:var(--color1);
+    background-color: var(--color1);
     color: white;
     outline:none;
 }
 
 div#pet_profile button#edit{
-    grid-area: favorite;
-    background-color:var(--color1);
-    color: white;
+    grid-area: adopt;
     outline:none;
 }
 
@@ -68,7 +66,6 @@ div#pet_profile h2 img#background{
     filter:blur(7px);
     
 }
-
 
 div#pet_profile div#pet_info {
     grid-column-start: auto;
