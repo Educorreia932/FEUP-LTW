@@ -14,7 +14,7 @@
         include(ROOT . "/templates/cards/pet_card.php");
         
         foreach($favouritePets as $pet_entry)
-            drawPetCard($username, $pet_entry);
+            drawPetCard($user['Username'], $pet_entry);
 
         echo '</section>';
     }

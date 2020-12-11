@@ -9,13 +9,11 @@
     require_once(ROOT . "/templates/common/header.php");
     
     if(!empty($_GET['user'])) {
-
         $user_requested = $_GET['user'];
 
         if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
         
             require_once(ROOT . "/database/pets.php");
-
 
             if(($user = getUserByUsername($user_requested)) == null) {
                 drawHeader("Helper Shelter - Invalid page");
@@ -35,9 +33,12 @@
                     </script>';
             }
         
-    } else {
+    } 
+    
+    else {
         drawHeader("Helper Shelter - Invalid page");
         require_once(ROOT . "/templates/invalid_page.php");
     }
+
     require_once(ROOT . "/templates/common/footer.php");
 ?>
