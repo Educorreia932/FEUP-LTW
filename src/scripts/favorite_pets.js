@@ -1,9 +1,22 @@
-function favoritePet(event) {
-    let petCard = event.path[2];
-    let pet_id = petCard.querySelector("span.pet-id").textContent;
-    let request = new XMLHttpRequest();
+let pet_cards = document.querySelectorAll(".pet-card");
 
-    request.addEventListener("load", function() {updatePet(petCard, this.responseText, this.status)});
+for (pet_card of pet_cards) {
+    pet_card.addEventListener("click", sendRequest.bind(pet_card));
+}
+
+function sendRequest() {
+    let pet_id = this.querySelector("span.pet-id").textContent;
+
+    let request = new XMLHttpRequest();
+    let element = this;
+
+    request.addEventListener("load", function() {
+        updatePet(
+            element, 
+            request.status, 
+            request.responseText 
+        )
+    });
     request.open("POST", "../api/api_favorite_pet.php", true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     request.send(
@@ -13,29 +26,31 @@ function favoritePet(event) {
     );
 }
 
-function updatePet(petCard, responseText, status) {
+function updatePet(element, status, responseText) {
     if (status == 401)
         alert("You should be logged in to perform this action.");
 
     else if (status == 200) {
         if (responseText.trim("\n") == "Added to favorites")
-            changeFavoriteIcon(petCard, true);
+            changeAppearance(element, true);
 
         else if (responseText.trim("\n") == "Removed from favorites")
-            changeFavoriteIcon(petCard, false);
+            changeAppearance(element, false);
     }
 }
 
-function changeFavoriteIcon(petCard, favorited) {
-    iconClasses = petCard.querySelector("span.favorite-icon i.fa-heart").classList;
+function changeAppearance(element, favorited) {
+    if (element.classList.contains("pet-card")) {
+        let icon_classes = element.querySelector("span.favorite-icon i.fa-heart").classList;
 
-    if (favorited) {
-        iconClasses.add("fas");
-        iconClasses.remove("far");
-    }
-
-    else {
-        iconClasses.add("far");
-        iconClasses.remove("fas");
+        if (favorited) {
+            icon_classes.add("fas");
+            icon_classes.remove("far");
+        }
+    
+        else {
+            icon_classes.add("far");
+            icon_classes.remove("fas");
+        }
     }
 }

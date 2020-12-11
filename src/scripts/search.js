@@ -39,14 +39,18 @@ function search(event) {
 }
 
 function receiveSearchResults() {
-    console.log(this.responseText);
+    pet_cards = document.querySelectorAll("section#pet-grid .pet-card");
 
-    pet_grid = document.querySelector("section#pet-grid");
-    proposal_card = pet_grid.querySelector(".proposal-card");
+    let searchResults = JSON.parse(this.responseText);
 
-    pet_grid.innerHTML = this.responseText;
-    
-    if (proposal_card != null)
-        pet_grid.prepend(proposal_card);
+    for (let pet_card of pet_cards) {
+        let pet_id = pet_card.querySelector("span.pet-id").textContent;
+
+        if (!searchResults.includes(pet_id))
+            pet_card.style.display = "none";
+
+        else
+            pet_card.style.display = "inline-block";
+    }
 }
 
