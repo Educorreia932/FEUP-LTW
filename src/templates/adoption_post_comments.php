@@ -2,8 +2,8 @@
 
 <div id="pet_profile_comments">
     <?php
-
-    if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
+    
+    if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username']) && $_SESSION['username'] != $author_name) {
 
     ?>
         <form method="post" onsubmit="submitComment(event)">
@@ -15,15 +15,19 @@
             <input type="hidden" value=<?=$user['Username'] ?> name="username">
             <input type="submit" value="Submit"></input>
         </form>
-
     <?php
         }
     ?>  
 
     <div id="comments">
         <?php
-            foreach ($comments as $comment) 
+            $comment_count = 1;
+
+            foreach ($comments as $comment) {
                 include(__DIR__ . "/comment.php");
+                $comment_count = $comment_count + 1;
+            }
+
         ?>
     </div>
 </div>

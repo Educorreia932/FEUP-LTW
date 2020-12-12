@@ -1,8 +1,14 @@
 <script defer src="../scripts/addProposal.js"></script>
+<?php
+    $author_name = getUserById($adoption_post['AuthorID']);
+?>
 <div id="pet_profile">
     <h1>
         <?= $adoption_post["Title"] ?>
     </h1>
+    <h4 id="author">
+        by <?=$author_name?>
+    </h4>
     <h2>
         <img id="front" src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
         <img id="background" src="../<?= $pet["Photo"] ?>" alt="Pet Photo">

@@ -1,6 +1,12 @@
 
 div#pet_profile h1{
     text-align: center;
+    margin-bottom: 0.2em;
+}
+
+div#pet_profile h4#author {
+    text-align: center;
+    margin-top: 0.6em;
 }
 
 div#pet_profile button{
@@ -130,7 +136,7 @@ div#pet_profile_comments div#comments{
     margin-top:1em;
 }
 
-div#pet_profile_comments div#comments div#comment{
+div#pet_profile_comments div#comments div.comment{
     margin-bottom: 1em;
     background-color: white;
     margin-left: 2em;
@@ -139,15 +145,15 @@ div#pet_profile_comments div#comments div#comment{
     border-radius: 0.5rem;
 }
 
-div#pet_profile_comments div#comments div#comment :nth-child(1){
+div#pet_profile_comments div#comments div.comment :nth-child(1){
     font-weight: bold;
 }
 
-div#pet_profile_comments div#comments div#comment p{
+div#pet_profile_comments div#comments div.comment p{
     margin-left: 1em;
 }
 
-div#pet_profile_comments div#comments div#comment footer {
+div#pet_profile_comments div#comments div.comment footer {
     display: flex;
     justify-content: space-between;
     font-size: 0.8em;
@@ -156,13 +162,14 @@ div#pet_profile_comments div#comments div#comment footer {
     padding-bottom: 0.5em;
 }
 
-div#pet_profile_comments div#comments div#comment footer span#question_date{
+div#pet_profile_comments div#comments div.comment footer span#question_date{
     margin-right: 1em;
     font-weight: normal;
 }
 
-div#pet_profile_comments div#comments div#comment footer span#reply_button{
+div#pet_profile_comments div#comments div.comment footer span#reply_button{
     margin-left: 3em;
     font-weight: normal;
 }
+
 

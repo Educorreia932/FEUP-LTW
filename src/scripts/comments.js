@@ -25,8 +25,11 @@ function receiveComments() {
 
     for (const comment of comments) {
 
+        let newQuestionAnswer = document.createElement("div");
+        newQuestionAnswer.setAttribute("class","question_answer");
+
         let newComment = document.createElement("div");
-        newComment.setAttribute("id","comment");
+        newComment.setAttribute("class","comment");
 
         const username = document.createElement("p");
         username.innerHTML = comment.Username;
@@ -36,14 +39,34 @@ function receiveComments() {
 
         newComment.prepend(text);
         newComment.prepend(username);
-        document.getElementById("comments").prepend(newComment)
+        newQuestionAnswer.prepend(newComment);
+        document.getElementById("comments").prepend(newQuestionAnswer);
     }
 }
 
-function toggleReplyBox() {
-    
+var replyActive = 0;
+
+function toggleReplyBox(comment_number) {
+    console.log(comment_number);
+    let reply_box = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')').querySelector('.reply_box');
+
+    if(replyActive == comment_number) {
+        reply_box.style.display = "none";
+        replyActive = 0;
+    } 
+    else {
+        reply_box.style.display = "block";
+        if(replyActive > 0) {
+            toggleReplyBox(replyActive);
+        }
+        replyActive = comment_number;
+
+    }
+
+    // if(comment_number == replyActive) 
+        
 }
 
 function submitReply(event) {
-
+    event.preventDefault();
 }
