@@ -1,7 +1,9 @@
 <?php
 
-    if(!isset($_SESSION)) 
+    if(!isset($_SESSION)){
+        session_set_cookie_params(0, '/', $_SERVER['HTTP_HOST'], true, true);
         session_start(); 
+    }
 
     function drawHeader($page_name) {
 ?>
@@ -34,7 +36,7 @@
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
                     $user = getUser($_SESSION['username'], $_SESSION['password']);
             ?>
-            <p>Greetings, <a href="<?="../pages/user_profile.php?user=" . $_SESSION['username']?>"><?= $_SESSION['username']?></a></p>
+            <p>Greetings, <a href="<?="../pages/user_profile.php?user=" .urlencode($_SESSION['username'])?>"><?= $_SESSION['username']?></a></p>
             
             <script src="../scripts/user_menu.js"></script>
             
@@ -42,7 +44,7 @@
             
             <div id="avatar_dropdown" style="display: none">
                 <ul>
-                    <li><a href="<?="../pages/user_profile.php?user=" . $_SESSION['username']?>">Profile</a></li>
+                    <li><a href="<?="../pages/user_profile.php?user=" . urlencode($_SESSION['username'])?>">Profile</a></li>
                     <li><a href="../pages/settings.php">Settings</a></li>
                     <li><a href="../actions/log_out.php">Log Out</a></li>
                 </ul>
