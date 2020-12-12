@@ -17,7 +17,7 @@
                 <?php
                     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username']) && $reply == null) {
                         if($_SESSION['username'] == getUserByID($adoption_post['AuthorID'])) {
-                            echo('<input type="button" onclick="toggleReplyBox('.$comment_count.');" value="Reply">');
+                            echo('<input id="reply_button" type="button" onclick="toggleReplyBox('.$comment_count.');" value="Reply">');
                         }
                     }
                 ?>
@@ -27,10 +27,11 @@
     </div>
 
     <div class="reply_box" style="display:none">
-        <form method="post" onsubmit="submitReply(event)">
-            <textarea id="commentText" name="text" rows="5"></textarea> 
-    
-            <input type="hidden" value="<?=$comment['ID']?>">
+        <form method="post" onsubmit="submitReply(event,<?=$comment_count?>)">
+            <textarea id="replyText" name="text" rows="5"></textarea> 
+                    
+            <input type="hidden" name="comment_number" value="<?=$comment_count?>">
+            <input type="hidden" name="comment_id" value="<?=$comment['ID']?>">
             <input type="submit" value="Submit reply"></input>
         </form>
     </div>
@@ -43,7 +44,7 @@
             
         ?>
         <footer>
-            <p><?=$replyDate?>
+            <p><?=$replyDate?></p>
         </footer>
         <?php
             }
