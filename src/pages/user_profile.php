@@ -1,8 +1,10 @@
 <?php
     include_once(__DIR__ . "/../config.php");
 
-    if(!isset($_SESSION)) 
+    if(!isset($_SESSION)){
+        session_set_cookie_params(0, '/', $_SERVER['HTTP_HOST'], true, true);
         session_start(); 
+    }
 
     require_once(ROOT . "/database/connection.php");
     require_once(ROOT . "/database/users.php");
