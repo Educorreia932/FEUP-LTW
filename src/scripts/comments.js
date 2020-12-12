@@ -73,14 +73,6 @@ function submitReply(event, number) {
     let comment_id = document.querySelector('#comments .question_answer:nth-child(' + number + ') .reply_box input[name=comment_id]').value;
     let comment_number = document.querySelector('#comments .question_answer:nth-child(' + number + ') .reply_box [name=comment_number]').value;
 
-    console.log(text);
-    console.log(comment_id);
-    console.log(comment_number);
-
-    // let d = new Date();
-    // let date = d.getDate() + '-' + d.getMonth() + '-' + d.getFullYear() + ' ' + 
-    //     ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2) + ':' + ("0" + d.getSeconds()).slice(-2);
-
     let request = new XMLHttpRequest();
 
     request.addEventListener("load", function() { receiveCommentsReplies(comment_number, this.responseText); })
@@ -90,25 +82,33 @@ function submitReply(event, number) {
         encodeForAjax({ 
             text: text,
             question_id: comment_id,
-            // date: date,
         })
     );
 }
 
 function receiveCommentsReplies(comment_number, response) {
-    console.log(response);
-    const reply = JSON.parse(response);
+    if(response != -1) {
+        const reply = JSON.parse(response);
 
-    let reply_div = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')').querySelector('.reply');
+        let reply_div = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')').querySelector('.reply');
 
-    let replyFooter = document.createElement("footer");
-    let replyDate = document.createElement("p");
-    replyDate.innerHTML = reply.Date;
-    replyFooter.prepend(replyFooter);
+        let replyFooter = document.createElement("footer");
+        let replyDate = document.createElement("p");
+        replyDate.innerHTML = reply.Date;
+        replyFooter.prepend(replyDate);
 
-    let replyText = document.createElement("p");
-    replyText.innerHTML = reply.text;
+        let replyText = document.createElement("p");
+        replyText.innerHTML = reply.Text;
 
-    reply_div.prepend(replyDate);
-    reply_div.prepend(replyText);
+        reply_div.prepend(replyDate);
+        reply_div.prepend(replyText);
+
+        toggleReplyBox(comment_number);
+        removeReplyButton(comment_number);
+    }
+}
+
+function removeReplyButton(comment_number) {
+    let reply_button = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') input#reply_button');
+    reply_button.outerHTML = "";
 }

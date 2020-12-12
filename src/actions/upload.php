@@ -17,6 +17,8 @@
 		include_once(ROOT . '/database/pets.php');
 		include_once(ROOT . '/database/users.php');
 
+		date_default_timezone_set('Europe/Lisbon');
+		
 		$petAndPostID = (int)getPetMaxID()[0]['M'] + 1;
 
 		$originalFileName = "/images/pets/" . $petAndPostID . "-{$_FILES['image']['name']}";

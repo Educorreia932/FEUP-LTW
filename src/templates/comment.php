@@ -28,7 +28,7 @@
 
     <div class="reply_box" style="display:none">
         <form method="post" onsubmit="submitReply(event,<?=$comment_count?>)">
-            <textarea id="replyText" name="text" rows="5"></textarea> 
+            <textarea id="replyText" name="text" rows="5" required></textarea> 
                     
             <input type="hidden" name="comment_number" value="<?=$comment_count?>">
             <input type="hidden" name="comment_id" value="<?=$comment['ID']?>">
