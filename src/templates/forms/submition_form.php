@@ -5,7 +5,7 @@
 
         <div id="post-title">
             <label>
-                Post Title <input type="text" name="post-title" required>
+                Post Title <input type="text" name="post-title" pattern="[\w]{1,30}" required>
             </label>
         </div>
     </div>
@@ -15,7 +15,7 @@
 
         <div id="fields">
             <label>
-                Pet Name <input type="text" name="name" required>
+                Pet Name <input type="text" name="name" pattern="[\w]{1,20}" required>
             </label>
 
             <label>
@@ -27,7 +27,7 @@
             </label>
 
             <label>
-                Color <input type="text" name="color" required>
+                Color <input type="text" name="color" pattern="[a-zA-Z]{1,}" required>
             </label>
             
             <div id="extra-fields">
