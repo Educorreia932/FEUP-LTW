@@ -18,7 +18,7 @@
         <div id="proposal-text">
             <p><?=htmlspecialchars($proposal['Text'])?></p>
             <footer>
-                <p><?=$propDate?></p>
+                <p><?=htmlspecialchars($propDate)?></p>
             </footer>
         </div>
     </div>
