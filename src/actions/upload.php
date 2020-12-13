@@ -22,6 +22,11 @@
 
 	$extensions = array('image/jpeg', 'image/png', 'image/gif');
 
+	if ($_SESSION['csrf'] !== $_POST['csrf']) {
+		header("Location: ../index.php");
+		die;
+	  }
+
 	if (in_array($type, $extensions)) {
 		include_once(ROOT . '/database/connection.php');
 		include_once(ROOT . '/database/pets.php');

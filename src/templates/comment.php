@@ -47,7 +47,6 @@
         <footer>
             <p class="reply_date"><?=$replyDate?></p>
         </footer>
-        
     </div>
     <?php
         }

@@ -14,10 +14,8 @@
 	}
 
 	if ($_SESSION['csrf'] !== $_POST['csrf']) {
-			echo '<script type="text/javascript">
-					alertWrongCSRF();
-				</script>';
-			die;
+		header("Location: ../index.php");
+		die;
 	  }
 
 	$type = $_FILES['image']['type'];

@@ -8,7 +8,7 @@
     ?>
         <form method="post" onsubmit="submitComment(event)">
             <label class="input-comment">
-                Add a new comment! <textarea id="commentText" name="text" rows="5"></textarea> 
+                Add a new question! <textarea id="commentText" name="text" rows="5"></textarea> 
             </label>
             
             <input type="hidden" value=<?=$pet["PetID"] ?> name="pet_id">

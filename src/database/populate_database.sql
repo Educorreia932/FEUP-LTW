@@ -147,21 +147,6 @@ VALUES(
     8
 );
 
-INSERT INTO AdoptionProposal 
-VALUES(
-    3,
-    "Isto é um texto de proposal. Quero este cute dog",
-    "06-12-2020 22:52:31",
-    1
-);
-
-INSERT INTO ProposalPets 
-VALUES(
-    NULL,
-    3,
-    1
-);
-
 INSERT INTO Users
 VALUES(
     1,
@@ -190,6 +175,7 @@ VALUES(
     "Hamilton is a cute little cat just looking for a home :)",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
+    0,
     1
 );
 
@@ -200,6 +186,7 @@ VALUES(
     "Found it in my street. It doesn't seem very happy",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
+    0,
     1
 );
 
@@ -210,6 +197,7 @@ VALUES(
     "Look at her, so cute! Come give her some love",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
+    0,
     1
 );
 
@@ -220,6 +208,7 @@ VALUES(
     "Adopt him please",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
+    0,
     1
 );
 
@@ -230,6 +219,7 @@ VALUES(
     "Just do it",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
+    0,
     1
 );
 
@@ -240,6 +230,7 @@ VALUES(
     "It needs some help",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
+    0,
     1
 );
 
@@ -250,6 +241,7 @@ VALUES(
     "He looks at you while you sleep.",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
+    0,
     1
 );
 
@@ -260,6 +252,7 @@ VALUES(
     "Look at this fox! How can you not want it?",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
+    0,
     1
 );
 
@@ -295,4 +288,36 @@ VALUES(
     "Test Reply",
     "11-12-2020 11:30:21",
     2
+);
+
+INSERT INTO AdoptionProposal 
+VALUES(
+    1,
+    "Isto é um texto de proposal. Quero este cute dog",
+    "06-12-2020 22:52:31",
+    0,
+    1
+);
+
+INSERT INTO AdoptionProposal 
+VALUES(
+    2,
+    "Isto é um texto de proposal. Quero este cute dog",
+    "06-12-2020 22:52:31",
+    0,
+    2
+);
+
+INSERT INTO ProposalPets 
+VALUES(
+    NULL,
+    1,
+    1
+);
+
+INSERT INTO ProposalPets 
+VALUES(
+    NULL,
+    2,
+    1
 );
