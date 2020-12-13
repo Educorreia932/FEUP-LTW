@@ -151,7 +151,6 @@ div#extra-fields {
     padding-left: 1em;
 }
 
-
 form#pet-submition input[type=submit] {
    font-size: 1.7em;
    display: block;
@@ -215,33 +214,31 @@ div#postHead {
 
 form#search-bar {
     display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+    margin: auto;
+    margin-bottom: 1.5em;
+    box-sizing: border-box;
     background-color: white;
-    width: fit-content;
     padding: 0.5em;
     border-radius: 0.6em;
     box-shadow: 0em 0.1em 0.2em grey;   
-    margin: auto;
-    margin-bottom: 1.5em;
 }
 
-form#search-bar * {
+form#search-bar input {
     border: none;
     outline: none;
     color: var(--color4);
 }
 
-form#search-bar * + * {
+form#search-bar div {
+    display: flex;
+}
+
+form#search-bar input + input,
+form#search-bar > div + div {
     border-left: 2px solid var(--color2);
     padding-left: 1em;
     padding-right: 1em;
 }   
-
-form#search-bar * + *::after {
-    content: "";
-    width: 1em;
-}
 
 form#search-bar input:active {
     border: none;
@@ -252,4 +249,63 @@ form#search-bar button[type="submit"] {
     background-color: transparent;
 }
 
+form#search-bar div.range-inputs {
+    display: grid;
+    grid-template-areas:
+        "Title Title"
+        "Minimum Maximum";
+}
 
+form#search-bar div.range-inputs h3 {
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    grid-area: Title;
+}
+
+form#search-bar div.range-inputs input:nth-child(2) {
+    grid-area: Minimum;
+}
+
+form#search-bar div.range-inputs input:nth-child(3) {
+    grid-area: Maximum;
+}
+
+form#search-bar div.selection-inputs {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+@media (max-width: 50em) {
+    form#search-bar {
+        background-color: transparent;
+        flex-direction: column; 
+        box-shadow: none;   
+    }
+
+    form#search-bar div {
+        flex-direction: column;
+        margin: auto;
+        background-color: white;
+        padding: 1em;
+        margin: 0.5em;
+        border-radius: 10px;
+    }
+
+    form#search-bar * {
+        text-align: center;
+        border: none !important;
+    }
+
+    form#search-bar > * + * {
+        border-left: 0;
+        border-bottom: 2px solid var(--color2);
+        padding-left: 1em;
+        padding-right: 1em;
+    }   
+
+    form#search-bar div.range-inputs {
+        display: flex;
+    }
+}

@@ -27,6 +27,7 @@
         <script defer src="../scripts/encode_for_ajax.js"></script>
         <script defer src="../scripts/favorite_pets.js"></script>
         <script src="https://kit.fontawesome.com/57668fbb45.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     </head>
 
     <body>

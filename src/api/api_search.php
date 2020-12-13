@@ -24,12 +24,6 @@
     function getSearchResults($name, $location, $color, $min_weight, $max_weight, $min_age, $max_age, $species, $size) {
         $searchResults = array();
 
-        if (!isset($_SESSION)) 
-            session_start(); 
-
-        if (!array_key_exists('username', $_SESSION) || empty($_SESSION['username'])) 
-            return;
-
         $pets = getAllPets();
 
         foreach ($pets as $pet) {
@@ -54,7 +48,7 @@
             array_push($searchResults, $pet["PetID"]);
         }
 
-        echo json_encode($searchResults);
+        return json_encode($searchResults);
     }
 
     include_once(__DIR__ . "/../config.php");
@@ -72,5 +66,5 @@
     $species = $_POST["species"];
     $size = $_POST["size"];
 
-    getSearchResults($name, $location, $color, $min_weight, $max_weight, $min_age, $max_age, $species, $size);
+    echo getSearchResults($name, $location, $color, $min_weight, $max_weight, $min_age, $max_age, $species, $size);
 ?>
