@@ -115,6 +115,19 @@
 
         return $stmt->fetchAll();
     }
+    
+    function getAllPetUnansweredProposals($pet_id) {
+        global $db;
+
+        $query =   'SELECT *
+                    FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID=ProposalPets.ProposalID
+                    WHERE ProposalPets.PetID=? AND AdoptionProposal.Answered=0';
+        
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($pet_id));
+
+        return $stmt->fetchAll();
+    }
 
     function getPetPost($post) {
         global $db;

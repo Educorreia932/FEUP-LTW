@@ -45,16 +45,37 @@ function answerProposal(proposal_id, proposal_number, answer) {
     else 
         console.log("refuse " + proposal_number);
 
-    // let request = new XMLHttpRequest();
+    let request = new XMLHttpRequest();
 
-    // request.addEventListener("load", proposalAnswerHandler);
+    request.addEventListener("load", function() {proposalAnswerHandler(this.responseText, answer, proposal_number)});
 
-    // request.open("post", "../api/api_answer_proposal.php", true);
-    // request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // request.send(
-    //     encodeForAjax({
-    //         proposal_id: proposal_id,
-    //         answer: answer
-    //     })
-    // );
+    request.open("post", "../api/api_answer_proposal.php", true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(
+        encodeForAjax({
+            proposal_id: proposal_id,
+            answer: answer
+        })
+    );
+}
+
+function proposalAnswerHandler(response, answer, proposal_number) {
+    if(response == 1) {
+        let proposal = document.querySelector('#adoption_post_proposals .post_proposal:nth-child(' + proposal_number + ')');
+        if(answer == 1) {
+            proposal.style.backgroundColor = "#90ee90";
+            let rest = document.querySelectorAll('#adoption_post_proposals .post_proposal:not(:nth-child(' + proposal_number + '))');
+
+            for(prop of rest) {
+                prop.style.backgroundColor = "#ffcccb";            }
+        } 
+        else if(answer == -1) {
+            proposal.style.backgroundColor = "#ffcccb";
+            let buttons = proposal.querySelector('.proposal_buttons');
+            buttons.replaceWith("");
+        }
+    }
+    else {
+        alert("There has been an error answering the proposal!");
+    }
 }

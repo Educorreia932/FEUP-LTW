@@ -23,6 +23,20 @@ function proposedBefore($user_id, $pet_id) {
     return $stmt->fetch();
 }
 
+function getPostIDFromProposalId($proposal_id) {
+    global $db;
+    
+    $query =   'SELECT Pets.AdoptionPostID FROM (
+                    (AdoptionProposal JOIN ProposalPets ON (AdoptionProposal.ID = ProposalPets.ProposalID))
+                    JOIN Pets ON (ProposalPets.PetID = Pets.PetID))
+                WHERE AdoptionProposal.ID = ?';
+    
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($proposal_id));
+
+    return $stmt->fetch();
+}
+
 function acceptProposal($proposal_id) {
     global $db;
     
@@ -38,15 +52,22 @@ function acceptProposal($proposal_id) {
     
     if($stmt = $db->prepare($query) && $stmt->execute(array($proposal_id))) {
 
-        $query =   'UPDATE AdoptionProposal SET Answer=1
+        $query =   'UPDATE AdoptionProposal SET Answered=1
                 WHERE AdoptionProposal.ID = ?';
 
-        $query1 =   'UPDATE AdoptionProposal SET Answer=-1
+        $query1 =   'UPDATE AdoptionProposal SET Answered=-1
                 WHERE AdoptionProposal.ID <> ?';
+
+        $query2 =   'UPDATE AdoptionPosts SET Closed=1
+                WHERE AdoptionPostID = ?';
         
         $stmt = $db->prepare($query);
-        if($stmt->execute(array($proposal_id)) && ($stmt = $db->prepare($query1)) && $stmt->execute(array($proposal_id)))
-            return TRUE;
+        if($stmt->execute(array($proposal_id)) && ($stmt = $db->prepare($query1)) && $stmt->execute(array($proposal_id))) {
+            $post = getPostIDFromProposalId($proposal_id);
+            $stmt = $db->prepare($query2);
+            if($stmt->execute(array($post['AdoptionPostID'])));
+                return TRUE;
+        }
     }
     return FALSE;
 }
@@ -54,10 +75,10 @@ function acceptProposal($proposal_id) {
 function refuseProposal($proposal_id) {
     global $db;
     
-    $query = 'UPDATE AdoptionProposal SET Answer=-1
+    $query = 'UPDATE AdoptionProposal SET Answered=-1
               WHERE AdoptionProposal.ID = ?';
               
-    if($stmt = $db->prepare($query) && $stmt->execute(array($proposal_id)))
+    if(($stmt = $db->prepare($query)) && $stmt->execute(array($proposal_id)))
         return TRUE;
     return FALSE;
 }

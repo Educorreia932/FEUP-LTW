@@ -12,8 +12,8 @@
     </p>
 
     <span class="proposal_buttons">
-        <button class="accept_proposal" onclick="answerProposal(<?=$proposal['ID']?>,<?=$proposal_count?>)"><i class="fas fa-check"></i></button>
-        <button class="refuse_proposal" onclick="answerProposal(<?=$proposal['ID']?>,<?=$proposal_count?>)"><i class="fas fa-times"></i></i></button>
+        <button class="accept_proposal" onclick="answerProposal(<?=$proposal['ID']?>,<?=$proposal_count?>, 1)"><i class="fas fa-check"></i></button>
+        <button class="refuse_proposal" onclick="answerProposal(<?=$proposal['ID']?>,<?=$proposal_count?>, -1)"><i class="fas fa-times"></i></i></button>
     </span>
 
     <footer>
