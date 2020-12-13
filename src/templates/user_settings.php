@@ -5,6 +5,7 @@
     <h2>User Photo</h2>
 
     <form action="../actions/action_change_photo.php" id="user_photo" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
         <?php require("cards/photo_card.php") ?>
         <input type="submit" value="Save changes">
     </form>

@@ -1,6 +1,7 @@
 <h2>Submit Your Pets For Adoption</h2>
 
 <form action="../actions/upload.php" id="pet-submition" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
     <div id="postHead">
 
         <div id="post-title">

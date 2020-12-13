@@ -8,6 +8,11 @@
 		session_start();
 	}
 
+	if ($_SESSION['csrf'] !== $_POST['csrf']) {
+		header("Location: ../index.php");
+		die;
+	  }
+
 	$type = $_FILES['image']['type'];
 
 	$extensions = array('image/jpeg', 'image/png', 'image/gif');
