@@ -103,6 +103,19 @@
         return $stmt->fetch();
     }
 
+    function getAllPetProposals($pet_id) {
+        global $db;
+
+        $query =   'SELECT *
+                    FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID=ProposalPets.ProposalID
+                    WHERE ProposalPets.PetID=?';
+        
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($pet_id));
+
+        return $stmt->fetchAll();
+    }
+
     function getPetPost($post) {
         global $db;
 

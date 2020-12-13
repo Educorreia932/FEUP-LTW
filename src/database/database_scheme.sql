@@ -45,6 +45,7 @@ CREATE TABLE AdoptionPosts (
     Description TEXT,
     Location TEXT,
     Date TEXT,
+    Closed INTEGER,
     AuthorID INTEGER REFERENCES Users(UserID)
 );
 
@@ -67,6 +68,7 @@ CREATE TABLE AdoptionProposal (
     ID INTEGER PRIMARY KEY,
     Text TEXT,
     Date TEXT,
+    Answered INTEGER,
     AuthorID INTEGER REFERENCES Users(UserID)
 );
 

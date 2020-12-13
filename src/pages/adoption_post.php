@@ -17,10 +17,12 @@
     $adoption_post = getPost($_GET["id"]);
     $pet = getPet($_GET["id"]);
     $comments = getComments($pet["PetID"]);
+    $proposals = getAllPetProposals($pet["PetID"]);
 
     drawHeader("Helper Shelter - " . htmlspecialchars($pet["Name"]));
 
     require_once(ROOT . "/templates/adoption_post.php");
+    require_once(ROOT . "/templates/adoption_post_proposals.php");
     require_once(ROOT . "/templates/adoption_post_comments.php");
     require_once(ROOT . "/templates/common/footer.php");
 ?>
