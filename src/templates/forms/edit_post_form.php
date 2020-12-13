@@ -7,7 +7,7 @@
 
         <div id="post-title">
             <label>
-                Post Title <input type="text" name="post_title" pattern="[\w]{1,30}" value="<?=$adoption_post['Title']?>">
+                Post Title <input type="text" name="post_title" pattern=".{1,30}" value="<?=$adoption_post['Title']?>">
             </label>
         </div>
     </div>
