@@ -1,6 +1,7 @@
 <section class="authentication-form">
 	<h1>Create a new account</h1>
 	<form action="../actions/action_register.php" method="post">
+		<input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
 		<label>
 			Name <input type="text" pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)" name="name" required
 					title="Capitalized first and last name, separated by a single space.">

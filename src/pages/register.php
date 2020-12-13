@@ -10,7 +10,7 @@
     else{
         echo '<script language="javascript">
                 alert("Already registered!");
-                window.location.href="/index.php";
+                window.location.href="../index.php";
                 </script>';
         }
 

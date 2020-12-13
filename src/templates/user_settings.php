@@ -5,6 +5,7 @@
     <h2>User Photo</h2>
 
     <form action="../actions/action_change_photo.php" id="user_photo" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
         <?php require("cards/photo_card.php") ?>
         <input type="submit" value="Save changes">
     </form>
@@ -12,10 +13,6 @@
     
     <h2>User settings</h2>
     <form id="profile_change" method="post" onsubmit="submitNewProfile(event);">
-
-        <div id="profile_pic">
-            <!-- <?php include(ROOT . "/templates/cards/photo_card.php"); ?> -->
-        </div>
 
         <div id="profile_info">
             <label for="newName">Name</label>
