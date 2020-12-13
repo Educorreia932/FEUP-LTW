@@ -137,7 +137,7 @@ div#pet_profile_comments div#comments{
 }
 
 div#pet_profile_comments div#comments div.comment{
-    margin-bottom: 1em;
+    margin-top: 1em;
     background-color: white;
     margin-left: 2em;
     max-width: 90%;
@@ -171,5 +171,51 @@ div#pet_profile_comments div#comments div.comment footer span#reply_button{
     margin-left: 3em;
     font-weight: normal;
 }
+
+.reply_box {
+    padding-left: 3em;
+    padding-right: 1em;
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+}
+
+.reply_box textarea{
+    resize: none;
+    width: 100%;
+    font-size: 1em;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.reply_button {
+    border: none;
+    border-radius: 0.4rem;
+    background-color: white;
+}
+
+.reply {
+    border-radius: 1rem;
+    border: solid goldenrod;
+    border-width: 0.15em;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1em;
+    background-color: wheat;
+}
+
+.reply footer {
+    padding: 0%;
+}
+
+.reply .reply_date {
+    text-align: end;
+    margin-bottom: 0.3em;
+    font-size: 0.8em;
+}
+
+
+
 
 

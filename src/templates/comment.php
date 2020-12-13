@@ -17,7 +17,9 @@
                 <?php
                     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username']) && $reply == null) {
                         if($_SESSION['username'] == getUserByID($adoption_post['AuthorID'])) {
-                            echo('<input id="reply_button" type="button" onclick="toggleReplyBox('.$comment_count.');" value="Reply">');
+                            // echo('<input class="reply_button" type="button" onclick="toggleReplyBox('.$comment_count.');" value="Reply">');
+                            echo('<button class="reply_button" onclick="toggleReplyBox('.$comment_count.');">
+                            <i class="fas fa-reply"></i> Reply</button>');
                         }
                     }
                 ?>
@@ -28,28 +30,28 @@
 
     <div class="reply_box" style="display:none">
         <form method="post" onsubmit="submitReply(event,<?=$comment_count?>)">
-            <textarea id="replyText" name="text" rows="5" required></textarea> 
+            <textarea id="replyText" name="text" rows="3" required></textarea> 
                     
             <input type="hidden" name="comment_number" value="<?=$comment_count?>">
             <input type="hidden" name="comment_id" value="<?=$comment['ID']?>">
             <input type="submit" value="Submit reply"></input>
         </form>
-    </div>
+    </div>  
 
+    <?php 
+        if(($reply = getReply($comment)) != null) {
+            $replyDate = DateTime::createFromFormat('d-m-Y H:i:s', $reply['Date'])->format('j M Y \a\t H:i');
+    ?>
     <div class="reply">
-        <?php
-            if(($reply = getReply($comment)) != null) {
-                echo('<p>'.htmlspecialchars($reply['Text']).'</p>');
-                $replyDate = DateTime::createFromFormat('d-m-Y H:i:s', $reply['Date'])->format('j M Y \a\t H:i');
-            
-        ?>
+        <p><?=htmlspecialchars($reply['Text'])?></p>    
         <footer>
-            <p><?=$replyDate?></p>
+            <p class="reply_date"><?=$replyDate?></p>
         </footer>
-        <?php
-            }
-        ?>
+        
     </div>
+    <?php
+        }
+    ?>
 </div>
 
 

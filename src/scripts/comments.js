@@ -47,12 +47,12 @@ function receiveComments() {
 var replyActive = 0;
 
 function toggleReplyBox(comment_number) {
-    let reply_box = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')').querySelector('.reply_box');
-    let reply_button = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')').querySelector('input#reply_button');
+    let reply_box = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .reply_box');
+    let reply_button = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .reply_button');
 
     if(replyActive == comment_number) {
         reply_box.style.display = "none";
-        reply_button.value = "Reply";
+        reply_button.innerHTML = '<i class="fas fa-reply"></i> Reply';
         replyActive = 0;
     } 
     else {
@@ -61,7 +61,7 @@ function toggleReplyBox(comment_number) {
             toggleReplyBox(replyActive);
         }
         replyActive = comment_number;
-        reply_button.value = "Cancel";
+        reply_button.innerHTML = '<i class="fas fa-window-close"></i> Cancel';
 
     }   
 }
@@ -90,18 +90,24 @@ function receiveCommentsReplies(comment_number, response) {
     if(response != -1) {
         const reply = JSON.parse(response);
 
-        let reply_div = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')').querySelector('.reply');
+        let questionAnswer = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')');
+
+        let reply_div = document.createElement("div");
+        reply_div.setAttribute("class", "reply");
 
         let replyFooter = document.createElement("footer");
         let replyDate = document.createElement("p");
+        replyDate.setAttribute("class", "reply_date");
         replyDate.innerHTML = reply.Date;
         replyFooter.prepend(replyDate);
 
         let replyText = document.createElement("p");
         replyText.innerHTML = reply.Text;
 
-        reply_div.prepend(replyDate);
+        reply_div.prepend(replyFooter);
         reply_div.prepend(replyText);
+
+        questionAnswer.append(reply_div);
 
         toggleReplyBox(comment_number);
         removeReplyButton(comment_number);
@@ -109,6 +115,6 @@ function receiveCommentsReplies(comment_number, response) {
 }
 
 function removeReplyButton(comment_number) {
-    let reply_button = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') input#reply_button');
+    let reply_button = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .reply_button');
     reply_button.outerHTML = "";
 }

@@ -60,7 +60,9 @@
                 ) WHERE Replies.ID = LastReplyID
                 ');
             if($stmt->execute()) {
-                return $stmt->fetch();
+                $reply = $stmt->fetch();
+                $reply['Date'] = DateTime::createFromFormat('d-m-Y H:i:s', $reply['Date'])->format('j M Y \a\t H:i');
+                return $reply;
             }
             return -1;
         }
