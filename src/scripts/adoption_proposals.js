@@ -35,3 +35,26 @@ function addAdoptionProp(pet, userID) {
         })
     );
 }
+
+function answerProposal(proposal_id, proposal_number, answer) {
+    if(answer != -1 && answer != 1)
+        return;
+    
+    if(answer == 1)
+        console.log("accept " + proposal_number);
+    else 
+        console.log("refuse " + proposal_number);
+
+    // let request = new XMLHttpRequest();
+
+    // request.addEventListener("load", proposalAnswerHandler);
+
+    // request.open("post", "../api/api_answer_proposal.php", true);
+    // request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // request.send(
+    //     encodeForAjax({
+    //         proposal_id: proposal_id,
+    //         answer: answer
+    //     })
+    // );
+}

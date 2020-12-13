@@ -14,7 +14,7 @@
     if(!$test){
         $tablesID = (int)getAdoptionMaxID()[0]['M'] + 1;
         
-        $stmt = $db->prepare('INSERT INTO AdoptionProposal VALUES (?, ?, ?, ?)');
+        $stmt = $db->prepare('INSERT INTO AdoptionProposal VALUES (?, ?, ?, 0, ?)');
         $stmt->execute(array($tablesID, $text, $date, $user_id));
 
         $stmt = $db->prepare('INSERT INTO ProposalPets VALUES (?, ?, ?)');

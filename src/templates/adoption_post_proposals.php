@@ -9,8 +9,10 @@
         $proposal_count = 1;
 
         foreach ($proposals as $proposal) {
-            include(__DIR__ . "/cards/post_proposal.php");
-            $proposal_count = $proposal_count + 1;
+            if($proposal['Answered'] != -1) { 
+                include(__DIR__ . "/cards/post_proposal.php");
+                $proposal_count = $proposal_count + 1;
+            }
         }
 
     ?>

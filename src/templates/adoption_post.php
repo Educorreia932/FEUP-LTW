@@ -1,4 +1,4 @@
-<script defer src="../scripts/addProposal.js"></script>
+<script defer src="../scripts/adoption_proposals.js"></script>
 <?php
     $author_name = getUserById($adoption_post['AuthorID']);
 ?>

@@ -31,7 +31,7 @@
 		$date_now = new DateTime('NOW');
 		$date_text = $date_now->format('d-m-Y H:i:s');
 
-		$postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, ?, ?)');
+		$postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, ?, 0, ?)');
 
 		$posterID = (int)getUser($_SESSION['username'], $_SESSION['password'])['UserID'];
 

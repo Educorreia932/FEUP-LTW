@@ -1,5 +1,5 @@
 <div class="post_proposal">
-    <p>
+    <p class="proposal_author">
         <?php 
             $username = getUserByID($proposal["AuthorID"]);
             echo(htmlspecialchars($username));
@@ -7,9 +7,15 @@
         ?>
     </p>
     
-    <p>
+    <p class="proposal_text">
         <?= htmlspecialchars($proposal["Text"]) ?>
     </p>
+
+    <span class="proposal_buttons">
+        <button class="accept_proposal" onclick="answerProposal(<?=$proposal['ID']?>,<?=$proposal_count?>)"><i class="fas fa-check"></i></button>
+        <button class="refuse_proposal" onclick="answerProposal(<?=$proposal['ID']?>,<?=$proposal_count?>)"><i class="fas fa-times"></i></i></button>
+    </span>
+
     <footer>
         <!-- <span id="reply_button">
             <?php
