@@ -47,11 +47,12 @@ function receiveComments() {
 var replyActive = 0;
 
 function toggleReplyBox(comment_number) {
-    console.log(comment_number);
-    let reply_box = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')').querySelector('.reply_box');
+    let reply_box = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .reply_box');
+    let reply_button = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .reply_button');
 
     if(replyActive == comment_number) {
         reply_box.style.display = "none";
+        reply_button.innerHTML = '<i class="fas fa-reply"></i> Reply';
         replyActive = 0;
     } 
     else {
@@ -60,13 +61,60 @@ function toggleReplyBox(comment_number) {
             toggleReplyBox(replyActive);
         }
         replyActive = comment_number;
+        reply_button.innerHTML = '<i class="fas fa-window-close"></i> Cancel';
 
-    }
-
-    // if(comment_number == replyActive) 
-        
+    }   
 }
 
-function submitReply(event) {
+function submitReply(event, number) {
     event.preventDefault();
+
+    let text = document.querySelector('#comments .question_answer:nth-child(' + number + ') .reply_box textarea[id=replyText]').value;
+    let comment_id = document.querySelector('#comments .question_answer:nth-child(' + number + ') .reply_box input[name=comment_id]').value;
+    let comment_number = document.querySelector('#comments .question_answer:nth-child(' + number + ') .reply_box [name=comment_number]').value;
+
+    let request = new XMLHttpRequest();
+
+    request.addEventListener("load", function() { receiveCommentsReplies(comment_number, this.responseText); })
+    request.open("post", "../api/api_add_reply.php", true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(
+        encodeForAjax({ 
+            text: text,
+            question_id: comment_id,
+        })
+    );
+}
+
+function receiveCommentsReplies(comment_number, response) {
+    if(response != -1) {
+        const reply = JSON.parse(response);
+
+        let questionAnswer = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ')');
+
+        let reply_div = document.createElement("div");
+        reply_div.setAttribute("class", "reply");
+
+        let replyFooter = document.createElement("footer");
+        let replyDate = document.createElement("p");
+        replyDate.setAttribute("class", "reply_date");
+        replyDate.innerHTML = reply.Date;
+        replyFooter.prepend(replyDate);
+
+        let replyText = document.createElement("p");
+        replyText.innerHTML = reply.Text;
+
+        reply_div.prepend(replyFooter);
+        reply_div.prepend(replyText);
+
+        questionAnswer.append(reply_div);
+
+        toggleReplyBox(comment_number);
+        removeReplyButton(comment_number);
+    }
+}
+
+function removeReplyButton(comment_number) {
+    let reply_button = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .reply_button');
+    reply_button.outerHTML = "";
 }

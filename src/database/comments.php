@@ -51,20 +51,21 @@
         global $db;
 
         $stmt = $db->prepare('INSERT INTO Replies VALUES (NULL, ?, ?, ?)');
-        $stmt->execute(array($text, $date, $questionID));
-
-        // $stmt = $db->prepare('SELECT MAX(ID) as LastCommentID FROM Comments JOIN Replies');
-
-        // $stmt = $db->prepare('SELECT Comments.ID 
-        //                      FROM (
-        //                          (Comments JOIN Replies),
-        //                          (SELECT MAX(ID) as LastReplied
-        //                             FROM Replies
-        //                          )
-
-        // ');
-        $stmt->execute();
-
-        //return $stmt->fetch()["LastCommentID"];
+        if($stmt->execute(array($text, $date, $questionID))) {
+            $stmt = $db->prepare('SELECT * FROM (
+                    Replies, 
+                    (
+                        SELECT MAX(ID) as LastReplyID FROM Replies
+                    )
+                ) WHERE Replies.ID = LastReplyID
+                ');
+            if($stmt->execute()) {
+                $reply = $stmt->fetch();
+                $reply['Date'] = DateTime::createFromFormat('d-m-Y H:i:s', $reply['Date'])->format('j M Y \a\t H:i');
+                return $reply;
+            }
+            return -1;
+        }
+        return -1;
     }
 ?>

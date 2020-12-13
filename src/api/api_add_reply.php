@@ -9,11 +9,11 @@
 
     $text = $_POST["text"];
     $date = (new DateTime('NOW'))->format('d-m-Y H:i:s');
-    $pet_id = $_POST["pet_id"]; 
-    $username = $_POST["username"];
+    $question_id = $_POST["question_id"]; 
 
     // Add comment to database
-    $comment_id = addComment($text, $date, $pet_id, $username);
-
-    echo json_encode(fecthAfterComments($comment_id, $username));
+    if(($newReply = addReply($text, $date, $question_id)) != -1) 
+        echo json_encode($newReply);
+    else 
+        echo json_encode(-1);
 ?>

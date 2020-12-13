@@ -3,6 +3,8 @@
     include_once(ROOT . '/database/connection.php'); 
     include_once(ROOT . '/database/adoption_proposal.php'); 
 
+    date_default_timezone_set('Europe/Lisbon');
+    
     $pet_id = $_POST["pet_id"];
     $user_id = $_POST["userID"];
     $text = $_POST["text"];
