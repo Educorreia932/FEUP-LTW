@@ -1,11 +1,16 @@
 <?php
     include_once(__DIR__ . "/../config.php");
 
-    if(!isset($_SESSION)) 
+    if(!isset($_SESSION)){
         session_start(); 
+        if (!isset($_SESSION['csrf'])) {
+            $_SESSION['csrf'] = bin2hex(openssl_random_pseudo_bytes(32));
+          }
+    }
 
-    include_once(ROOT . "/database/connection.php");~
+    include_once(ROOT . "/database/connection.php");
     include_once(ROOT . "/database/users.php");
+
 
     include_once(ROOT . "/templates/common/header.php");
     
