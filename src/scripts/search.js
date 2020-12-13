@@ -41,6 +41,7 @@ function search(event) {
 function receiveSearchResults() {
     pet_cards = document.querySelectorAll("section#pet-grid .pet-card");
 
+    console.log(this.responseText);
     let searchResults = JSON.parse(this.responseText);
 
     for (let pet_card of pet_cards) {
