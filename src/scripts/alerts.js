@@ -12,3 +12,9 @@ function alertWrongImageExtention() {
     alert("Wrong image extention, please try again!");
     window.location.href = "../pages/pet_submission_page.php";
 }
+
+function alertWrongCSRF() {
+    alert("Wrong CSRF token, please try again!");
+    window.location.href = "../index.php";
+}
+

@@ -1,18 +1,19 @@
 <?php
-    include_once(__DIR__ . "/../config.php");
+    require(__DIR__ . "/../config.php");
 
-    include_once(ROOT . "/templates/common/header.php");
-    drawHeader("Helper Shelter - Login");
-
-    if (!(array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])))
-        include_once(ROOT . "/templates/forms/login.php");
+    require(ROOT . "/templates/common/header.php");
+    
+    if (!(array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))){
+        drawHeader("Helper Shelter - Login");
+        require(ROOT . "/templates/forms/login.php");
+    }
 
     else{
         echo '<script language="javascript">
                 alert("Already logged in!");
-                window.location.href="/index.php";
+                window.location.href="../index.php";
                 </script>';
         }
 
-    include_once(ROOT . "/templates/common/footer.php");
+    require(ROOT . "/templates/common/footer.php");
 ?>

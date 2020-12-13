@@ -1,6 +1,6 @@
 <?php
 
-    if(!isset($_SESSION)){
+    if (session_status() == PHP_SESSION_NONE){
         session_set_cookie_params(0, '/', $_SERVER['HTTP_HOST'], true, true);
         session_start(); 
         if (!isset($_SESSION['csrf'])) {

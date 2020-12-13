@@ -12,8 +12,16 @@
     include_once(ROOT . "/database/connection.php"); 
     include_once(ROOT . "/database/pets.php");     
 
-    $name = $_GET['name'];
-    $species = $_GET['species'];
+    $post_title = $_POST['post_title'];
+    $location = $_POST['location'];
+    $description = $_POST['description'];
+    $post_id = $_POST['adoption_post_id'];
+    var_dump($post_title);
+    var_dump($location);
+    var_dump($description);
+    var_dump($post_id);
 
-    header("Location: ../pages/search.php?name=$name&species=$species");
+    edit_post($post_title, $location, $description, $post_id);
+
+    header("Location: ../pages/adoption_post.php?id=$post_id");
 ?>

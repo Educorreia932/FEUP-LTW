@@ -14,10 +14,6 @@
     <h2>User settings</h2>
     <form id="profile_change" method="post" onsubmit="submitNewProfile(event);">
 
-        <div id="profile_pic">
-            <!-- <?php include(ROOT . "/templates/cards/photo_card.php"); ?> -->
-        </div>
-
         <div id="profile_info">
             <label for="newName">Name</label>
             <input type="text" pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)" id="newName" name="newName" required

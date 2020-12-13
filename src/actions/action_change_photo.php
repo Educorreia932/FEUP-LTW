@@ -3,9 +3,14 @@
 <?php
 	include_once(__DIR__ . "/../config.php");
 
-	if (!isset($_SESSION)){
+	if (session_status() == PHP_SESSION_NONE){
 		session_set_cookie_params(0, '/', $_SERVER['HTTP_HOST'], true, true);
 		session_start();
+		if (!isset($_SESSION['csrf'])) {
+			echo '<script type="text/javascript">
+					alertUsedUsername();
+				</script>';;
+		  }
 	}
 
 	if ($_SESSION['csrf'] !== $_POST['csrf']) {
@@ -32,7 +37,6 @@
 		move_uploaded_file($_FILES['image']['tmp_name'], ROOT . $originalFileName);
 		header("Location: ../pages/settings.php");
 	} 
-
 	else {
 		echo '<script type="text/javascript">
 				alertWrongImageExtention();

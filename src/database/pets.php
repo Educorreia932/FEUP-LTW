@@ -162,4 +162,19 @@
         $stmt = $db->prepare('DELETE FROM UserFavouritePets WHERE UserID = ? AND PetID = ?');
         $stmt->execute(array($user_id, $pet_id));
     }
+   
+
+    function edit_post($post_title, $location, $description, $post_id){
+        global $db;
+
+        $stmt = $db->prepare(
+            'UPDATE AdoptionPosts
+            SET Title=?, Location=?, Description=?
+            WHERE AdoptionPostID=?'
+        );
+
+        if($stmt->execute(array($post_title, $location, $description, $post_id)))
+            return 0;   
+        return 1;  
+    }
 ?>
