@@ -31,7 +31,7 @@
 
     <body>
         <header>
-            <h1><a href="../"><?php echo("Helper Shelter" . $_SESSION["csrf"] )?></div></a></h1>
+            <h1><a href="../"><?php echo("Helper Shelter")?></div></a></h1>
             <div id="authentication">  
 
             <?php
