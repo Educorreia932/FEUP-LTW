@@ -11,13 +11,6 @@
           }
     }
 
-    if ($_SESSION['csrf'] !== $_POST['csrf']) {
-		echo '<script type="text/javascript">
-					alertWrongCSRF();
-				</script>';
-			die;
-	  }
-
     include_once(ROOT . '/database/connection.php'); 
     include_once(ROOT . '/database/users.php');     
 
