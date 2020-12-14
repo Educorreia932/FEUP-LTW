@@ -74,6 +74,7 @@ div#avatar_dropdown {
     right: 1em;
     background-color: white;
     text-align: justify;
+    box-shadow: 0em 0.1em 0.2em grey;
 }
 
 div#avatar_dropdown ul {

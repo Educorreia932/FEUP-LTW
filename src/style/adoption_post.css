@@ -7,6 +7,15 @@ div#pet_profile h1{
 div#pet_profile h4#author {
     text-align: center;
     margin-top: 0.6em;
+    font-weight: normal;
+}
+
+div#pet_profile h4#author a {
+    font-weight: bold;
+}
+
+div#pet_profile h4#author a:hover {
+    text-decoration: underline;
 }
 
 div#pet_profile button{
@@ -134,13 +143,15 @@ div#pet_profile_comments form input[type=submit] {
 
 div#pet_profile_comments div#comments{
     margin-top:1em;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 div#pet_profile_comments div#comments div.comment{
     margin-top: 1em;
     background-color: white;
     margin-left: 2em;
-    margin-right: 8em;
+    margin-right: 2em;
     max-width: 100%;
     border:0.5px solid black;
     border-radius: 0.5rem;
@@ -229,7 +240,7 @@ section#adoption_post_proposals {
 div.post_proposal {
     background-color: #e8f4f8;
     border-radius: 1rem;
-    border: 0.5px solid black;
+    box-shadow: 0em 0.1em 0.2em grey;
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 15%;

@@ -41,8 +41,27 @@ div#proposal-text {
 }
 
 div#proposal-text footer {
-    text-align: end;
     grid-area: Footer;
+    display: flex;
+    justify-content: space-between;
+}
+
+div#proposal-text span.user_proposal_date {
+    text-align: end;
+}
+
+div#proposal-text span.pending {
+    color: orange;
+    text-decoration: black;
+    text-shadow: 0em 0em 0.05em grey;
+}
+
+div#proposal-text span.accepted {
+    color: green;
+}
+
+div#proposal-text span.refused {
+    color: red;
 }
 
 div#proposal-text p {

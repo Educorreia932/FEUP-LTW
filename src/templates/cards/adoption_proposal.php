@@ -18,7 +18,15 @@
         <div id="proposal-text">
             <p><?=htmlspecialchars($proposal['Text'])?></p>
             <footer>
-                <p><?=htmlspecialchars($propDate)?></p>
+                <?php
+                    if($proposal['Answered'] == 0)
+                        echo '<span class="pending">Pending</span>';
+                    else if($proposal['Answered'] == 1)
+                        echo '<span class="accepted">Accepted</span>';
+                    else 
+                        echo '<span class="refused">Refused</span>';
+                ?>
+                <span class="user_proposal_date"><?=htmlspecialchars($propDate)?></span>
             </footer>
         </div>
     </div>
