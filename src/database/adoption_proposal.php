@@ -26,7 +26,7 @@ function proposedBefore($user_id, $pet_id) {
 function getPostIDFromProposalId($proposal_id) {
     global $db;
     
-    $query =   'SELECT Pets.AdoptionPostID FROM (
+    $query =   'SELECT * FROM (
                     (AdoptionProposal JOIN ProposalPets ON (AdoptionProposal.ID = ProposalPets.ProposalID))
                     JOIN Pets ON (ProposalPets.PetID = Pets.PetID))
                 WHERE AdoptionProposal.ID = ?';
@@ -81,6 +81,51 @@ function refuseProposal($proposal_id) {
     if(($stmt = $db->prepare($query)) && $stmt->execute(array($proposal_id)))
         return TRUE;
     return FALSE;
+}
+
+function getNotifications($user_id) {
+    global $db;
+    
+    $query =   'SELECT * FROM AdoptionProposal
+                WHERE AdoptionProposal.AuthorID = ? AND SeenAuthor = 0';
+    
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($user_id));
+
+    $newAnswers = $stmt->fetchAll();
+
+    $newAnswers = array_map('setNewAnswer', $newAnswers);
+
+    $query =   'SELECT * FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID = ProposalPets.ProposalID
+                WHERE AdoptionProposal.ID IN (
+                    SELECT AdoptionProposal.ID FROM (
+                        (AdoptionProposal JOIN ProposalPets ON (AdoptionProposal.ID = ProposalPets.ProposalID))
+                        JOIN Pets ON (ProposalPets.PetID = Pets.PetID)
+                        JOIN AdoptionPosts ON (AdoptionPosts.AdoptionPostID = Pets.AdoptionPostID)
+                    )
+                    WHERE AdoptionPosts.AuthorID = ?
+                ) AND AdoptionProposal.SeenPostAuthor = 0';
+    
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($user_id));
+
+    $newProposals = $stmt->fetchAll();
+
+    $newProposals = array_map('setNewProposal', $newProposals);
+
+    $notifications = array_merge($newAnswers, $newProposals);
+
+    return $notifications;
+}
+
+function setNewAnswer($value) {
+    $value['NotificationType'] = "NewAnswer";
+    return $value;
+}
+
+function setNewProposal($value) {
+    $value['NotificationType'] = "NewProposal";
+    return $value;
 }
 
 ?>

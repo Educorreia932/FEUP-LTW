@@ -40,6 +40,22 @@
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
                     $user = getUser($_SESSION['username']);
             ?>
+
+            <button id="notification_bell" onclick="toggleNotifications();"><i class="fas fa-bell"></i></button>
+            <div id="user_notifications" style="display: none">
+                <ul>
+                    <?php
+                        include_once(ROOT . "/database/adoption_proposal.php");
+                        $notifications = getNotifications($user['UserID']);
+                        foreach($notifications as $notification) {
+                            echo '<li>';
+                            require(ROOT . "/templates/cards/notification.php");
+                            echo '</li>';
+                        }
+                    ?>
+                </ul>
+            </div>
+
             <p>Greetings, <a href="<?="../pages/user_profile.php?user=" .urlencode($_SESSION['username'])?>"><?= $_SESSION['username']?></a></p>
             
             <script src="../scripts/user_menu.js"></script>

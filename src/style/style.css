@@ -90,6 +90,38 @@ div#avatar_dropdown a {
     color: black;
 }
 
+div#user_notifications {
+    display: block;
+    position: absolute;
+    width: fit-content;
+    right: 15em;
+    top: 3em;
+    background-color: white;
+    text-align: justify;
+    box-shadow: 0em 0.1em 0.2em grey;
+    max-height: 15em;
+    overflow: auto;
+}
+
+div#user_notifications ul {
+    list-style-type: none;
+    padding: 0%;
+    margin: 0;
+}
+
+div#user_notifications li {
+    margin-left: 0em;
+    height: fit-content;
+    width: fit-content;
+}
+
+a.notification {
+    display: block;
+    padding: 1em;
+    color: black;
+    background-color: wheat;
+    border-bottom: 1px solid grey;
+}
 
 /* Footer */
 

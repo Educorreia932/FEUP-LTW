@@ -69,6 +69,8 @@ CREATE TABLE AdoptionProposal (
     Text TEXT,
     Date TEXT,
     Answered INTEGER,
+    SeenAuthor INTEGER,
+    SeenPostAuthor INTEGER,
     AuthorID INTEGER REFERENCES Users(UserID)
 );
 

@@ -296,6 +296,8 @@ VALUES(
     "Isto é um texto de proposal. Quero este cute dog",
     "06-12-2020 22:52:31",
     0,
+    1,
+    0,
     1
 );
 
@@ -304,6 +306,8 @@ VALUES(
     2,
     "Isto é um texto de proposal. Quero este cute dog",
     "06-12-2020 22:52:31",
+    0,
+    1,
     0,
     2
 );
