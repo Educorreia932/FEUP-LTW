@@ -1,4 +1,4 @@
-<h2>Edit your post</h2>
+<h2 class="Edit-post">Edit your post</h2>
 
 <form action="../actions/action_edit_post.php" id="edit-post" method="post" enctype="multipart/form-data">
     <input type="hidden" name="csrf" value="<?=$_SESSION['csrf']?>">
