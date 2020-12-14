@@ -43,7 +43,7 @@
 
 		$postTransaction = $db->prepare('INSERT INTO AdoptionPosts VALUES (?, ?, ?, ?, ?, 0, ?)');
 
-		$posterID = (int)getUser($_SESSION['username'], $_SESSION['password'])['UserID'];
+		$posterID = (int)getUser($_SESSION['username'])['UserID'];
 
 		$postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"], $date_text, $posterID));
 

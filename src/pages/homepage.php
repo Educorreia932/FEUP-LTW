@@ -22,7 +22,7 @@
     $pets = getAllPets();
 
     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
-        $user = getUser($_SESSION['username'], $_SESSION['password']);
+        $user = getUser($_SESSION['username']);
         $username = $user['Username'];
     }
 

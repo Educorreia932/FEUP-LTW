@@ -38,7 +38,7 @@
             <?php
                 // Check if user is logged in
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
-                    $user = getUser($_SESSION['username'], $_SESSION['password']);
+                    $user = getUser($_SESSION['username']);
             ?>
             <p>Greetings, <a href="<?="../pages/user_profile.php?user=" .urlencode($_SESSION['username'])?>"><?= $_SESSION['username']?></a></p>
             

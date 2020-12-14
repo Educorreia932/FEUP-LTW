@@ -37,17 +37,16 @@
             return FALSE;
     }
 
-    function getUser($username, $password) {
-        $password = sha1($password);
+    function getUser($username) {
 
         global $db;
 
         $query =  'SELECT * FROM 
                    Users WHERE 
-                   Username = ? AND Password = ?';
+                   Username = ?';
 
         $stmt = $db->prepare($query);
-        $stmt->execute(array($username, $password));
+        $stmt->execute(array($username));
         $user = $stmt->fetch();
 
         return $user;

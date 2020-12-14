@@ -6,7 +6,7 @@ section#user_settings {
     width: 70%;
 }
 
-div.photo-card {
+form#user_photo div.photo-card {
     grid-area: Photo;
     width: 20%;
     height: 100%;

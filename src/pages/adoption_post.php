@@ -10,7 +10,7 @@
     require_once(ROOT . "/database/comments.php");
 
     if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username']))
-        $user = getUser($_SESSION['username'], $_SESSION['password']);
+        $user = getUser($_SESSION['username']);
 
     else
         $user = null;

@@ -15,7 +15,7 @@
         include_once(ROOT . "/database/connection.php");
         include_once(ROOT . "/database/users.php");
 
-        $user = getUser($_SESSION['username'], $_SESSION['password']);
+        $user = getUser($_SESSION['username']);
 
         $user_name = $user['Name'];
         drawHeader("Helper Shelter - $user_name's Settings");

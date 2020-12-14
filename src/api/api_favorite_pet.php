@@ -12,7 +12,7 @@
         require_once(ROOT . "/database/users.php");
         require_once(ROOT . "/database/pets.php");
 
-        $user = getUser($_SESSION['username'], $_SESSION['password']);
+        $user = getUser($_SESSION['username']);
         $username = $user['Username'];
         $pet_id = $_POST["pet_id"];
 
