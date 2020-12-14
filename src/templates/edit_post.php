@@ -1,7 +1,6 @@
-<script defer src="../scripts/addProposal.js"></script>
 <?php
     $author_name = getUserById($adoption_post['AuthorID']);
-    if($author_name != $_SESSION['Username'])
+    if($author_name != $_SESSION['username'])
         header("Location: ../index.php");
 ?>
 <div id="pet_profile">

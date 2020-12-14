@@ -12,7 +12,7 @@
 		</label>
 		
 		<label>
-			Password <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" name="password" required
+			Password <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&\-_])[A-Za-z\d@$!%*#?&\-_]{8,}$" name="password" required
 						title="Must contain at least one number, one lowercase letter, a special character and at least 8 or more characters.">
 		</label>
 
