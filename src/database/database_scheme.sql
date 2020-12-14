@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS Comments;
 
 CREATE TABLE Users (
     UserID INTEGER PRIMARY KEY,
-    Username TEXT,  
+    Username TEXT UNIQUE,  
     Password TEXT,
     Name TEXT,
     Biography TEXT,
