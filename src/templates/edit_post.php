@@ -1,4 +1,3 @@
-<script defer src="../scripts/addProposal.js"></script>
 <?php
     $author_name = getUserById($adoption_post['AuthorID']);
     if($author_name != $_SESSION['username'])

@@ -302,17 +302,60 @@ span.proposal_buttons button.refuse_proposal:hover {
     height: 1.4em !important;
 }
 
-form#edit-post div#postHead{
+form#edit-post div#post-title{
+    display: block;
+    font-size: 1rem;
     text-align: center;
     padding: 1em;
 }
 
-form#edit-post div#top{
-    text-align: center;
-    padding: 1em;
+form#profile_change {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: 
+        "Forms"
+        "Button";
+    margin-bottom: 1.5em;
 }
 
+form#edit-post div#fields{
+    grid-area: Forms;
+    text-align: center;
+    padding: 1em;
+    padding-left: 0em;
+}
+
+form#edit-post label{
+    grid-area: Forms;
+
+    display: block;
+}
 
 form#edit-post{
+    grid-area: Forms;
     text-align: center;
+}
+
+#edit-post input {
+    grid-area: Forms;
+    width: max-content;
+    margin-bottom: 1em;
+    border-radius: 0.2rem;
+    padding: 0.5em;
+    border: none;
+}
+
+#edit-post textarea{
+    margin-left: 20%;
+    margin-bottom: 1em;
+    width: 60%;
+    display: block;
+    resize: none;
+    border-radius: 0.2rem;
+    padding: 0.5em;
+    border: none;
+}
+
+#submit_changes input[type="submit"] {
+    grid-area: Button;
 }
