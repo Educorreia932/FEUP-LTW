@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="../style/forms.css">
         <link rel="stylesheet" href="../style/adoption_list.css">
         <link rel="stylesheet" href="../style/cards.css">
-        <link rel="stylesheet" href="../style/pet_profile.css">
+        <link rel="stylesheet" href="../style/adoption_post.css">
         <link rel="stylesheet" href="../style/user_profile.css">
         <link rel="stylesheet" href="../style/user_proposal.css">
         <link rel="stylesheet" href="../style/user_post.css">

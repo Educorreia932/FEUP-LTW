@@ -41,8 +41,8 @@ div#pet_profile div#grid{
     padding:2em;
     border-bottom: 0.5px solid black;
     max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 div#pet_profile h2{
@@ -214,6 +214,76 @@ div#pet_profile_comments div#comments div.comment footer span#reply_button{
     text-align: end;
     margin-bottom: 0.3em;
     font-size: 0.8em;
+}
+
+
+
+/* Proposals section */
+
+section#adoption_post_proposals {
+    margin-right: 3em;
+    margin-left: 3em;
+    border-bottom: 0.5px solid black;
+}
+
+div.post_proposal {
+    background-color: #e8f4f8;
+    border-radius: 1rem;
+    border: 0.5px solid black;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-left: 3em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+
+div.post_proposal a {
+    color: black;
+    font-weight: bold;
+}
+
+div.post_proposal p.proposal_author {
+    margin-bottom: 1.5em;
+}
+
+div.post_proposal a:hover {
+    text-decoration: underline;
+}
+
+div.post_proposal footer {
+    text-align: end;
+}
+
+span.proposal_buttons button {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border: none;
+    background-color: #e8f4f8;
+    border-radius: 0.5rem;
+}
+
+span.proposal_buttons button.accept_proposal {
+    color: green;
+}
+
+span.proposal_buttons button.refuse_proposal {
+    color: red;
+}
+
+span.proposal_buttons button.accept_proposal:hover {
+    color: black;
+    background-color: #90ee90;
+}
+
+span.proposal_buttons button.refuse_proposal:hover {
+    color: black;
+    background-color: #ffcccb;
 }
 
 

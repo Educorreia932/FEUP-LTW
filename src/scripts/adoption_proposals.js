@@ -39,11 +39,6 @@ function addAdoptionProp(pet, userID) {
 function answerProposal(proposal_id, proposal_number, answer) {
     if(answer != -1 && answer != 1)
         return;
-    
-    if(answer == 1)
-        console.log("accept " + proposal_number);
-    else 
-        console.log("refuse " + proposal_number);
 
     let request = new XMLHttpRequest();
 
@@ -67,7 +62,11 @@ function proposalAnswerHandler(response, answer, proposal_number) {
             let rest = document.querySelectorAll('#adoption_post_proposals .post_proposal:not(:nth-child(' + proposal_number + '))');
 
             for(prop of rest) {
-                prop.style.backgroundColor = "#ffcccb";            }
+                prop.style.backgroundColor = "#ffcccb";  
+            }
+            let all_buttons = document.querySelectorAll('.proposal_buttons');
+            for(buttons of all_buttons)
+                buttons.replaceWith("");
         } 
         else if(answer == -1) {
             proposal.style.backgroundColor = "#ffcccb";

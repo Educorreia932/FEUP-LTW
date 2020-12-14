@@ -1,5 +1,6 @@
 <script defer src="../scripts/comments.js"></script>
 
+<h2>Questions</h2>
 <div id="pet_profile_comments">
     <?php
     
