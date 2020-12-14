@@ -7,7 +7,7 @@
         <?= $adoption_post["Title"] ?>
     </h1>
     <h4 id="author">
-        by <?=$author_name?>
+        <a href="../pages/user_profile.php?user=<?=$author_name?>" style="color: black">by <?=$author_name?></a>
     </h4>
     <h2>
         <img id="front" src="../<?= $pet["Photo"] ?>" alt="Pet Photo">
