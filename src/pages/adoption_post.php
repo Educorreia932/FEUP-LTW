@@ -20,7 +20,13 @@
     $comments = getComments($pet["PetID"]);
     $proposals = getAllPetUnansweredProposals($pet["PetID"]);
 
-    verifyPostNotifications($user['UserID'], $adoption_post['AdoptionPostID']);
+    if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
+        if($user['UserID'] == $adoption_post['AuthorID']) {
+            verifyPostNotifications($user['UserID'], $pet["PetID"]);
+        } else {
+            verifyProfileNotifications($user['UserID'], $pet["PetID"]);
+        }
+    }
 
     drawHeader("Helper Shelter - " . htmlspecialchars($pet["Name"]));
 

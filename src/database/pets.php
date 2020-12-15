@@ -45,7 +45,7 @@
         $stmt = $db->prepare($query);
         $stmt->execute(array($id));
         
-        return $stmt->fetchAll()[0];
+        return $stmt->fetch();
     }
 
     function getSpeciesName($id){

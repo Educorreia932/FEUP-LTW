@@ -12,6 +12,7 @@
     require_once(ROOT . "/database/connection.php");
     require_once(ROOT . "/database/users.php");
     require_once(ROOT . "/templates/common/header.php");
+    require_once(ROOT . "/database/adoption_proposal.php");
     
     if(!empty($_GET['user'])) {
         $user_requested = $_GET['user'];
@@ -25,6 +26,9 @@
             }
             
             else {
+                if($user_requested == $_SESSION['username']) {
+                    verifyProfileNotifications($user['UserID']);
+                }
                 $username = $user['Name'];
                 drawHeader("Helper Shelter - $user_requested's Profile");
                 require_once(ROOT . "/templates/user_profile.php");

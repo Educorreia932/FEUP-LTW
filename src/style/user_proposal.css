@@ -31,13 +31,14 @@ div#proposal-pet-info h5 {
 
 div#proposal-text {
     grid-area: Proposal;
+    /* width: 100%; */
     display: grid;
     grid-template-rows: 90% 10%;
     grid-template-areas: 
     "PropText"
     "Footer";
     padding-bottom: 1em;
-    padding-right: 2em;
+    padding-right: 1em;
 }
 
 div#proposal-text footer {
@@ -83,4 +84,12 @@ div#pet-pic-proposal {
 div#pet-pic-proposal img {
     height: 100%;
     width: auto;
+}
+
+div#proposal-pet-info a.user_proposal_pet {
+    color: black;
+}
+
+div#proposal-pet-info a.user_proposal_pet:hover {
+    text-decoration: underline;
 }

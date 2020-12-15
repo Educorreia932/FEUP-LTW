@@ -10,7 +10,7 @@
         <div id="pet-pic-proposal" >
             <img src="../<?=$proposal_pet['Photo']?>" alt="Pet photo">
         </div>
-            <h4><?=htmlspecialchars($proposal_pet['Name'])?></h4>
+            <h4><a class="user_proposal_pet" href="../pages/adoption_post.php?id=<?= $proposal_pet["PetID"] ?>"><?=htmlspecialchars($proposal_pet['Name'])?></a></h4>
             <h5><?=htmlspecialchars($speciesName)?></h5>
             <h5>Age <?=htmlspecialchars($proposal_pet['Age'])?></h5>
         </div>

@@ -17,6 +17,10 @@ a {
     color: white;
 }
 
+p {
+    word-break: break-word;
+}
+
 /* Header */
 
 header {
@@ -75,6 +79,7 @@ div#avatar_dropdown {
     background-color: white;
     text-align: justify;
     box-shadow: 0em 0.1em 0.2em grey;
+    z-index: 4;
 }
 
 div#avatar_dropdown ul {
@@ -90,10 +95,27 @@ div#avatar_dropdown a {
     color: black;
 }
 
+button#notification_bell {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5em;
+    margin-right: 1em;
+    font-size: 1em;
+}
+
+button#notification_bell #notification_count{
+    position: absolute;
+    font-size: 0.8em;
+    top: 0.2em;
+    background-color: orange;
+    border-radius: 50%;
+    padding: 0.15em;
+}
+
 div#user_notifications {
     display: block;
     position: absolute;
-    width: fit-content;
+    max-width: fit-content;
     right: 15em;
     top: 3em;
     background-color: white;
@@ -101,26 +123,60 @@ div#user_notifications {
     box-shadow: 0em 0.1em 0.2em grey;
     max-height: 15em;
     overflow: auto;
+    background-color: wheat;
+    z-index: 4;
+    max-width: 30%;
 }
 
 div#user_notifications ul {
     list-style-type: none;
     padding: 0%;
     margin: 0;
+    background-color: wheat;
 }
 
-div#user_notifications li {
+div#user_notifications ul li {
     margin-left: 0em;
+    margin-right: 0em;
     height: fit-content;
-    width: fit-content;
+    width: auto;
+    background-color: wheat;
+    border-bottom: 1px solid grey;
+}
+
+div#user_notifications li#no_nots {
+    display: block;
+    padding: 1em;
+    color: black;
+    background-color: white;
 }
 
 a.notification {
     display: block;
-    padding: 1em;
     color: black;
     background-color: wheat;
-    border-bottom: 1px solid grey;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+a.notification header {
+    display: block;
+    padding: 0;
+    height: auto;
+    margin-bottom: 0.8em;
+    padding-top: 1em;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    background-color: wheat;
+    width: fit-content;
+}
+
+a.notification p#notification-text {
+    color: black;
+    text-align: start;
+    margin: 0%;
 }
 
 /* Footer */

@@ -9,8 +9,6 @@
                 <?=htmlspecialchars($user['Biography'])?>
             </div>
         </div>
-        
-        <script src="../scripts/edit_profile.js"></script>
     </div>
 
     <?php

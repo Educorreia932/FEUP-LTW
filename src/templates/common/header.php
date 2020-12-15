@@ -39,19 +39,33 @@
                 // Check if user is logged in
                 if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
                     $user = getUser($_SESSION['username']);
+                    
+                    include_once(ROOT . "/database/adoption_proposal.php");
+                    include_once(ROOT . "/database/pets.php");
+                    $notifications = getNotifications($user['UserID']);         
             ?>
 
-            <button id="notification_bell" onclick="toggleNotifications();"><i class="fas fa-bell"></i></button>
+            <button id="notification_bell" onclick="toggleNotifications();">
+                <i class="fas fa-bell"></i>
+                <?php
+                    if(($notif_count = count($notifications)) > 0) {
+                        echo '<span id="notification_count">'.$notif_count.'</span>';
+                    }
+                ?>
+            </button>
+
             <div id="user_notifications" style="display: none">
                 <ul>
                     <?php
-                        include_once(ROOT . "/database/adoption_proposal.php");
-                        $notifications = getNotifications($user['UserID']);
                         foreach($notifications as $notification) {
                             echo '<li>';
                             require(ROOT . "/templates/cards/notification.php");
                             echo '</li>';
                         }
+                        if(count($notifications) == 0) {
+                            echo '<li id="no_nots">No notifications</li>';
+                        }
+                            
                     ?>
                 </ul>
             </div>
