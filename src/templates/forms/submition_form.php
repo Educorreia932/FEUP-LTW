@@ -24,7 +24,7 @@
             </label>
             
             <label>
-                Weight <input type="number" name="weight" required>
+                Weight <input type="number" step="any" name="weight" required>
             </label>
 
             <label>
