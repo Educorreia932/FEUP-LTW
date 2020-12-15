@@ -20,6 +20,8 @@
     $comments = getComments($pet["PetID"]);
     $proposals = getAllPetUnansweredProposals($pet["PetID"]);
 
+    verifyPostNotifications($user['UserID'], $adoption_post['AdoptionPostID']);
+
     drawHeader("Helper Shelter - " . htmlspecialchars($pet["Name"]));
 
     require_once(ROOT . "/templates/adoption_post.php");

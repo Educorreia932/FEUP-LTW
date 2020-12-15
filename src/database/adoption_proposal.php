@@ -52,10 +52,10 @@ function acceptProposal($proposal_id) {
     
     if($stmt = $db->prepare($query) && $stmt->execute(array($proposal_id))) {
 
-        $query =   'UPDATE AdoptionProposal SET Answered=1
+        $query =   'UPDATE AdoptionProposal SET Answered=1, SeenAuthor=0
                 WHERE AdoptionProposal.ID = ?';
 
-        $query1 =   'UPDATE AdoptionProposal SET Answered=-1
+        $query1 =   'UPDATE AdoptionProposal SET Answered=-1, SeenAuthor=0
                 WHERE AdoptionProposal.ID <> ?';
 
         $query2 =   'UPDATE AdoptionPosts SET Closed=1
@@ -126,6 +126,68 @@ function setNewAnswer($value) {
 function setNewProposal($value) {
     $value['NotificationType'] = "NewProposal";
     return $value;
+}
+
+function verifyPostNotifications($user_id, $post_id) {
+    $notifications = getNotifications($user_id);
+
+    foreach($notifications as $key => $notification) {
+        if($notification['NotificationType'] != "NewProposal" || $notification['PetID'] != $post_id) {
+            unset($notifications[$key]);
+        }
+    }
+    if(count($notifications) == 0)
+        return;
+
+    $notifications = array_map('notifID', $notifications);
+    
+
+    $list = '';
+    foreach($notifications as $n) {
+        $list = $list . $n . ',';
+    }
+    $list = $list . '-1';
+
+    echo("<script>console.log('PHP: " . $list . "');</script>");
+
+    global $db;
+
+    // $query =   'UPDATE AdoptionProposal SET SeenPostAuthor=1
+    //             WHERE ID IN (?)';
+
+    $query =   'SELECT * FROM AdoptionProposal
+                WHERE ID IN (:ids)';
+    
+    $stmt = $db->prepare($query);
+    $stmt->execute(array(':ids'=>$list));
+    echo("<script>console.log('PHP: " . count($stmt->fetchAll()) . "');</script>");
+}
+
+function verifyProfileNotifications($user_id, $post_id) {
+    $notifications = getNotifications($user['UserID']);
+
+    foreach($notifications as $key => $notification) {
+        if($notification['Type'] != "NewProposal" && $notification['ID'] != $post_id) {
+            unset($notifications[$key]);
+        }
+    }
+    if(count($notifications) == 0)
+        return;
+
+    $notifications = array_map('notifID', $notifications);
+    echo("<script>console.log('PHP: " . $notifications . "');</script>");
+
+    global $db;
+
+    $query =   'UPDATE AdoptionProposal SET SeenPostAuthor=1
+                WHERE AdoptionProposal.ID IN ?';
+    
+    $stmt = $db->prepare($query);
+    $stmt->execute(array($notifications));
+}
+
+function notifID($value) {
+    return $value['ID'];
 }
 
 ?>
