@@ -41,11 +41,18 @@ function acceptProposal($proposal_id) {
     global $db;
     
     $query =   'SELECT *
-                FROM AdoptionProposal 
-                WHERE Answered = 1 AND ID <> ?';
+                FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID = ProposalPets.ProposalID
+                WHERE Answered = 1 AND AdoptionProposal.ID <> ? 
+                AND ProposalPets.PetID IN (
+                    SELECT ProposalPets.PetID
+                    FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID = ProposalPets.ProposalID
+                    WHERE AdoptionProposal.ID = ?
+                )
+                ';
 
     $stmt = $db->prepare($query);
-    $stmt->execute(array($proposal_id));
+    $stmt->execute(array($proposal_id, $proposal_id));           
+
     if(count($stmt->fetchAll()) != 0)
         return FALSE;
 
@@ -56,13 +63,22 @@ function acceptProposal($proposal_id) {
                 WHERE AdoptionProposal.ID = ?';
 
         $query1 =   'UPDATE AdoptionProposal SET Answered=-1, SeenAuthor=0
-                WHERE AdoptionProposal.ID <> ?';
+                WHERE AdoptionProposal.ID <> ?
+                AND AdoptionProposal.ID IN (
+                    SELECT AdoptionProposal.ID 
+                    FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID = ProposalPets.ProposalID
+                    WHERE ProposalPets.PetID IN (
+                        SELECT ProposalPets.PetID
+                        FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID = ProposalPets.ProposalID
+                        WHERE AdoptionProposal.ID = ?
+                    )
+                )';
 
         $query2 =   'UPDATE AdoptionPosts SET Closed=1
                 WHERE AdoptionPostID = ?';
         
         $stmt = $db->prepare($query);
-        if($stmt->execute(array($proposal_id)) && ($stmt = $db->prepare($query1)) && $stmt->execute(array($proposal_id))) {
+        if($stmt->execute(array($proposal_id)) && ($stmt = $db->prepare($query1)) && $stmt->execute(array($proposal_id, $proposal_id))) {
             $post = getPostIDFromProposalId($proposal_id);
             $stmt = $db->prepare($query2);
             if($stmt->execute(array($post['AdoptionPostID'])));
@@ -151,18 +167,18 @@ function verifyPostNotifications($user_id, $pet_id) {
     echo("<script>console.log('PHP: " . count($stmt->fetchAll()) . "');</script>");
 }
 
-function verifyProfileNotifications($user_id) {
+function verifyAnswersNotifications($user_id, $pet_id) {
     global $db;
 
     $query =   'UPDATE AdoptionProposal SET SeenAuthor=1
-                WHERE ID IN (
+                WHERE AdoptionProposal.ID IN (
                     SELECT AdoptionProposal.ID 
                     FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID = ProposalPets.ProposalID
-                    WHERE AuthorID = ? AND SeenAuthor=0
+                    WHERE AuthorID = ? AND SeenAuthor=0 AND ProposalPets.PetID = ?
                 )';
     
     $stmt = $db->prepare($query);
-    $stmt->execute(array($user_id));
+    $stmt->execute(array($user_id, $pet_id));
     echo("<script>console.log('PHP: " . count($stmt->fetchAll()) . "');</script>");
 }
 

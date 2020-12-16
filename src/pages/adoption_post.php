@@ -24,7 +24,7 @@
         if($user['UserID'] == $adoption_post['AuthorID']) {
             verifyPostNotifications($user['UserID'], $pet["PetID"]);
         } else {
-            verifyProfileNotifications($user['UserID'], $pet["PetID"]);
+            verifyAnswersNotifications($user['UserID'], $pet["PetID"]);
         }
     }
 

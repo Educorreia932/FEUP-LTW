@@ -1,5 +1,5 @@
 
-<a class="notification" href="../pages/adoption_post.php?id=<?= $notification["PetID"] ?>">
+<a class="notification" href="../pages/adoption_post.php?id=<?= $notification["PetID"]?>">
     <?php
         if($notification['NotificationType'] == "NewProposal") {
             echo '<header>New adoption proposal for ' . getPet($notification['PetID'])['Name'] . '</header>';
