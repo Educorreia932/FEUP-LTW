@@ -1,18 +1,16 @@
 <?php
     function checkUser($username, $password) {
-        $password = sha1($password);
-
         global $db;
 
         $query =  'SELECT * FROM 
                    Users WHERE 
-                   Username = ? AND Password = ?';
+                   Username = ?';
 
         $stmt = $db->prepare($query);
-        $stmt->execute(array($username, $password));
+        $stmt->execute(array($username));
         $user = $stmt->fetch();
 
-        if ($user) 
+        if (password_verify ( $password, $user["Password"])) 
             return TRUE;
 
         else 
@@ -99,7 +97,8 @@
         global $db;
 
         $stmt = $db->prepare('INSERT INTO Users VALUES (NULL, ?, ?, ?, ?, ?)');
-        $stmt->execute(array($username, $password, $name, "", $photo));
+        $options = ['cost' => 12];
+        $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT, $options), $name, "", $photo));
     }
 
     function getFavouritePets($username) {
@@ -154,17 +153,18 @@
             WHERE Username=?'
         );
 
+        $options = ['cost' => 12];
+
         $stmt->execute(array($username));
         $currentPass = ($stmt->fetch())['Password'];
-
-        if($old == $currentPass) {
-            if($currentPass != $new) {
+        if(password_verify ( $old , $currentPass )) {
+            if(!password_verify ( $new , $currentPass )) {
                 $stmt = $db->prepare(
                     'UPDATE Users
                     SET Password=?
                     WHERE Username=?'
                 );
-                $stmt->execute(array($new, $username));
+                $stmt->execute(array(password_hash($new, PASSWORD_DEFAULT, $options), $username));
                 $currentPass = $stmt->fetch();
                 return 0;
             }

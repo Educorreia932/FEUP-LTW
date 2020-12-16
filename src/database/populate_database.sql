@@ -147,27 +147,6 @@ VALUES(
     8
 );
 
-INSERT INTO Users
-VALUES(
-    1,
-    "ltw2020",
-    "67b544aa527f72e69100d158a264e46496efe1dd",
-    "LTW 2020/21",
-    "LTW in 2020/21",
-    "/images/users/1.png"
-);
-
-INSERT INTO Users
-VALUES(
-    2,
-    "potato",
-    "0a5c6c4d0379637341f316a773efa9c50af1ac49",
-    "Padoru Padoru",
-    "Some know me as Track-tor. The rest don't know me at all.",
-    "/images/default-avatar.png"
-);
-
-
 INSERT INTO AdoptionPosts
 VALUES(
     1,

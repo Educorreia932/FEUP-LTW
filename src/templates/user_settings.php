@@ -45,13 +45,13 @@
         <input type="password" id="oldPassword" name="oldPassword" required>
 
         <label for="newPassword1">New Password</label>
-        <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" name="newPassword1" 
+        <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&\-_])[A-Za-z\d@$!%*#?&\-_]{8,}$" name="newPassword1" 
             id="newPassword1" required
             title="Must contain at least one number, one lowercase letter, a special character and at least 8 or more characters."
             onkeyup="check_pass();">
 
         <label for="newPassword2">Confirm new Password</label>
-		<input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" name="newPassword2" required
+		<input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&\-_])[A-Za-z\d@$!%*#?&\-_]{8,}$" name="newPassword2" required
             id="newPassword2"        
             title="Must contain at least one number, one lowercase letter, a special character and at least 8 or more characters" 
             onkeyup="check_pass();">
