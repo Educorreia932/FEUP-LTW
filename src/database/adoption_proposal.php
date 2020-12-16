@@ -167,18 +167,18 @@ function verifyPostNotifications($user_id, $pet_id) {
     echo("<script>console.log('PHP: " . count($stmt->fetchAll()) . "');</script>");
 }
 
-function verifyProfileNotifications($user_id) {
+function verifyAnswersNotifications($user_id, $pet_id) {
     global $db;
 
     $query =   'UPDATE AdoptionProposal SET SeenAuthor=1
-                WHERE ID IN (
+                WHERE AdoptionProposal.ID IN (
                     SELECT AdoptionProposal.ID 
                     FROM AdoptionProposal JOIN ProposalPets ON AdoptionProposal.ID = ProposalPets.ProposalID
-                    WHERE AuthorID = ? AND SeenAuthor=0
+                    WHERE AuthorID = ? AND SeenAuthor=0 AND ProposalPets.PetID = ?
                 )';
     
     $stmt = $db->prepare($query);
-    $stmt->execute(array($user_id));
+    $stmt->execute(array($user_id, $pet_id));
     echo("<script>console.log('PHP: " . count($stmt->fetchAll()) . "');</script>");
 }
 

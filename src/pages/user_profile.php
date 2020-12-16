@@ -26,9 +26,6 @@
             }
             
             else {
-                if($user_requested == $_SESSION['username']) {
-                    verifyProfileNotifications($user['UserID']);
-                }
                 $username = $user['Name'];
                 drawHeader("Helper Shelter - $user_requested's Profile");
                 require_once(ROOT . "/templates/user_profile.php");
