@@ -13,7 +13,7 @@
 		
 		<label>
 			Password <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&\-_])[A-Za-z\d@$!%*#?&\-_]{8,}$" name="password" required
-						title="Must contain at least one number, one lowercase letter, a special character and at least 8 or more characters.">
+						title="Must contain at least one number, one letter, a special character and at least 8 or more characters.">
 		</label>
 
 		<input type="submit" value="Register">

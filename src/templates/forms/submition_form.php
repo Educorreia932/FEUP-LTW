@@ -24,11 +24,11 @@
             </label>
             
             <label>
-                Weight <input type="number" name="weight" required>
+                Weight <input type="number" step="any" name="weight" required>
             </label>
 
             <label>
-                Color <input type="text" name="color" pattern="[a-zA-Z]{1,}" required>
+                Color <input type="text" name="color" pattern="[a-zA-Z\\]{1,}" required>
             </label>
             
             <div id="extra-fields">
