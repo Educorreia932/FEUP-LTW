@@ -76,9 +76,13 @@
             <?php
                     }
                     else{
-            ?>
-                    <button type="button" id="adopt" onclick='addAdoptionProp(<?= $pet["PetID"] . "," . $id ?>)'> Adopt </button>
+                        if(!isAdopted($pet["AdoptionPostID"])){?>
+                            <button type="button" id="adopt" onclick='addAdoptionProp(<?= $pet["PetID"] . "," . $id ?>)'> Adopt </button>
             <?php
+                        }else{?>
+                            <button type="button" id="adopted"> Adopted </button>
+            <?php
+                        }
                     }
                 }
             ?>

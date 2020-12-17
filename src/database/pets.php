@@ -1,4 +1,18 @@
 <?php
+    function isAdopted($id)
+    {
+        global $db;
+
+        $query =   'SELECT * FROM 
+                    AdoptionPosts
+                    WHERE AdoptionPostID = ?';
+
+        $stmt = $db->prepare($query);
+        $stmt->execute(array($id));
+
+        return $stmt->fetch()["Closed"];
+    }
+
     function getAllPets() {
         global $db;
         
