@@ -13,13 +13,15 @@ Repository for the project of group 12 for the LTW's classes.
 ## Code Organization
 
 - 📂 **api** - Interface between PHP and HTTP requests, mainly for AJAX 
-- 📂 **actions** - 
+- 📂 **actions** - PHP form actions
 - 📂 **database** - Database queries, connection and storage
-- 📂 **images** - Images 
+- 📂 **images** - Images storage
+- 📂 **pages** - FIles that represent the main webpages
 - 📂 **scripts** - Javascript scripts
 - 📂 **style** - CSS stylesheets
-- 📂 **templates** - HTML templates for the main pages to use
+- 📂 **templates** - HTML templates for the webpages to use
     - 📂 **cards** - Card templates
+    - 📂 **common** - Common templates
     - 📂 **forms** - Form templates
 
 ## Input Verification
@@ -64,3 +66,4 @@ abc ❌
 #### Regular expression
 
 `(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_])[A-Za-z\d@$!%*#?&_]{8,}`
+

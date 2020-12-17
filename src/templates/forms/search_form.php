@@ -24,6 +24,8 @@
 
         <select id="species" name="species">
             <option value="none" selected disabled hidden>Pet Species</option> 
+            <option value="none">Clear</option> 
+
             <?php
                 include_once(ROOT . '/database/connection.php'); 
                 include_once(ROOT . '/database/pets.php');  
@@ -42,6 +44,7 @@
     
         <select id="size" name="size">
             <option value="none" selected disabled hidden>Pet Size</option> 
+            <option value="none">Clear</option> 
             <option value="0">Small</option>
             <option value="1">Medium</option>
             <option value="2">Large</option>
