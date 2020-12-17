@@ -28,7 +28,7 @@
             </label>
 
             <label>
-                Color <input type="text" name="color" pattern="[a-zA-Z\\]{1,}" required>
+                Color <input type="text" name="color" pattern="[a-zA-Z\\/ ]{1,}" required>
             </label>
             
             <div id="extra-fields">

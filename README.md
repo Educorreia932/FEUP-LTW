@@ -4,7 +4,7 @@ Repository for the project of group 12 for the LTW's classes.
 
 ## Elements
 
-- Davide Castro ()
+- Davide Castro (201806512)
 - Diogo Rosário (201806582)
 - Eduardo Correia (201806433)
 - Henrique Ribeiro (201806529)
