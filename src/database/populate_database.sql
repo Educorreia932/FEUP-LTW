@@ -155,7 +155,7 @@ VALUES(
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
     0,
-    1
+    2
 );
 
 INSERT INTO AdoptionPosts
@@ -188,7 +188,7 @@ VALUES(
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
     0,
-    1
+    2
 );
 
 INSERT INTO AdoptionPosts
@@ -199,13 +199,13 @@ VALUES(
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
     0,
-    1
+    2
 );
 
 INSERT INTO AdoptionPosts
 VALUES(
     6,
-    "Retard dog",
+    "Blep dog",
     "It needs some help",
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
@@ -232,7 +232,7 @@ VALUES(
     "Trofa, Portugal",
     "07-12-2020 15:16:12",
     0,
-    1
+    2
 );
 
 INSERT INTO Comments
@@ -247,10 +247,10 @@ VALUES(
 INSERT INTO Comments
 VALUES(
     2,
-    "Test comment",
+    "Is the moustache included?",
     "07-12-2020 17:40:34",
     1,
-    1
+    2
 );
 
 INSERT INTO Replies
@@ -264,43 +264,7 @@ VALUES(
 INSERT INTO Replies
 VALUES(
     2,
-    "Test Reply",
+    "Of course it is",
     "11-12-2020 11:30:21",
     2
-);
-
-INSERT INTO AdoptionProposal 
-VALUES(
-    1,
-    "Isto é um texto de proposal. Quero este cute dog",
-    "06-12-2020 22:52:31",
-    0,
-    1,
-    0,
-    1
-);
-
-INSERT INTO AdoptionProposal 
-VALUES(
-    2,
-    "Isto é um texto de proposal. Quero este cute dog",
-    "06-12-2020 22:52:31",
-    0,
-    1,
-    0,
-    2
-);
-
-INSERT INTO ProposalPets 
-VALUES(
-    NULL,
-    1,
-    1
-);
-
-INSERT INTO ProposalPets 
-VALUES(
-    NULL,
-    2,
-    1
 );
