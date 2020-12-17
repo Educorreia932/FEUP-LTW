@@ -2,6 +2,37 @@
 
 Repository for the project of group 12 for the LTW's classes.
 
+## Elements
+
+- Davide Castro ()
+- Diogo Rosário (201806582)
+- Eduardo Correia (201806433)
+- Henrique Ribeiro (201806529)
+
+## Credentials
+
+- 👥 ltw2020 🔑 ltw_2020 
+- 👥 potato 🔑 potatos_good1
+
+## Features
+
+- **Security**
+    - **XSS:** yes
+    - **CSRF:** yes
+    - **SQL using prepare/execute:** yes
+    - **Passwords:** Bcrypt / Salting
+    - **Data Validation:** Regex (PHP / HTML / Javascript) 
+- **Technologies**
+    - **Separated logic/database/presentation:** yes
+    - **Semantic HTML tags:** yes
+    - **Responsive CSS:** yes
+    - **Javascript:** yes
+    - **Ajax:** yes
+    - **REST API:** yes
+- **Usability**:
+    - **Error/success messages:** yes
+    - **Forms don't lose data on error:** yes
+
 ## Database
 
 [![Database Scheme](Database.png)](https://app.creately.com/diagram/qilCyc2EWYk/edit)
@@ -66,4 +97,6 @@ abc ❌
 #### Regular expression
 
 `(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_])[A-Za-z\d@$!%*#?&_]{8,}`
+
+
 
