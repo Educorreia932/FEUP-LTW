@@ -21,7 +21,7 @@
         return $lower_bound <= $target && $target <= $higher_bound;
     }
 
-    function getSearchResults($name, $location, $color, $min_weight, $max_weight, $min_age, $max_age, $species, $size) {
+    function getSearchResults($name, $color, $min_weight, $max_weight, $min_age, $max_age, $species, $size) {
         $searchResults = array();
 
         $pets = getAllPets();
@@ -57,7 +57,6 @@
     include_once(ROOT . '/database/pets.php'); 
 
     $name = $_POST["name"];
-    $location = $_POST["location"];
     $color = $_POST["color"]; 
     $min_weight = $_POST["min_weight"];
     $max_weight = $_POST["max_weight"];
@@ -66,5 +65,5 @@
     $species = $_POST["species"];
     $size = $_POST["size"];
 
-    echo getSearchResults($name, $location, $color, $min_weight, $max_weight, $min_age, $max_age, $species, $size);
+    echo getSearchResults($name, $color, $min_weight, $max_weight, $min_age, $max_age, $species, $size);
 ?>

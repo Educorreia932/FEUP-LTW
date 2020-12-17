@@ -9,7 +9,6 @@ function search(event) {
     event.preventDefault();
 
     let name = document.querySelector("input[name=name]").value;
-    let location = document.querySelector("input[name=location]").value; 
     let color = document.querySelector("input[name=color]").value;
     let min_weight = document.querySelector("input[name=min-weight]").value;
     let max_weight = document.querySelector("input[name=max-weight]").value;
@@ -26,7 +25,6 @@ function search(event) {
     request.send(
         encodeForAjax({ 
             name: name,
-            location: location,
             color: color,
             min_weight: min_weight,
             max_weight: max_weight,

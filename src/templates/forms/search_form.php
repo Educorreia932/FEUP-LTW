@@ -2,8 +2,8 @@
 
 <form id="search-bar" method="post" onsubmit="search(event)">
     <div class="text-inputs">
+        <h3>Pet Information</h3>
         <input id="name" name="name" type="text" placeholder="Pet Name">
-        <input id="location" name="location" type="text" placeholder="Location">
         <input id="color" name="color" type="text" placeholder="Color">
     </div>
 
@@ -20,6 +20,8 @@
     </div>
     
     <div class="selection-inputs">
+        <h3>Other</h3>
+
         <select id="species" name="species">
             <option value="none" selected disabled hidden>Pet Species</option> 
             <?php

@@ -218,66 +218,43 @@ form#search-bar {
     margin-bottom: 1.5em;
     box-sizing: border-box;
     background-color: white;
+    box-shadow: 0em 0.1em 0.2em grey;   
     padding: 0.5em;
     border-radius: 0.6em;
-    box-shadow: 0em 0.1em 0.2em grey;   
+    width: 80%;
 }
 
-form#search-bar input {
-    border: none;
-    outline: none;
-    color: var(--color4);
+form#search-bar h3 {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
 }
 
-form#search-bar div {
-    display: flex;
-}
-
-form#search-bar input + input,
-form#search-bar > div + div {
-    border-left: 2px solid var(--color2);
-    padding-left: 1em;
-    padding-right: 1em;
-}   
-
-form#search-bar input:active {
-    border: none;
-}
-
-form#search-bar button[type="submit"] {
-    border: none;
-    background-color: transparent;
-}
-
-form#search-bar div.range-inputs {
-    display: grid;
-    grid-template-areas:
-        "Title Title"
-        "Minimum Maximum";
-}
-
-form#search-bar div.range-inputs h3 {
+form#search-bar > div {
     text-align: center;
-    font-weight: normal;
-    margin: 0;
-    grid-area: Title;
+    vertical-align: middle;
 }
 
-form#search-bar div.range-inputs input:nth-child(2) {
-    grid-area: Minimum;
+form#search-bar > div > * {
+    margin-top: 0.2em;
 }
 
-form#search-bar div.range-inputs input:nth-child(3) {
-    grid-area: Maximum;
+form#search-bar > div + div {
+    border-left: 1px solid var(--color2);
+    padding-left: 1em;
 }
 
 form#search-bar div.selection-inputs {
-    display: flex;
     flex-direction: column;
-    margin: auto;
 }
 
-@media (max-width: 50em) {
+form#search-bar button[type="submit"] {
+    background-color: var(--color1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 60em) {
     form#search-bar {
         background-color: transparent;
         flex-direction: column; 

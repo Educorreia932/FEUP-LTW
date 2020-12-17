@@ -12,14 +12,15 @@ Repository for the project of group 12 for the LTW's classes.
 
 ## Code Organization
 
+- 📂 **api** - Interface between PHP and HTTP requests, mainly for AJAX 
 - 📂 **actions** - 
-- 📂 **database** - 
+- 📂 **database** - Database queries, connection and storage
 - 📂 **images** - Images 
 - 📂 **scripts** - Javascript scripts
 - 📂 **style** - CSS stylesheets
 - 📂 **templates** - HTML templates for the main pages to use
-    - 📂 **cards**
-    - 📂 **forms**
+    - 📂 **cards** - Card templates
+    - 📂 **forms** - Form templates
 
 ## Input Verification
 
