@@ -22,8 +22,8 @@
 
         echo json_encode($test);
     }
+    
     else{
         echo 'error';
     }
-
 ?>

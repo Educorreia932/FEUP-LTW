@@ -68,7 +68,7 @@ ltw ❌
 
 #### Regular expression
 
-`[\w]{4,20}`
+`[\w]{3,20}`
 
 ### Name 
 
@@ -82,7 +82,7 @@ Eduardo 3 ❌
 
 #### Regular expression
 
-`([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)`
+`^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)`
 
 ### Password
 
@@ -96,7 +96,7 @@ abc ❌
 
 #### Regular expression
 
-`(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&_])[A-Za-z\d@$!%*#?&_]{8,}`
+`^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&\-_])[A-Za-z\d@$!%*#?&\-_]{8,}$`
 
 
 
