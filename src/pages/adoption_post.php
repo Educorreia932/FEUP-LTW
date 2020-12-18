@@ -15,8 +15,17 @@
     else
         $user = null;
 
-    $adoption_post = getPost($_GET["id"]);
     $pet = getPet($_GET["id"]);
+    
+    if(!$pet)
+    {
+        drawHeader("Helper Shelter - Invalid Pet");
+        require_once("../templates/invalid_page.php");
+        require_once(ROOT . "/templates/common/footer.php");
+        die;
+    }
+
+    $adoption_post = getPost($_GET["id"]);
     $comments = getComments($pet["PetID"]);
     $proposals = getAllPetUnansweredProposals($pet["PetID"]);
 
