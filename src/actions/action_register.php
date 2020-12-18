@@ -18,7 +18,6 @@
     include_once(ROOT . '/database/connection.php'); 
     include_once(ROOT . '/database/users.php');     
 
-
     if (!checkUsername($_POST['username'])) {
         addUser($_POST['username'], $_POST['password'], $_POST['name'], "/images/default-avatar.png");
         header('Location: ../pages/login.php');

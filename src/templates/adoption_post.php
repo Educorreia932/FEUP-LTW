@@ -29,7 +29,7 @@
             <p id="info_bullets">
                 <a> <?= htmlspecialchars(getSpeciesName($pet["SpeciesID"])) ?> </a>
                 <a> <?= htmlspecialchars(getGender($pet["Gender"])) ?> </a>
-                <a> <?= $pet["Age"] ?> </a> 
+                <a> <?= $pet["Age"] ?> years</a> 
             </p>
             
             <hr>
