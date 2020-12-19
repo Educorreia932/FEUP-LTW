@@ -1,4 +1,8 @@
-<script defer src="../scripts/search.js"></script>
+<?php
+    if(isset($dynamic_search))
+        if($dynamic_search)
+            echo '<script defer src="../scripts/search.js"></script>';
+?>
 
 <form id="search-bar" action="../pages/search.php" method="get">
     <div class="text-inputs">

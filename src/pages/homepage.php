@@ -29,6 +29,7 @@
     else 
         $username = NULL;
     
+    $dynamic_search = true;
     include_once(ROOT . "/templates/adoption_grid.php");
     include_once(ROOT . "/templates/common/footer.php");
 ?>
