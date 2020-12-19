@@ -18,7 +18,7 @@ Repository for the project of group 12 for the LTW's classes.
 
 - **Security**
     - **XSS:** yes
-    - **CSRF:** yes
+    - **CSRF:** yes (for examples see files: action_change_photo.php, action_edit_post.php, upload.php)
     - **SQL using prepare/execute:** yes
     - **Passwords:** Bcrypt / Salting
     - **Data Validation:** Regex (PHP / HTML / Javascript) 
@@ -31,7 +31,10 @@ Repository for the project of group 12 for the LTW's classes.
     - **REST API:** yes
 - **Usability**:
     - **Error/success messages:** yes
-    - **Forms don't lose data on error:** yes
+    - **Forms don't lose data on error:** some of them
+- **Extra features**:
+    - **Rest API**
+    - **Notifications**
 
 ## Database
 
