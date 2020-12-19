@@ -39,17 +39,25 @@ function search(event) {
 function receiveSearchResults() {
     pet_cards = document.querySelectorAll("section#pet-grid .pet-card");
 
-    console.log(this.responseText);
+    //console.log(this.responseText);
     let searchResults = JSON.parse(this.responseText);
+    console.log(searchResults);
 
     for (let pet_card of pet_cards) {
         let pet_id = pet_card.querySelector("span.pet-id").textContent;
 
-        if (!searchResults.includes(pet_id))
-            pet_card.style.display = "none";
-
-        else
+        let found = false;
+        for(pet in searchResults) {
+            if(searchResults[pet].PetID == pet_id) {
+                found = true;
+                break;
+            }
+        }
+        
+        if(found)
             pet_card.style.display = "inline-block";
+        else 
+            pet_card.style.display = "none";
     }
 }
 

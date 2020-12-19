@@ -1,6 +1,6 @@
 <script defer src="../scripts/search.js"></script>
 
-<form id="search-bar" method="post" onsubmit="search(event)">
+<form id="search-bar" action="../pages/search.php" method="get">
     <div class="text-inputs">
         <h3>Pet Information</h3>
         <input id="name" name="name" type="text" placeholder="Pet Name">
@@ -23,7 +23,7 @@
         <h3>Other</h3>
 
         <select id="species" name="species">
-            <option value="none" selected disabled hidden>Pet Species</option> 
+            <option value="none" selected hidden>Pet Species</option> 
             <option value="none">Clear</option> 
 
             <?php
@@ -43,7 +43,7 @@
         </select>
     
         <select id="size" name="size">
-            <option value="none" selected disabled hidden>Pet Size</option> 
+            <option value="none" selected hidden>Pet Size</option> 
             <option value="none">Clear</option> 
             <option value="0">Small</option>
             <option value="1">Medium</option>

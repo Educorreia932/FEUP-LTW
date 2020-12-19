@@ -12,11 +12,14 @@
             include(ROOT . "/templates/cards/submit_pet_card.php");
 
         include(ROOT . "/templates/cards/pet_card.php");
-    ?>
 
-    <?php
-        foreach ($pets as $pet)
-            drawPetCard($username, $pet); 
+        if(count($pets) > 0) {
+            foreach ($pets as $pet)
+                drawPetCard($username, $pet); 
+        }
+        else {
+            echo '<p>No results</p>';
+        }
     ?>
 
     </section>

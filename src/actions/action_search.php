@@ -14,6 +14,12 @@
 
     $name = $_GET['name'];
     $species = $_GET['species'];
+    $color = $_GET["color"]; 
+    $min_weight = $_GET["min_weight"];
+    $max_weight = $_GET["max_weight"];
+    $min_age = $_GET["min_age"];
+    $max_age = $_GET["max_age"];
+    $size = $_GET["size"];
 
     header("Location: ../pages/search.php?name=$name&species=$species");
 ?>
