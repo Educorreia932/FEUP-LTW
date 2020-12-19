@@ -66,6 +66,31 @@ function toggleReplyBox(comment_number) {
     }   
 }
 
+var editActive = 0;
+
+function toggleEditBox(comment_number) {
+    let edit_box = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .edit_box');
+    let edit_button = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .edit_button');
+    let text = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') .replyText');
+
+    if(editActive == comment_number) {
+        text.style.display = "block";
+        edit_box.style.display = "none";
+        edit_button.innerHTML = '<i class="fas fa-edit"></i> Edit';
+        editActive = 0;
+    } 
+    else {
+        text.style.display = "none";
+        edit_box.style.display = "block";
+        if(editActive > 0) {
+            toggleEditBox(editActive);
+        }
+        editActive = comment_number;
+        edit_button.innerHTML = '<i class="fas fa-window-close"></i> Cancel';
+
+    }   
+}
+
 function submitReply(event, number) {
     event.preventDefault();
 
@@ -84,6 +109,35 @@ function submitReply(event, number) {
             question_id: comment_id,
         })
     );
+}
+
+function editReply(event, number) {
+    event.preventDefault();
+
+    let text = document.querySelector('#comments .question_answer:nth-child(' + number + ') .edit_box textarea[id=editText]').value;
+    let reply_id = document.querySelector('#comments .question_answer:nth-child(' + number + ') .edit_box input[name=reply_id]').value;
+    let comment_number = document.querySelector('#comments .question_answer:nth-child(' + number + ') .edit_box [name=comment_number]').value;
+
+    let request = new XMLHttpRequest();
+
+    request.addEventListener("load", function() { receiveEditReply(comment_number, this.responseText); })
+    request.open("post", "../api/api_edit_reply.php", true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    request.send(
+        encodeForAjax({ 
+            text: text,
+            reply_id: reply_id,
+        })
+    );
+}
+
+function receiveEditReply(comment_number, response)
+{
+    if(response != -1){
+        let replyText = document.querySelector('#comments .question_answer:nth-child(' + comment_number + ') p.replyText');
+        replyText.innerHTML = JSON.parse(response);
+        toggleEditBox(comment_number);
+    }
 }
 
 function receiveCommentsReplies(comment_number, response) {

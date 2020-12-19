@@ -198,10 +198,24 @@ div#pet_profile_comments div#comments div.comment footer span#reply_button{
     font-family: 'Varela Round', sans-serif;
 }
 
+.edit_box textarea{
+    resize: none;
+    background-color: wheat;
+    width: 100%;
+    font-size: 1em;
+    font-family: 'Varela Round', sans-serif;
+}
+
 .reply_button {
     border: none;
     border-radius: 0.4rem;
     background-color: white;
+}
+
+.edit_button {
+    border: none;
+    border-radius: 0.4rem;
+    background-color: wheat;
 }
 
 .reply {
@@ -218,6 +232,8 @@ div#pet_profile_comments div#comments div.comment footer span#reply_button{
 }
 
 .reply footer {
+    display: flex;
+    justify-content: space-between;
     padding: 0%;
 }
 

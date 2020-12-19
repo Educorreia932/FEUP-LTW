@@ -10,7 +10,7 @@
         </p>
         
         <p>
-            <?= htmlspecialchars($comment["Text"]) ?>
+            <?= htmlspecialchars(html_entity_decode($comment["Text"])) ?>
         </p>
         <footer>
             <span id="reply_button">
@@ -43,9 +43,30 @@
             $replyDate = DateTime::createFromFormat('d-m-Y H:i:s', $reply['Date'])->format('j M Y \a\t H:i');
     ?>
     <div class="reply">
-        <p><?=htmlspecialchars($reply['Text'])?></p>    
+        <p class="replyText"><?=htmlspecialchars(html_entity_decode($reply['Text']))?></p>
+
+        <div class="edit_box" style="display:none">
+            <form method="post" onsubmit="editReply(event,<?=$comment_count?>)">
+                <textarea id="editText" name="text" rows="3" required><?= htmlspecialchars(html_entity_decode($reply['Text']))?></textarea> 
+    
+                <input type="hidden" name="comment_number" value="<?=$comment_count?>">
+                <input type="hidden" name="reply_id" value="<?=$reply['ID']?>">
+                <input type="submit" value="Submit edit"></input>
+            </form>
+        </div>  
+
         <footer>
-            <p class="reply_date"><?=$replyDate?></p>
+            <span id="edit_button">
+                <?php
+                    if (array_key_exists('username', $_SESSION) && !empty($_SESSION['username'])) {
+                        if($_SESSION['username'] == getUserByID($adoption_post['AuthorID'])) {
+                            echo('<button class="edit_button" onclick="toggleEditBox('.$comment_count.');">
+                            <i class="fas fa-reply"></i> Edit</button>');
+                        }
+                    }
+                ?>
+            </span>
+            <span class="reply_date"><?=$replyDate?></span>
         </footer>
     </div>
     <?php

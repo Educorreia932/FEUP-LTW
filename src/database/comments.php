@@ -30,7 +30,7 @@
         $user_id = getUserID($username);
 
         $stmt = $db->prepare('INSERT INTO Comments VALUES (NULL, ?, ?, ?, ?)');
-        $stmt->execute(array($text, $date, $pet_id, $user_id));
+        $stmt->execute(array(htmlentities($text), $date, $pet_id, $user_id));
 
         $stmt = $db->prepare('SELECT MAX(ID) as LastCommentID FROM Comments');
         $stmt->execute();
@@ -51,7 +51,7 @@
         global $db;
 
         $stmt = $db->prepare('INSERT INTO Replies VALUES (NULL, ?, ?, ?)');
-        if($stmt->execute(array($text, $date, $questionID))) {
+        if($stmt->execute(array(htmlentities($text), $date, $questionID))) {
             $stmt = $db->prepare('SELECT * FROM (
                     Replies, 
                     (
@@ -65,6 +65,16 @@
                 return $reply;
             }
             return -1;
+        }
+        return -1;
+    }
+
+    function editReply($text, $replyID) {
+        global $db;
+
+        $stmt = $db->prepare('UPDATE Replies SET Text = ? WHERE ID = ?');
+        if($stmt->execute(array(htmlentities($text), $replyID))) {
+            return 1;
         }
         return -1;
     }
