@@ -33,6 +33,7 @@
         } 
         
         else {
+            drawHeader("Helper Shelter");
             echo '<script language="javascript">
                     alert("Please log in to access user profile!");
                     window.location.href="../index.php";
