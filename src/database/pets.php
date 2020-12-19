@@ -200,7 +200,7 @@
             WHERE AdoptionPostID=?'
         );
 
-        if($stmt->execute(array($post_title, $location, $description, $post_id)))
+        if($stmt->execute(array($post_title, $location, htmlentities($description), $post_id)))
             return 0;   
         return 1;  
     }

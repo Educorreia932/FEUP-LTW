@@ -23,10 +23,6 @@
     $location = $_POST['location'];
     $description = $_POST['description'];
     $post_id = $_POST['adoption_post_id'];
-    var_dump($post_title);
-    var_dump($location);
-    var_dump($description);
-    var_dump($post_id);
 
     edit_post($post_title, $location, $description, $post_id);
 

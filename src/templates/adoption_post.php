@@ -39,7 +39,7 @@
             </p>
 
             <p>
-                <?= $adoption_post["Description"] ?>
+                <?=htmlspecialchars(html_entity_decode($adoption_post["Description"])) ?>
             </p>
         </div>
         

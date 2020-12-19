@@ -6,7 +6,7 @@
             <h2><?=htmlspecialchars($user['Name'])?></h2>
             <h3>@<?=htmlspecialchars($user['Username'])?></h3>
             <div id="user_bio">
-                <?=htmlspecialchars($user['Biography'])?>
+                <?=htmlspecialchars(html_entity_decode($user['Biography']))?>
             </div>
         </div>
     </div>

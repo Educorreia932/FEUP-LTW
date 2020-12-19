@@ -210,7 +210,7 @@
             WHERE Username=?'
         );
 
-        if($stmt->execute(array($newName, $newBio, $username)))
+        if($stmt->execute(array($newName, htmlentities($newBio), $username)))
             return 0;   
         return 1;     
     }

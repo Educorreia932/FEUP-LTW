@@ -32,7 +32,7 @@
                 </div>
                 <div id="pet-description">
                     <h3>Description</h3>
-                    <p><?=htmlspecialchars($post['Description'])?></p>
+                    <p><?=htmlspecialchars(html_entity_decode($post['Description']))?></p>
                 </div>
             </div>
         </div>

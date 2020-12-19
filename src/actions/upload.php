@@ -45,7 +45,7 @@
 
 		$posterID = (int)getUser($_SESSION['username'])['UserID'];
 
-		$postTransaction->execute(array($petAndPostID, $_POST["post-title"], $_POST["description"], $_POST["city"], $date_text, $posterID));
+		$postTransaction->execute(array($petAndPostID, $_POST["post-title"], htmlentities($_POST["description"]), $_POST["city"], $date_text, $posterID));
 
 		$stmt = $db->prepare('INSERT INTO Pets VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
 
