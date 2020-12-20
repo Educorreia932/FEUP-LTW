@@ -36,6 +36,8 @@ Repository for the project of group 12 for the LTW's classes.
     - **Rest API**
     - **Notifications**
 
+Everything the teacher suggested in the demo was implemented except for removing the alerts from the action files as it would require changing many aspects of the code.
+
 ## Database
 
 [![Database Scheme](Database.png)](https://app.creately.com/diagram/qilCyc2EWYk/edit)
