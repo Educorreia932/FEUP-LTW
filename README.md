@@ -9,6 +9,11 @@ Repository for the project of group 12 for the LTW's classes.
 - Eduardo Correia (201806433)
 - Henrique Ribeiro (201806529)
 
+## Instructions
+
+To run the project, simply enter `php -S localhost:4000` on the terminal inside the `root/` or `src/` folder.
+You may also run the `start.bat` script.
+
 ## Credentials
 
 - 👥 ltw2020 🔑 ltw_2020 
