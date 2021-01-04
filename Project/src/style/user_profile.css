@@ -1,0 +1,74 @@
+section#user_profile {
+    padding-top: 1.5em;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+section#user_profile h2 {
+    text-align: start;
+}
+
+section#user_profile hr.rounded {
+    border-top: solid grey;
+    margin-top: 1.5em;
+}
+
+div#profile_header {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas: "Image Info Options";
+    grid-template-rows: 100%;
+}
+
+div#user_info h2 {
+    font-size: 2.7em;
+    margin-bottom: 0.2em;
+}
+
+div#user_info h3 {
+    color: grey;
+    font-size: 1.5em;
+    margin-top: 0.2em;
+}
+
+#user_edit {
+    grid-area: Options;
+    padding-top: 2.5em;
+}
+
+#edit_profile_button {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1em;
+    border-radius: 1rem;
+    padding: 0.25em;
+    border-style: double;
+} 
+
+input#editName {
+    width: 60%;
+    margin-top: 0.8em;
+    font-size: 2.7em;
+}
+
+#user_info {
+    margin-left: 2.5em;
+    grid-area: Info;
+}
+
+img#profile_pic {
+    grid-area: Image;
+    width: 100%;
+    /* max-height: 11em; */
+    vertical-align: middle;
+    border-radius: 50%;
+    padding: 0.5em;
+    padding-right: 0;
+}
+
+section#favourites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
+    grid-gap: 1em;
+}
+
+

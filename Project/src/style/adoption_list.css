@@ -1,0 +1,35 @@
+h2 {
+    text-align: center;
+}
+
+section#adoption {
+    margin: 1em;
+}
+
+section#pet-grid {
+    display: grid;
+    margin-left: 7em;
+    margin-right: 7em;
+    grid-template-columns: repeat(auto-fill, minmax(14.5em, 1fr));
+    grid-gap: 1em;
+}
+
+footer.container {
+    border-radius: 0 0 0.5em 0.5em;
+    background-color: var(--color1);
+    padding: 0.5em;
+}
+
+footer.container p {
+    margin: 0;
+    background-color: var(--color1);
+    text-align: center;
+    font-size: large;
+    color: white;
+}
+
+img.resize {
+    width: auto;
+    height: auto;
+}
+

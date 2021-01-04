@@ -1,0 +1,73 @@
+div.card {
+    position: relative;
+    color: white;
+    background-color: var(--color1);
+    box-shadow: 0em 0.1em 0.2em grey;
+    height: 100%;
+    border-radius: 0.5em;
+    justify-self: flex-start;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+div.card.submit-pet-card {
+    height: 20.3em;
+}
+
+
+div.card:hover {
+    transform: scale(1.03);
+}
+
+span.pet-id {
+    display: none;
+}
+
+span.favorite-icon, div.post-icon {
+    position: absolute;
+    font-size: 1.3em;
+    color: var(--color1);
+    user-select: none;
+}
+
+div.post-icon {
+    top: 0.5em;
+    left: 0.5em;
+}
+
+span.favorite-icon {
+    top: 0.5em;
+    right: 0.5em;
+    cursor: pointer;
+}
+
+div.pet-card img {
+    display: block;
+    width: 100%;
+    height: 18em;
+    object-fit: cover;
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+/* Submit a Pet For Adoption Card */
+
+div.submit-pet-card {
+    width: 100%;
+}
+
+/* Photo Card */
+
+div.photo-card label {
+    height: 100%;
+}
+
+div.photo-card input#image {
+    display: none;
+}
+
+
+

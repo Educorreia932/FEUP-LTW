@@ -1,0 +1,135 @@
+section#user_settings {
+    margin: auto;
+    margin-top: 0em;
+    padding-top: 1em;
+    background-color: white;
+    width: 70%;
+}
+
+form#user_photo div.photo-card {
+    grid-area: Photo;
+    width: 20%;
+    height: 100%;
+    margin-right: 1em;
+    margin: auto;
+    margin-top: 0em;
+    padding-top: 1em;
+}
+
+section#user_settings label {
+    display: block;
+    font-weight: bold;
+}
+
+span#password_error {
+    color: red;
+}
+
+input#submit_password:disabled {
+    background-color: gray;
+}
+
+span#username_error {
+    color: red;
+}
+
+span#info_error {
+    color: red;
+}
+
+form#profile_change {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: 
+        "Photo Photo"
+        "Pic Name_Bio"
+        "Button Button";
+    margin-bottom: 1.5em;
+}
+
+div#profile_pic {
+    width: 100%;
+    grid-area: Pic;
+}
+
+div#profile_info {
+    grid-area: Name_Bio;
+    margin-bottom: 1em;
+    margin-top: 2em;;
+}
+
+div#profile_info input[name="newName"] {
+    width: max-content;
+    margin-bottom: 1em;
+    border-radius: 0.2rem;
+    padding: 0.5em;
+    border: none;
+    background-color: #EFEFEF;
+}
+
+div#profile_info textarea[name="newBio"] {
+    width: 80%;
+    display: block;
+    resize: none;
+    border-radius: 0.2rem;
+    padding: 0.5em;
+    border: none;
+    background-color: #EFEFEF;
+}
+
+form#profile_change input[type="submit"] {
+    grid-area: Button;
+}
+
+form#username_change {
+    margin-top: 3em;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+form#username_change label {
+    margin-bottom: 0.8em;
+}
+
+form#username_change input[type="submit"] {
+    display: block;
+    width: fit-content;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 1em;
+}
+
+form#username_change input[type="submit"] {
+    display: block;
+    width: fit-content;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: 1em;
+}
+
+form#user_photo input[type=submit]{
+    margin-top: 0.5em;
+    display: block;
+}
+
+form#password_change {
+    text-align: center;
+    padding-bottom: 5em;
+}
+
+form#password_change label {
+    font-weight: normal;
+    font-size: 1em;
+}
+
+form#password_change input[type="password"] {
+    margin-bottom: 0.5em;
+}
+
+form#password_change input[type="submit"] {
+    display: block;
+    width: fit-content;
+    margin-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+}

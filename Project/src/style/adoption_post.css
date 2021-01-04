@@ -1,0 +1,377 @@
+
+div#pet_profile h1{
+    text-align: center;
+    margin-bottom: 0.2em;
+}
+
+div#pet_profile h4#author {
+    text-align: center;
+    margin-top: 0.6em;
+    font-weight: normal;
+}
+
+div#pet_profile h4#author a {
+    font-weight: bold;
+}
+
+div#pet_profile h4#author a:hover {
+    text-decoration: underline;
+}
+
+div#pet_profile button{
+    border-radius: 25px;
+    margin: 0.5em;
+    margin-right: 5em;
+    display:block;
+    font-size: 1.5em; 
+    padding:1em;
+    width: 8em;
+}
+
+div#pet_profile button#adopt{
+    grid-area: adopt;
+    outline:none;
+}
+div#pet_profile button#favorite{
+    grid-area: favorite;
+    background-color: var(--color1);
+    color: white;
+    outline:none;
+}
+
+div#pet_profile button#edit{
+    grid-area: adopt;
+    outline:none;
+}
+
+div#pet_profile div#grid{
+    display:grid;
+    grid-template-columns: 70% 30%;
+    padding:2em;
+    border-bottom: 0.5px solid black;
+    max-width: 90%;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+div#pet_profile h2{
+    position: relative;
+    grid-area: img;
+    height: 15em;
+    overflow: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+div#pet_profile h2 img#front{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    position: relative;
+    z-index:3;
+}
+
+div#pet_profile h2 img#background{
+    width:80%;
+    left:10%;
+    right:10%;
+    top:-60%;
+    position: absolute;
+    z-index:1;
+    filter:blur(7px);
+    
+}
+
+div#pet_profile div#pet_info {
+    grid-column-start: auto;
+    padding:1em;
+    border-radius:25px;
+    margin-left: auto;
+    margin-right: auto;
+    width:60%;
+    word-wrap: break-word;
+    text-align: center;
+    border: solid 1px black;
+}
+
+div#pet_profile div#buttons {
+    grid-column-start: auto;
+}
+
+
+div#pet_profile div#pet_info hr{
+    width:30%;
+    border:0;
+    border-bottom: solid 1px var(--color2);
+}
+
+
+div#pet_profile div#pet_info p#info_bullets a{
+    color:black;
+}
+
+div#pet_profile div#pet_info p#info_bullets *+ :before{
+    content : "\2022";
+}
+
+div#pet_profile_comments form label textarea{
+    display:block;
+    width:100%;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+    resize: none;
+}
+
+
+div#pet_profile_comments form{
+    margin-top:1em;
+    margin-left:2em;
+    max-width: 90%;
+}
+
+div#pet_profile_comments form input[type=submit] {
+    background-color: var(--color1);
+    color: white;
+    border: none;
+    margin-left: 45%;
+    margin-right: 45%;
+    padding: 0.3em;
+    padding-left: 2.7em;
+    padding-right: 2.7em;
+    border-radius: 7px 7px 7px 7px;
+}
+
+div#pet_profile_comments div#comments{
+    margin-top:1em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+div#pet_profile_comments div#comments div.comment{
+    margin-top: 1em;
+    background-color: white;
+    margin-left: 2em;
+    margin-right: 2em;
+    max-width: 100%;
+    border:0.5px solid black;
+    border-radius: 0.5rem;
+}
+
+div#pet_profile_comments div#comments div.comment :nth-child(1){
+    font-weight: bold;
+}
+
+div#pet_profile_comments div#comments div.comment p{
+    margin-left: 1em;
+}
+
+div#pet_profile_comments div#comments div.comment footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    padding-right: 1em;
+    width: 100%;
+    padding-bottom: 0.5em;
+}
+
+div#pet_profile_comments div#comments div.comment footer span#question_date{
+    margin-right: 1em;
+    font-weight: normal;
+}
+
+div#pet_profile_comments div#comments div.comment footer span#reply_button{
+    margin-left: 3em;
+    font-weight: normal;
+}
+
+.reply_box {
+    padding-left: 3em;
+    padding-right: 1em;
+    margin-top: 0.2em;
+    margin-bottom: 1em;
+}
+
+.reply_box textarea{
+    resize: none;
+    width: 100%;
+    font-size: 1em;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.edit_box textarea{
+    resize: none;
+    background-color: wheat;
+    width: 100%;
+    font-size: 1em;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.reply_button {
+    border: none;
+    border-radius: 0.4rem;
+    background-color: white;
+}
+
+.edit_button {
+    border: none;
+    border-radius: 0.4rem;
+    background-color: wheat;
+}
+
+.reply {
+    border-radius: 1rem;
+    border: solid goldenrod;
+    border-width: 0.15em;
+    margin-left: 5em;
+    margin-right: 8em;
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1em;
+    background-color: wheat;
+}
+
+.reply footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0%;
+}
+
+.reply .reply_date {
+    text-align: end;
+    margin-bottom: 0.3em;
+    font-size: 0.8em;
+}
+
+
+
+/* Proposals section */
+
+section#adoption_post_proposals {
+    margin-right: 3em;
+    margin-left: 3em;
+    border-bottom: 0.5px solid black;
+}
+
+div.post_proposal {
+    background-color: #e8f4f8;
+    border-radius: 1rem;
+    box-shadow: 0em 0.1em 0.2em grey;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-left: 3em;
+    padding-right: 2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+
+div.post_proposal a {
+    color: black;
+    font-weight: bold;
+}
+
+div.post_proposal p.proposal_author {
+    margin-bottom: 1.5em;
+}
+
+div.post_proposal a:hover {
+    text-decoration: underline;
+}
+
+div.post_proposal footer {
+    text-align: end;
+}
+
+span.proposal_buttons button {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border: none;
+    background-color: #e8f4f8;
+    border-radius: 0.5rem;
+}
+
+span.proposal_buttons button.accept_proposal {
+    color: green;
+}
+
+span.proposal_buttons button.refuse_proposal {
+    color: red;
+}
+
+span.proposal_buttons button.accept_proposal:hover {
+    color: black;
+    background-color: #90ee90;
+}
+
+span.proposal_buttons button.refuse_proposal:hover {
+    color: black;
+    background-color: #ffcccb;
+}
+
+.Edit-post{
+    text-align: center;
+    height: 1.4em !important;
+}
+
+form#edit-post div#post-title{
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1em;
+}
+
+form#profile_change {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: 
+        "Forms"
+        "Button";
+    margin-bottom: 1.5em;
+}
+
+form#edit-post div#fields{
+    grid-area: Forms;
+    text-align: center;
+    padding: 1em;
+    padding-left: 0em;
+}
+
+form#edit-post label{
+    grid-area: Forms;
+
+    display: block;
+}
+
+form#edit-post{
+    grid-area: Forms;
+    text-align: center;
+}
+
+#edit-post input {
+    grid-area: Forms;
+    width: max-content;
+    margin-bottom: 1em;
+    border-radius: 0.2rem;
+    padding: 0.5em;
+    border: none;
+}
+
+#edit-post textarea{
+    margin-left: 20%;
+    margin-bottom: 1em;
+    width: 60%;
+    display: block;
+    resize: none;
+    border-radius: 0.2rem;
+    padding: 0.5em;
+    border: none;
+}
+
+#submit_changes input[type="submit"] {
+    grid-area: Button;
+}
