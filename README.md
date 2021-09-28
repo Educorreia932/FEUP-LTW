@@ -8,5 +8,4 @@
 
 The project consisted in a website where users could list rescue pets for adoption and/or offer them a *forever home*.
 
-![Website Screenshot](https://educorreia932.dev/static/images/Projects/HelperShelter.png)
-
+![Website Screenshot](https://educorreia932.dev/static/projects/HelperShelter.png)
